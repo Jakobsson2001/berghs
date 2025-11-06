@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript | Berghs Class</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <span class="brand-badge">B</span>
+          <span>Berghs Class</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="javascript.html" aria-current="page">JavaScript</a></li>
+          <li><a href="git.html">Git</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container prose">
+        <h1>JavaScript</h1>
+        <p>Use this page to plan your JavaScript lessons. Consider variables, functions, DOM, events, fetch, and modules.</p>
+        <h2>Starter snippet</h2>
+        <pre><code>document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('#demo');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      alert('Hello JS');
+    });
+  }
+});
+</code></pre>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

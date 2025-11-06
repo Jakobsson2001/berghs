@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML | Berghs Class</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <span class="brand-badge">B</span>
+          <span>Berghs Class</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="html.html" aria-current="page">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+          <li><a href="git.html">Git</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container prose">
+        <h1>HTML</h1>
+        <p>Use this page to outline your HTML lessons. Consider sections for semantics, accessibility, forms, media, and document structure.</p>
+        <h2>Starter snippet</h2>
+        <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;title&gt;Page title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;h1&gt;Hello HTML&lt;/h1&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

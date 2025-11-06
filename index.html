@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Berghs Class Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <meta name="theme-color" content="#0ea5e9" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html" aria-current="page">
+          <span class="brand-badge">B</span>
+          <span>Berghs Class</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+          <li><a href="git.html">Git</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="panel">
+          <span class="kicker">Course Starter</span>
+          <h1>Welcome to your class template</h1>
+          <p class="lead">A clean, modern starting point with a shared navbar and four subpages for your curriculum: HTML, CSS, JavaScript, and Git.</p>
+        </div>
+
+        <div class="grid">
+          <a class="card" href="html.html">
+            <h3>HTML</h3>
+            <p>Structure content with semantic markup and accessible patterns.</p>
+          </a>
+          <a class="card" href="css.html">
+            <h3>CSS</h3>
+            <p>Style your pages with responsive, modern layouts.</p>
+          </a>
+          <a class="card" href="javascript.html">
+            <h3>JavaScript</h3>
+            <p>Add interactivity and dynamic behavior using vanilla JS.</p>
+          </a>
+          <a class="card" href="git.html">
+            <h3>Git</h3>
+            <p>Version control fundamentals and everyday workflows.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="container prose">
+        <h2>How to use this template</h2>
+        <ul>
+          <li>Use the navbar to navigate the four core topics.</li>
+          <li>Replace the placeholder content on each subpage with your lessons.</li>
+          <li>Extend styles in <code>assets/styles.css</code> and scripts in <code>assets/script.js</code>.</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Git | Berghs Class</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <span class="brand-badge">B</span>
+          <span>Berghs Class</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+          <li><a href="git.html" aria-current="page">Git</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container prose">
+        <h1>Git</h1>
+        <p>Use this page to teach Git fundamentals: repositories, commits, branches, merges, and remotes.</p>
+        <h2>Concepts</h2>
+        <ul>
+          <li>Commits: snapshot of changes</li>
+          <li>Branches: parallel lines of development</li>
+          <li>Merges: bringing work together</li>
+          <li>Remotes: collaborating via a server</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

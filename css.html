@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS | Berghs Class</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <span class="brand-badge">B</span>
+          <span>Berghs Class</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html" aria-current="page">CSS</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+          <li><a href="git.html">Git</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container prose">
+        <h1>CSS</h1>
+        <p>Use this page to structure your CSS lessons. Consider sections covering the cascade, selectors, layout (flexbox, grid), responsive design, and modern techniques.</p>
+        <h2>Starter snippet</h2>
+        <pre><code>/* Base reset */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* Layout */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+</code></pre>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
