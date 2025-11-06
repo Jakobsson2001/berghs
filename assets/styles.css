@@ -30,6 +30,19 @@ img, svg {
   max-width: 100%;
 }
 
+/* Image size utility classes */
+.media--small {
+  width: 320px; /* preferred fixed width */
+  max-width: 100%;
+  height: auto;
+}
+
+.media--thumb {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   width: 100%;
   max-width: 1080px;
