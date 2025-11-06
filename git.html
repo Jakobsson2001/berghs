@@ -176,6 +176,20 @@
     </style>
   </head>
   <body>
+    <!-- TODO (Rasmus): Why we created our own navbar
+         We built a custom navbar instead of using a framework/library to keep this project simple
+         and educational—students can see exactly how navigation works without abstraction layers.
+         
+         Best practice: In a real project, you'd typically create a single reusable navbar component
+         (e.g., in a separate file/module) that gets imported into each page. That single navbar
+         would automatically highlight the current page based on the URL or route, avoiding code
+         duplication and making updates easier. This keeps the code DRY (Don't Repeat Yourself)
+         and ensures consistency across all pages.
+         
+         Also note: This page has inline CSS (in the <style> tag above). In a real project, you should
+         separate CSS into its own .css file (like assets/styles.css) for better organization,
+         reusability, and maintainability.
+    -->
     <!-- Sticky Header with logo + nav -->
     <header class="site-header" role="banner">
       <div class="container header-inner">

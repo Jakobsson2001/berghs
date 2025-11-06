@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frameworks | Berghs Class</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body class="theme-light">
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <span class="brand-badge">B</span>
+          <span>Berghs Class</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+          <li><a href="frameworks.html" aria-current="page">Frameworks</a></li>
+          <li><a href="git.html">Git</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="panel">
+            <div class="split">
+              <div>
+                <span class="kicker">Next Steps</span>
+                <h1>From Basics to Frameworks</h1>
+                <p class="lead">Learn how React, Tailwind, and MUI help you build faster by reusing proven patterns instead of starting from scratch.</p>
+                <div class="actions">
+                  <a href="#why-frameworks" class="btn btn-primary">Get Started</a>
+                  <a href="#react" class="btn btn-ghost">Learn More</a>
+                </div>
+              </div>
+              <div class="hero-figure" aria-hidden="true">
+                <svg viewBox="0 0 260 200" role="img" width="100%" height="100%">
+                  <defs>
+                    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#d946ef"/>
+                      <stop offset="100%" stop-color="#38bdf8"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="0" y="0" width="260" height="200" rx="16" fill="url(#g2)" opacity="0.18"/>
+                  <circle cx="70" cy="120" r="34" fill="#f0abfc" opacity="0.9"/>
+                  <circle cx="160" cy="80" r="46" fill="#60a5fa" opacity="0.85"/>
+                  <rect x="110" y="120" width="90" height="28" rx="8" fill="#f472b6" opacity="0.8"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container prose">
+        <div style="background: linear-gradient(135deg, rgba(217,70,239,0.08), rgba(56,189,248,0.08)); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 2rem; text-align: center;">
+          <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--text);">
+            💡 Don't reinvent the wheel — build on what others have made better.
+          </p>
+        </div>
+
+        <h2 id="why-frameworks">From Basics to Frameworks</h2>
+        <p>
+          Once you've learned the fundamentals of HTML, CSS, and JavaScript, you might notice that writing everything from scratch
+          becomes repetitive. Each new project needs navigation bars, layouts, buttons, and similar patterns. Developers quickly realized
+          they were "reinventing the wheel" — building the same components again and again.
+        </p>
+
+        <h3>Why Use Frameworks?</h3>
+        <p>
+          Frameworks like <strong>React</strong>, <strong>Tailwind CSS</strong>, and <strong>Material UI (MUI)</strong> solve this problem by providing
+          reusable building blocks and consistent patterns. Instead of focusing on boilerplate code, you can focus on logic,
+          interactivity, and design. These tools help you write clean, maintainable code faster — without starting over every time.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0;">
+          <div style="background: linear-gradient(180deg, rgba(56,189,248,0.10), rgba(56,189,248,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px; text-align: center;">
+            <div style="font-size: 32px; margin-bottom: 8px;">⚛️</div>
+            <h4 style="margin: 0 0 6px; font-size: 18px;">React</h4>
+            <p style="margin: 0; color: var(--muted); font-size: 14px;">Component-based UI library</p>
+          </div>
+          <div style="background: linear-gradient(180deg, rgba(217,70,239,0.10), rgba(217,70,239,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px; text-align: center;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🎨</div>
+            <h4 style="margin: 0 0 6px; font-size: 18px;">Tailwind</h4>
+            <p style="margin: 0; color: var(--muted); font-size: 14px;">Utility-first CSS framework</p>
+          </div>
+          <div style="background: linear-gradient(180deg, rgba(14,165,233,0.10), rgba(14,165,233,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px; text-align: center;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🧩</div>
+            <h4 style="margin: 0 0 6px; font-size: 18px;">MUI</h4>
+            <p style="margin: 0; color: var(--muted); font-size: 14px;">Pre-styled components</p>
+          </div>
+        </div>
+
+        <h2 id="react">How React Works: The Foundation</h2>
+        <p>
+          React is a JavaScript library that builds upon the web standards you've already learned. At its core, React uses <strong>JSX</strong> (JavaScript XML),
+          a syntax extension that looks like HTML but is actually JavaScript. When you write React components, you're describing the structure and behavior
+          of your UI in a declarative way.
+        </p>
+
+        <h3>React's Relationship with HTML</h3>
+        <p>
+          React components compile down to standard HTML elements through a process called <strong>rendering</strong>. When React renders a component,
+          it creates a <strong>Virtual DOM</strong> (a JavaScript representation of the HTML structure), then efficiently updates the actual browser DOM
+          (the HTML you see in the browser) only where changes occur.
+        </p>
+
+        <p>
+          Here's how it works: You write JSX that looks like HTML, React processes it, and the browser receives standard HTML elements.
+          Your knowledge of HTML semantics, accessibility attributes, and element structure directly applies in React.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 20px 0;">
+          <pre style="margin: 0; overflow-x: auto;"><code>// React Component (JSX)
+function Button() {
+  return (
+    &lt;button className="btn-primary" onClick={handleClick}&gt;
+      Click me
+    &lt;/button&gt;
+  );
+}
+
+// Renders to standard HTML:
+// &lt;button class="btn-primary"&gt;Click me&lt;/button&gt;</code></pre>
+        </div>
+
+        <h3>React's Relationship with CSS and Tailwind</h3>
+        <p>
+          React components can use CSS in multiple ways, and this is where Tailwind CSS becomes powerful:
+        </p>
+
+        <ul>
+          <li><strong>Standard CSS:</strong> You can import CSS files or use inline styles just like in traditional HTML. React doesn't change how CSS works.</li>
+          <li><strong>Tailwind CSS:</strong> Tailwind's utility classes work seamlessly with React. You apply Tailwind classes directly to JSX elements using the <code>className</code> attribute (note: it's <code>className</code> in React, not <code>class</code>, because <code>class</code> is a reserved word in JavaScript).</li>
+          <li><strong>CSS-in-JS:</strong> React also supports writing styles as JavaScript objects, but Tailwind's utility-first approach is often preferred for its simplicity and performance.</li>
+        </ul>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 20px 0;">
+          <pre style="margin: 0; overflow-x: auto;"><code>// React component with Tailwind CSS
+function Card() {
+  return (
+    &lt;div className="bg-white rounded-lg shadow-md p-6"&gt;
+      &lt;h2 className="text-2xl font-bold text-gray-900"&gt;
+        Title
+      &lt;/h2&gt;
+      &lt;p className="text-gray-600 mt-2"&gt;Content&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// Tailwind classes compile to standard CSS
+// The browser receives: &lt;div class="bg-white rounded-lg..."&gt;
+// Which applies: background-color: white; border-radius: 0.5rem; ...</code></pre>
+        </div>
+
+        <h3>The Rendering Pipeline</h3>
+        <p>
+          Understanding the flow helps clarify how everything connects:
+        </p>
+
+        <ol>
+          <li><strong>You write JSX</strong> — React components with HTML-like syntax and Tailwind classes</li>
+          <li><strong>React compiles JSX</strong> — Transforms your components into JavaScript function calls</li>
+          <li><strong>React creates Virtual DOM</strong> — Builds a tree of React elements in memory</li>
+          <li><strong>React reconciles changes</strong> — Compares new Virtual DOM with previous state</li>
+          <li><strong>Browser receives HTML + CSS</strong> — React updates the actual DOM with standard HTML elements and CSS classes</li>
+          <li><strong>Browser renders</strong> — The final output is standard HTML, CSS, and JavaScript that any browser can display</li>
+        </ol>
+
+        <h2>Tailwind & MUI — Styling Smarter</h2>
+        <p>
+          <strong>Tailwind CSS</strong> is a utility-first CSS framework that generates CSS classes based on your usage. When you write <code>className="flex items-center gap-4"</code>
+          in React, Tailwind's build process generates the corresponding CSS rules. The classes are applied to the HTML elements React renders,
+          creating a seamless integration between React's component model and Tailwind's utility system.
+        </p>
+
+        <p>
+          <strong>Material UI (MUI)</strong> is a React component library that provides pre-built, styled components. Under the hood, MUI components
+          are React components that render standard HTML elements with CSS (and optionally, CSS-in-JS). You can use MUI components alongside Tailwind,
+          or use MUI's built-in styling system. Both approaches ultimately produce standard HTML and CSS.
+        </p>
+
+        <p>
+          The key insight: <strong>React, Tailwind, and MUI are all abstraction layers</strong> that make development faster and more maintainable,
+          but they all compile down to the same web fundamentals: HTML for structure, CSS for styling, and JavaScript for behavior.
+          Your foundational knowledge of HTML and CSS remains essential and directly applicable.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(217,70,239,0.06), rgba(56,189,248,0.06)); border-left: 4px solid var(--accent); border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0;">
+            💡 <strong>In short:</strong> React helps you structure your site, Tailwind and MUI help you style it — and together they let you focus on creating something meaningful rather than rebuilding what already exists.
+          </p>
+        </div>
+
+        <h2>Next Steps</h2>
+        <p>
+          Ready to dive deeper? Check out the official documentation:
+        </p>
+        <ul>
+          <li><a href="https://react.dev" target="_blank" rel="noopener noreferrer">React Documentation</a> — Learn React step by step</li>
+          <li><a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer">Tailwind CSS</a> — Utility-first CSS framework</li>
+          <li><a href="https://mui.com" target="_blank" rel="noopener noreferrer">Material UI</a> — React component library</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
