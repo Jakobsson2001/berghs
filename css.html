@@ -3,48 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CSS | Berghs Class</title>
-    <link rel="stylesheet" href="assets/styles.css" />
+    <title>CSS Overview</title>
   </head>
   <body>
-    <header class="navbar">
-      <div class="container">
-        <a class="brand" href="index.html">
-          <span class="brand-badge">B</span>
-          <span>Berghs Class</span>
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <ul class="nav-links">
-          <li><a href="html.html">HTML</a></li>
-          <li><a href="css.html" aria-current="page">CSS</a></li>
-          <li><a href="javascript.html">JavaScript</a></li>
-          <li><a href="git.html">Git</a></li>
-        </ul>
-      </div>
-    </header>
-
     <main>
-      <div class="container prose">
-        <h1>CSS</h1>
-        <p>Use this page to structure your CSS lessons. Consider sections covering the cascade, selectors, layout (flexbox, grid), responsive design, and modern techniques.</p>
-        <h2>Starter snippet</h2>
-        <pre><code>/* Base reset */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-
-/* Layout */
-.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-</code></pre>
-      </div>
+      <article>
+        <h1>Introduction to CSS</h1>
+        <p>Cascading Style Sheets, commonly shortened to CSS, is the language that designers and developers use to decide how web pages look and feel. When you visit a site, the browser reads the HTML to understand the content, and CSS to figure out how that content should be presented. Think of HTML as the structure of a house, while CSS is the paint, furniture, and decorations that make the rooms inviting. By adjusting colors, sizes, positioning, and effects, CSS turns documents into polished experiences.</p>
+        <p>CSS works by applying rules. A rule tells the browser which part of the page to target and which visual instructions to follow. The part being targeted is called the selector. It might be an element name such as paragraph, a class assigned to several elements, or a unique identifier used once on the page. The instructions are written as property and value pairs. For example, the property color set to blue tells the browser to display the selected text in blue.</p>
+        <p>Because many rules can apply to the same element, CSS uses a system called the cascade to decide which rule wins. Specificity, source order, and whether a rule is marked as important all influence this decision. A rule that targets a specific element, such as using an identifier, is more powerful than a general rule that targets all paragraphs. If two rules have identical strength, the one that appears later in the style sheet takes priority. Understanding this cascade prevents unexpected results and helps you organize your styles.</p>
+        <p>CSS also controls layout, which is how elements flow and align on a page. Early designers relied on tables and complicated tricks, but modern CSS provides dedicated tools. The box model describes every element as a rectangular box made of content, padding, borders, and margins. Display values, such as block, inline, and inline-block, determine how these boxes behave with each other. Layout modules like Flexbox and Grid offer ways to distribute space, create columns, and adapt designs to different screen sizes without extra code.</p>
+        <p>Responsive design is the practice of making a site look good on phones, tablets, laptops, and large screens. CSS enables this by letting you write media queries, which are conditions that check the size or characteristics of the device. When a condition is met, the browser uses the matching styles. You can increase font sizes on small screens, rearrange columns into stacks, or hide content that might clutter a display. Responsive CSS ensures that everyone enjoys the website without needing a separate mobile version.</p>
+        <p>An aspect of CSS is inheritance, where properties pass from parent elements to their children. For instance, if you set the text color of the body element, paragraphs inside adopt that color. Not every property inherits, so you can choose when to override defaults. Combined with classes, inheritance helps keep sheets shorter and easier to maintain. Instead of repeating the color or font rule everywhere, you define it once and let the cascade do the rest.</p>
+      </article>
     </main>
-
-    <footer>
-      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
-    </footer>
-
-    <script src="assets/script.js"></script>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>
