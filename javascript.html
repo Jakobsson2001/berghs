@@ -207,18 +207,34 @@
             btn.className = 'btn option';
             btn.type = 'button';
             btn.textContent = `${String.fromCharCode(97 + i)}) ${label}`; // a) label
-            btn.addEventListener('click', () => handleAnswer(i === item.answerIdx));
+            btn.dataset.index = i;
+            btn.addEventListener('click', () => handleAnswer(i, item.answerIdx));
             optionsEl.appendChild(btn);
           });
           stage.classList.remove('is-correct', 'is-wrong');
           renderProgress();
         }
 
-        function handleAnswer(isCorrect) {
-          stage.classList.toggle('is-correct', isCorrect);
-          stage.classList.toggle('is-wrong', !isCorrect);
+        function handleAnswer(selectedIdx, correctIdx) {
+          // Prevent multiple clicks
+          const allButtons = optionsEl.querySelectorAll('.option');
+          allButtons.forEach(btn => btn.disabled = true);
+          
+          const isCorrect = selectedIdx === correctIdx;
           if (isCorrect) score += 1;
-          // Move to next question after a brief delay
+          
+          // Mark individual buttons - always show correct answer in green
+          allButtons.forEach((btn, i) => {
+            if (i === correctIdx) {
+              // Always mark the correct answer in green
+              btn.classList.add('is-correct-answer');
+            } else if (i === selectedIdx && !isCorrect) {
+              // Mark the selected wrong answer in red
+              btn.classList.add('is-wrong-answer');
+            }
+          });
+          
+          // Move to next question after a longer delay
           setTimeout(() => {
             index += 1;
             if (index < quizData.length) {
@@ -226,7 +242,7 @@
             } else {
               showResults();
             }
-          }, 650);
+          }, 2000); // Increased from 650ms to 2000ms (2 seconds)
         }
 
         function showResults() {
