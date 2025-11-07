@@ -7,6 +7,15 @@
   --accent-strong: #0ea5e9; /* sky-500 */
   --border: #1f2937;      /* gray-800 */
   --shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+  /* Gör allt rosa — primära färger */
+  --pink-50:  #fff0f6;
+  --pink-100: #ffd6e8;
+  --pink-200: #ffb3d1;
+  --pink-400: #ff66aa;
+  --pink-600: #e91e63;
+  --pink-800: #880e4f;
+  --pink-900: #4a0030;
 }
 
 /* Light theme inspired by reference design */
@@ -35,6 +44,24 @@ html, body {
   font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--pink-50) !important;
+  color: var(--pink-800) !important;
+}
+
+/* Containers och kartor */
+.container,
+.prose,
+main,
+header,
+footer,
+nav,
+section,
+article,
+details,
+.summary {
+  background: transparent !important;
+  color: var(--pink-800) !important;
 }
 
 img, svg {
@@ -212,6 +239,19 @@ h1 {
   color: #cbd5e1;
 }
 
+/* Rubriker och länkar */
+h1,h2,h3,h4,h5,h6 {
+  color: var(--pink-900) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+
+a,
+a:visited {
+  color: var(--pink-600) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* Cards */
 .grid {
   display: grid;
@@ -245,6 +285,23 @@ h1 {
 .card p {
   margin: 0;
   color: var(--muted);
+}
+
+/* Koderutor, pre och textarea */
+pre, code, kbd, textarea, input, button {
+  background-color: rgba(255, 240, 246, 0.9) !important;
+  color: var(--pink-900) !important;
+  border: 1px solid var(--pink-200) !important;
+}
+
+/* Knappar */
+button,
+button[type="button"],
+.live-demo button {
+  background: linear-gradient(180deg, var(--pink-100), var(--pink-200)) !important;
+  border: 1px solid var(--pink-300) !important;
+  color: var(--pink-800) !important;
+  box-shadow: 0 6px 18px rgba(233,30,99,0.08);
 }
 
 /* Content */
@@ -542,4 +599,21 @@ footer {
     grid-template-columns: 1fr;
     text-align: left;
   }
+}
+
+/* Små justeringar för kontrast där text är på ljus bakgrund */
+.prose a,
+.prose p,
+.prose li {
+  color: var(--pink-800) !important;
+}
+
+/* Fokus och markörfärg */
+:focus {
+  outline: 3px solid rgba(233,30,99,0.18) !important;
+  box-shadow: 0 0 0 4px rgba(233,30,99,0.08);
+}
+
+* {
+  caret-color: var(--pink-600) !important;
 }

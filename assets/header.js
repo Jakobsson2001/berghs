@@ -84,8 +84,9 @@
     }).join('\n');
 
     const extraLinksHtml = config.extraLinks.map(link => {
+      const current = isCurrentPage(link.href) ? ' aria-current="page"' : '';
       const classes = link.class ? ` class="${link.class}"` : '';
-      return `          <li><a href="${link.href}"${classes}>${link.text}</a></li>`;
+      return `          <li><a href="${link.href}"${classes}${current}>${link.text}</a></li>`;
     }).join('\n');
 
     return `
@@ -152,10 +153,10 @@ ${linksHtml}
     } else {
       config = headerConfigs.navbar;
       
-      // Add extra "Get Started" link for javascript.html
-      if (currentPage === 'javascript.html') {
+      // Add extra "About Rasmus" link for javascript.html and about-rasmus.html
+      if (currentPage === 'javascript.html' || currentPage === 'about-rasmus.html') {
         config.extraLinks = [
-          { href: '#first-example', text: 'Get Started', class: 'btn btn-primary' }
+          { href: 'about-rasmus.html', text: 'About Rasmus', class: 'btn btn-primary' }
         ];
       }
       
