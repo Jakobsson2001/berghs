@@ -7,38 +7,56 @@
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <div id="header-container"></div>
-    <header class="image-header">
-      <img src="assets/CSS%20meme.jpg" alt="CSS meme showing how styles cascade" />
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <span class="brand-badge">B</span>
+          <span>Berghs Class</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html" aria-current="page">CSS</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+          <li><a href="git.html">Git</a></li>
+        </ul>
+      </div>
     </header>
 
     <main>
-      <div class="container prose">
-        <h1>CSS</h1>
-        <p>CSS, short for Cascading Style Sheets, is the language that gives web pages their appearance. Without it, every site would feel like a stack of plain documents. CSS lets you choose colors, fonts, spacing, and visual effects, almost like choosing paint and furniture for a room. With a few lines of instructions, you can turn a jumble of text and pictures into something that feels organized, welcoming, and purposeful.</p>
-        <p>CSS works by applying rules to pieces of HTML. Each rule starts with a selector, which tells the browser what to target. You might select every paragraph, a single heading, or a group of elements that share a class name. Inside the curly braces you list properties and values, such as color: blue or margin: 16px. The browser reads these instructions line by line and translates them into the final on-screen look.</p>
-        <p>When multiple rules try to style the same item, the cascade decides what wins. Specificity ranks the options. An ID selector is more specific than a class, and a class is stronger than an element selector. If two rules tie, the one that appears later in the stylesheet takes charge. Understanding this hierarchy helps you predict outcomes and see why a change seems to have no effect.</p>
-        <p>Another ingredient in CSS is inheritance. Some properties, like text color and font family, naturally pass from parent elements to their children. This behavior saves time because you can set a base style on the body and let paragraphs, lists, and quotes adopt it automatically. Other properties, such as margins or backgrounds, do not inherit, so you deliberately define them where necessary. Mastering inheritance keeps your stylesheets tidy and reduces repeated declarations.</p>
-        <p>Layout is one of the most powerful reasons to learn CSS. The language treats every element as a rectangular box with content, padding, borders, and margins. By adjusting these layers you control spacing and alignment. Modern layout modules such as Flexbox and Grid provide flexible systems for building rows, columns, and complex arrangements without relying on old table hacks. With practice you can create designs that adapt gracefully to different amounts of text and media.</p>
-        <p>Responsive design uses CSS to make sure a page looks right on phones, tablets, laptops, and monitors. Media queries act like checkpoints that watch the size of the screen. When the screen narrows, you might stack columns, increase font sizes, or hide decorative details that no longer fit. When there is more room, you can expand layouts and show additional information. This adaptability makes sites more inclusive and reduces the need for separate versions.</p>
-        <p>To write CSS effectively, it helps to build habits around organization and testing. Group related rules together, name classes clearly, and comment on sections that might puzzle your future self. Most browsers include developer tools that let you preview changes live, experiment with new values, and diagnose issues. As you practice, you will learn to balance creativity with consistency, delivering interfaces that look great, remain accessible, and communicate ideas with clarity.</p>
-        <div style="display:grid;place-items:center;gap:3rem;min-height:50vh">
-          <div style="text-align:center">
-            <span role="img" aria-label="Julian" style="font-size:220px;line-height:1">👨‍🦰</span>
-            <p style="font-size:32px;margin-top:1rem">Julian</p>
-          </div>
-          <div style="text-align:center">
-            <span role="img" aria-label="Seal" style="font-size:220px;line-height:1">🦭</span>
-            <p style="font-size:32px;margin-top:1rem">Säl</p>
-          </div>
-          <div style="max-width:800px;margin:2rem auto">
-            <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f" 
-                 alt="Man in white shirt with a seal on a tropical beach" 
-                 style="width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)">
-            <p style="text-align:center;font-size:18px;margin-top:1rem">Julian och sälen på stranden 🏖️</p>
-          </div>
+      <!-- HEADER / HERO -->
+      <header class="hero">
+        <img src="assets/Neda.png" alt="Headerbild för sidan" class="hero-image">
+        <div class="hero-content container">
+          <h1>Copy Lab-style rubrik</h1>
+          <p>Kort text som förklarar vem du är / vad sidan är.</p>
+          <a href="#services" class="cta-button">Se vad jag gör</a>
         </div>
-      </div>
+      </header>
+
+      <!-- TJÄNSTER -->
+      <section id="services" class="section container">
+        <h2>Tjänster</h2>
+        <p>Beskriv kort vad du erbjuder.</p>
+      </section>
+
+      <!-- CASE / PORTFOLIO -->
+      <section id="cases" class="section container">
+        <h2>Case</h2>
+        <p>Ett par exempel på jobb / projekt.</p>
+      </section>
+
+      <!-- OM MIG -->
+      <section id="about" class="section container">
+        <h2>Om mig</h2>
+        <p>Lite personlig text.</p>
+      </section>
+
+      <!-- KONTAKT -->
+      <section id="contact" class="section container">
+        <h2>Kontakt</h2>
+        <p>Mail, LinkedIn, osv.</p>
+      </section>
     </main>
 
     <footer>
