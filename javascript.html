@@ -43,6 +43,24 @@
       </section>
 
       <div class="container prose">
+<<<<<<< HEAD
+        <h1>JavaScript</h1>
+        <p>Use this page to plan your JavaScript lessons. Consider variables, functions, DOM, events, fetch, and modules.</p>
+        <h2>Starter snippet</h2>
+        <figure class="demo-figure">
+          <img id="demoImage" src="https://via.placeholder.com/600x300?text=JavaScript+Demo" alt="JavaScript demo" style="max-width:100%;height:auto;display:block;margin:0 0 1rem;">
+          <figcaption>Example screenshot for the starter snippet</figcaption>
+        </figure>
+        <pre><code>document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('#demo');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      alert('Hello JS');
+    });
+  }
+});
+</code></pre>
+=======
         <h1>Get Started with JavaScript</h1>
 
         <h2>What is JavaScript?</h2>
@@ -93,6 +111,7 @@
             <a href="frameworks.html" class="btn btn-primary">Explore Frameworks →</a>
           </div>
         </div>
+>>>>>>> ad96bda6a467ed187d359efa652b3c7ddca9cea7
       </div>
     </main>
 
@@ -188,18 +207,34 @@
             btn.className = 'btn option';
             btn.type = 'button';
             btn.textContent = `${String.fromCharCode(97 + i)}) ${label}`; // a) label
-            btn.addEventListener('click', () => handleAnswer(i === item.answerIdx));
+            btn.dataset.index = i;
+            btn.addEventListener('click', () => handleAnswer(i, item.answerIdx));
             optionsEl.appendChild(btn);
           });
           stage.classList.remove('is-correct', 'is-wrong');
           renderProgress();
         }
 
-        function handleAnswer(isCorrect) {
-          stage.classList.toggle('is-correct', isCorrect);
-          stage.classList.toggle('is-wrong', !isCorrect);
+        function handleAnswer(selectedIdx, correctIdx) {
+          // Prevent multiple clicks
+          const allButtons = optionsEl.querySelectorAll('.option');
+          allButtons.forEach(btn => btn.disabled = true);
+          
+          const isCorrect = selectedIdx === correctIdx;
           if (isCorrect) score += 1;
-          // Move to next question after a brief delay
+          
+          // Mark individual buttons - always show correct answer in green
+          allButtons.forEach((btn, i) => {
+            if (i === correctIdx) {
+              // Always mark the correct answer in green
+              btn.classList.add('is-correct-answer');
+            } else if (i === selectedIdx && !isCorrect) {
+              // Mark the selected wrong answer in red
+              btn.classList.add('is-wrong-answer');
+            }
+          });
+          
+          // Move to next question after a longer delay
           setTimeout(() => {
             index += 1;
             if (index < quizData.length) {
@@ -207,7 +242,7 @@
             } else {
               showResults();
             }
-          }, 650);
+          }, 2000); // Increased from 650ms to 2000ms (2 seconds)
         }
 
         function showResults() {

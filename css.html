@@ -8,9 +8,20 @@
   </head>
   <body>
     <div id="header-container"></div>
+    <header class="image-header">
+      <img src="assets/CSS%20meme.jpg" alt="CSS meme showing how styles cascade" />
+    </header>
 
     <main>
       <div class="container prose">
+        <h1>CSS</h1>
+        <p>CSS, short for Cascading Style Sheets, is the language that gives web pages their appearance. Without it, every site would feel like a stack of plain documents. CSS lets you choose colors, fonts, spacing, and visual effects, almost like choosing paint and furniture for a room. With a few lines of instructions, you can turn a jumble of text and pictures into something that feels organized, welcoming, and purposeful.</p>
+        <p>CSS works by applying rules to pieces of HTML. Each rule starts with a selector, which tells the browser what to target. You might select every paragraph, a single heading, or a group of elements that share a class name. Inside the curly braces you list properties and values, such as color: blue or margin: 16px. The browser reads these instructions line by line and translates them into the final on-screen look.</p>
+        <p>When multiple rules try to style the same item, the cascade decides what wins. Specificity ranks the options. An ID selector is more specific than a class, and a class is stronger than an element selector. If two rules tie, the one that appears later in the stylesheet takes charge. Understanding this hierarchy helps you predict outcomes and see why a change seems to have no effect.</p>
+        <p>Another ingredient in CSS is inheritance. Some properties, like text color and font family, naturally pass from parent elements to their children. This behavior saves time because you can set a base style on the body and let paragraphs, lists, and quotes adopt it automatically. Other properties, such as margins or backgrounds, do not inherit, so you deliberately define them where necessary. Mastering inheritance keeps your stylesheets tidy and reduces repeated declarations.</p>
+        <p>Layout is one of the most powerful reasons to learn CSS. The language treats every element as a rectangular box with content, padding, borders, and margins. By adjusting these layers you control spacing and alignment. Modern layout modules such as Flexbox and Grid provide flexible systems for building rows, columns, and complex arrangements without relying on old table hacks. With practice you can create designs that adapt gracefully to different amounts of text and media.</p>
+        <p>Responsive design uses CSS to make sure a page looks right on phones, tablets, laptops, and monitors. Media queries act like checkpoints that watch the size of the screen. When the screen narrows, you might stack columns, increase font sizes, or hide decorative details that no longer fit. When there is more room, you can expand layouts and show additional information. This adaptability makes sites more inclusive and reduces the need for separate versions.</p>
+        <p>To write CSS effectively, it helps to build habits around organization and testing. Group related rules together, name classes clearly, and comment on sections that might puzzle your future self. Most browsers include developer tools that let you preview changes live, experiment with new values, and diagnose issues. As you practice, you will learn to balance creativity with consistency, delivering interfaces that look great, remain accessible, and communicate ideas with clarity.</p>
         <div style="display:grid;place-items:center;gap:3rem;min-height:50vh">
           <div style="text-align:center">
             <span role="img" aria-label="Julian" style="font-size:220px;line-height:1">👨‍🦰</span>
