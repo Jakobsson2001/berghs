@@ -7,6 +7,64 @@
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
+  <main class="quiz">
+    <h1>CSS-quiz</h1>
+    <p>Testa dina kunskaper om CSS genom att svara på frågorna nedan.</p>
+
+    <!-- Fråga 1 -->
+    <section class="question">
+      <h2>1. Vad gör CSS-egenskapen <code>color</code>?</h2>
+      <label>
+        <input type="radio" name="q1" value="a">
+        Ändrar bakgrundsfärgen på ett element
+      </label><br>
+      <label>
+        <input type="radio" name="q1" value="b">
+        Ändrar textfärgen på ett element
+      </label><br>
+      <label>
+        <input type="radio" name="q1" value="c">
+        Lägger till en kantlinje runt ett element
+      </label>
+    </section>
+
+    <!-- Fråga 2 -->
+    <section class="question">
+      <h2>2. Vad betyder selektorn <code>.container</code> i CSS?</h2>
+      <label>
+        <input type="radio" name="q2" value="a">
+        Ett element med taggen &lt;container&gt;
+      </label><br>
+      <label>
+        <input type="radio" name="q2" value="b">
+        Alla element med id="container"
+      </label><br>
+      <label>
+        <input type="radio" name="q2" value="c">
+        Alla element med class="container"
+      </label>
+    </section>
+
+    <!-- Fråga 3 -->
+    <section class="question">
+      <h2>3. Vilken CSS-syntax är rätt för att sätta bakgrundsfärg till blå?</h2>
+      <label>
+        <input type="radio" name="q3" value="a">
+        <code>background-color: blue;</code>
+      </label><br>
+      <label>
+        <input type="radio" name="q3" value="b">
+        <code>bg-color = blue;</code>
+      </label><br>
+      <label>
+        <input type="radio" name="q3" value="c">
+        <code>color-background: blue;</code>
+      </label>
+    </section>
+
+    <button id="check-quiz">Kolla resultat</button>
+    <p id="quiz-result"></p>
+  </main>
     <header class="navbar">
       <div class="container">
         <a class="brand" href="index.html">
@@ -245,14 +303,7 @@ p {
       </div>
     </main>
 
-    <footer>
-      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
-    </footer>
-
-    <script src="assets/header.js"></script>
-    <script src="assets/script.js"></script>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+  <!-- Se till att scriptet laddas in -->
+  <script src="assets/script.js"></script>
   </body>
 </html>
