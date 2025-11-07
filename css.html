@@ -8,6 +8,9 @@
   </head>
   <body>
     <div id="header-container"></div>
+    <header class="image-header">
+      <img src="assets/CSS%20meme.jpg" alt="CSS meme showing how styles cascade" />
+    </header>
 
     <main>
       <div class="container prose">
@@ -19,6 +22,22 @@
         <p>Layout is one of the most powerful reasons to learn CSS. The language treats every element as a rectangular box with content, padding, borders, and margins. By adjusting these layers you control spacing and alignment. Modern layout modules such as Flexbox and Grid provide flexible systems for building rows, columns, and complex arrangements without relying on old table hacks. With practice you can create designs that adapt gracefully to different amounts of text and media.</p>
         <p>Responsive design uses CSS to make sure a page looks right on phones, tablets, laptops, and monitors. Media queries act like checkpoints that watch the size of the screen. When the screen narrows, you might stack columns, increase font sizes, or hide decorative details that no longer fit. When there is more room, you can expand layouts and show additional information. This adaptability makes sites more inclusive and reduces the need for separate versions.</p>
         <p>To write CSS effectively, it helps to build habits around organization and testing. Group related rules together, name classes clearly, and comment on sections that might puzzle your future self. Most browsers include developer tools that let you preview changes live, experiment with new values, and diagnose issues. As you practice, you will learn to balance creativity with consistency, delivering interfaces that look great, remain accessible, and communicate ideas with clarity.</p>
+        <div style="display:grid;place-items:center;gap:3rem;min-height:50vh">
+          <div style="text-align:center">
+            <span role="img" aria-label="Julian" style="font-size:220px;line-height:1">👨‍🦰</span>
+            <p style="font-size:32px;margin-top:1rem">Julian</p>
+          </div>
+          <div style="text-align:center">
+            <span role="img" aria-label="Seal" style="font-size:220px;line-height:1">🦭</span>
+            <p style="font-size:32px;margin-top:1rem">Säl</p>
+          </div>
+          <div style="max-width:800px;margin:2rem auto">
+            <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f" 
+                 alt="Man in white shirt with a seal on a tropical beach" 
+                 style="width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)">
+            <p style="text-align:center;font-size:18px;margin-top:1rem">Julian och sälen på stranden 🏖️</p>
+          </div>
+        </div>
       </div>
     </main>
 
