@@ -19,7 +19,7 @@
                 <h1>From Basics to Frameworks</h1>
                 <p class="lead">Learn how React, Tailwind, and MUI help you build faster by reusing proven patterns instead of starting from scratch.</p>
                 <div class="actions">
-                  <a href="#why-frameworks" class="btn btn-primary">Get Started</a>
+                  <a href="#installation" class="btn btn-primary">Get Started</a>
                   <a href="#react" class="btn btn-ghost">Learn More</a>
                 </div>
               </div>
@@ -79,6 +79,135 @@
             <h4 style="margin: 0 0 6px; font-size: 18px;">MUI</h4>
             <p style="margin: 0; color: var(--muted); font-size: 14px;">Pre-styled components</p>
           </div>
+        </div>
+
+        <h2 id="installation">Installation Guide</h2>
+        <p>
+          Before you can start using React and other frameworks, you need to set up your development environment. This guide will walk you through installing the necessary tools on both <strong>macOS (MacBook)</strong> and <strong>Windows</strong>.
+        </p>
+
+        <h3>Step 1: Install Node.js and npm</h3>
+        <p>
+          <strong>npm</strong> (Node Package Manager) comes bundled with Node.js. It's the default package manager for JavaScript and allows you to install libraries and tools for your projects.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">📱 macOS (MacBook)</h4>
+          <ol style="margin: 12px 0; padding-left: 20px;">
+            <li>Visit <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">nodejs.org</a></li>
+            <li>Download the <strong>LTS (Long Term Support)</strong> version for macOS</li>
+            <li>Open the downloaded <code>.pkg</code> file and follow the installation wizard</li>
+            <li>Open <strong>Terminal</strong> (found in Applications → Utilities)</li>
+            <li>Verify the installation by running:
+              <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>node --version
+npm --version</code></pre>
+              You should see version numbers for both commands.
+            </li>
+          </ol>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">🪟 Windows</h4>
+          <ol style="margin: 12px 0; padding-left: 20px;">
+            <li>Visit <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">nodejs.org</a></li>
+            <li>Download the <strong>LTS (Long Term Support)</strong> version for Windows</li>
+            <li>Run the downloaded <code>.msi</code> installer file</li>
+            <li>Follow the installation wizard (accept the default settings)</li>
+            <li>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> (search for "cmd" or "powershell" in the Start menu)</li>
+            <li>Verify the installation by running:
+              <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>node --version
+npm --version</code></pre>
+              You should see version numbers for both commands.
+            </li>
+          </ol>
+        </div>
+
+        <h3>Step 2: Install Yarn (Optional but Recommended)</h3>
+        <p>
+          <strong>Yarn</strong> is an alternative package manager to npm. Many developers prefer it for its speed and reliability. You can use either npm or Yarn — both work with React projects.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">📱 macOS (MacBook)</h4>
+          <p style="margin: 8px 0;">Open Terminal and run:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>npm install -g yarn</code></pre>
+          <p style="margin: 8px 0;">Verify installation:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>yarn --version</code></pre>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">🪟 Windows</h4>
+          <p style="margin: 8px 0;">Open Command Prompt or PowerShell and run:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>npm install -g yarn</code></pre>
+          <p style="margin: 8px 0;">Verify installation:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>yarn --version</code></pre>
+        </div>
+
+        <h3>Step 3: Create Your First React Project</h3>
+        <p>
+          Once you have npm (or Yarn) installed, you can create a new React project. React provides an official tool called <strong>Create React App</strong> that sets up everything you need.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Using npm:</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>npx create-react-app my-first-app
+cd my-first-app
+npm start</code></pre>
+
+          <h4 style="margin-top: 16px; color: var(--accent);">Using Yarn:</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>yarn create react-app my-first-app
+cd my-first-app
+yarn start</code></pre>
+
+          <p style="margin: 16px 0 0; color: var(--muted); font-size: 14px;">
+            💡 Replace <code>my-first-app</code> with your desired project name. The <code>npm start</code> or <code>yarn start</code> command will open your React app in the browser at <code>http://localhost:3000</code>.
+          </p>
+        </div>
+
+        <h3>Understanding package.json</h3>
+        <p>
+          When you create a React project, a file called <code>package.json</code> is automatically created in your project folder. This file is the <strong>heart of your project</strong> — it contains important information about your project and its dependencies.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">What's in package.json?</h4>
+          <p style="margin: 8px 0;">Here's what a typical <code>package.json</code> looks like:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>{
+  "name": "my-first-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  }
+}</code></pre>
+
+          <ul style="margin: 16px 0; padding-left: 20px;">
+            <li><strong>name:</strong> Your project's name</li>
+            <li><strong>version:</strong> The current version of your project</li>
+            <li><strong>dependencies:</strong> Lists all the libraries your project needs (like React, React DOM, etc.)</li>
+            <li><strong>scripts:</strong> Commands you can run with <code>npm run</code> or <code>yarn</code> (e.g., <code>npm start</code> runs the "start" script)</li>
+          </ul>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Installing Additional Packages</h4>
+          <p style="margin: 8px 0;">When you install a new package (like Tailwind CSS or MUI), it gets added to your <code>package.json</code>:</p>
+          
+          <p style="margin: 12px 0 4px; font-weight: 600;">Using npm:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>npm install tailwindcss</code></pre>
+
+          <p style="margin: 12px 0 4px; font-weight: 600;">Using Yarn:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>yarn add tailwindcss</code></pre>
+
+          <p style="margin: 16px 0 0; color: var(--muted); font-size: 14px;">
+            💡 After installation, you'll see the new package listed in the <code>dependencies</code> section of your <code>package.json</code>. This file ensures that anyone who works on your project can install the exact same packages by running <code>npm install</code> or <code>yarn install</code>.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(217,70,239,0.06), rgba(56,189,248,0.06)); border-left: 4px solid var(--accent); border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0;">
+            ✅ <strong>You're all set!</strong> Once you've completed these steps, you have everything you need to start building React applications. The next section will explain how React works under the hood.
+          </p>
         </div>
 
         <h2 id="react">How React Works: The Foundation</h2>
