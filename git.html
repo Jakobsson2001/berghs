@@ -191,26 +191,7 @@
          reusability, and maintainability.
     -->
     <!-- Sticky Header with logo + nav -->
-    <header class="site-header" role="banner">
-      <div class="container header-inner">
-        <a class="brand" href="#top">
-          <!-- Replace src with your attached logo file path. Example below expects assets/logo.png. -->
-          <img src="assets/logo.png" alt="Site logo" width="36" height="36" />
-          <span class="brand-title">
-            <strong>GitHub 101</strong>
-            <span>Understand, collaborate, and ship code.</span>
-          </span>
-        </a>
-        <nav aria-label="Primary">
-          <a href="#what">What</a>
-          <a href="#how">How</a>
-          <a href="#concepts">Concepts</a>
-          <a href="#workflow">Workflow</a>
-          <a href="#git-vs-github">Git vs GitHub</a>
-          <a href="#quiz">Quiz</a>
-        </nav>
-      </div>
-    </header>
+    <div id="header-container"></div>
 
     <main id="top">
       <!-- Hero / Intro -->
@@ -380,6 +361,7 @@ git push -u origin feat/login
     <!-- Octocat emoji runner (press "G") -->
     <div class="octo" aria-hidden="true" id="octo" hidden>🐙</div>
 
+    <script src="assets/header.js"></script>
     <script>
       // Smooth-scroll active link state via IntersectionObserver
       const navLinks = Array.from(document.querySelectorAll('nav[aria-label="Primary"] a'));
