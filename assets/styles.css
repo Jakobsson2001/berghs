@@ -160,6 +160,13 @@ img, svg {
   border-radius: 8px;
   width: 40px;
   height: 40px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Hero */
@@ -215,6 +222,12 @@ img, svg {
   font-weight: 600;
   border: 1px solid var(--border);
   color: var(--text);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary {
@@ -222,11 +235,33 @@ img, svg {
   color: #ffffff !important;
   border-color: transparent;
   box-shadow: var(--shadow);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Ensure all primary buttons with pink/fuchsia backgrounds have white text */
+.btn.btn-primary,
+button.btn-primary,
+a.btn-primary,
+.prose .btn-primary,
+.prose button.btn-primary,
+.prose a.btn-primary {
+  color: #ffffff !important;
 }
 
 .btn-ghost {
   background: rgba(56,189,248,0.10);
   color: var(--text);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.2);
 }
 
 .hero-figure {
@@ -318,6 +353,14 @@ button[type="button"],
   border: 1px solid var(--pink-300) !important;
   color: var(--pink-800) !important;
   box-shadow: 0 6px 18px rgba(233,30,99,0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+button:hover,
+button[type="button"]:hover,
+.live-demo button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(233,30,99,0.15) !important;
 }
 
 /* Content */
@@ -451,11 +494,13 @@ main {
 /* Live demo polish */
 .prose .live-demo button {
   color: var(--text);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 
 .prose .live-demo button:hover {
+  transform: translateY(-2px);
   border-color: rgba(56,189,248,0.35);
-  box-shadow: 0 2px 10px rgba(56,189,248,0.15);
+  box-shadow: 0 8px 20px rgba(56,189,248,0.2);
 }
 
 .prose #live-html-input {
