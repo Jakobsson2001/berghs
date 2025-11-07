@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Rasmus | Berghs Class</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body class="theme-light">
+    <div id="header-container"></div>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="panel">
+            <span class="kicker">About</span>
+            <h1>Rasmus</h1>
+            <p class="lead">Learn more about Rasmus.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="container prose">
+        <h1>About Rasmus</h1>
+        <p>This is a placeholder page about Rasmus. Add your content here.</p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
+    </footer>
+
+    <script src="assets/header.js"></script>
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
