@@ -7,24 +7,11 @@
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <header class="navbar">
-      <div class="container">
-        <a class="brand" href="index.html">
-          <span class="brand-badge">B</span>
-          <span>Berghs Class</span>
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <ul class="nav-links">
-          <li><a href="html.html" aria-current="page">HTML</a></li>
-          <li><a href="css.html">CSS</a></li>
-          <li><a href="javascript.html">JavaScript</a></li>
-          <li><a href="git.html">Git</a></li>
-        </ul>
-      </div>
-    </header>
+    <div id="header-container"></div>
 
     <main>
       <div class="container prose">
+<<<<<<< HEAD
         <h1>HTML</h1>
         <p>Use this page to outline your HTML lessons. Consider sections for semantics, accessibility, forms, media, and document structure.</p>
         <h2>Starter snippet</h2>
@@ -32,20 +19,269 @@
           <img id="dogMeme" src="assets/Dog%20meme.jpeg" alt="Dog meme" style="max-width:100%;height:auto;display:block;margin:0 0 1rem;">
           <figcaption>Dog meme</figcaption>
         </figure>
+=======
+        <h1>Beginner’s guide to HTML ✨</h1>
+        <p>HTML is the language that structures every web page. Think of it as the building blocks for content: headings, paragraphs, images, and links. This guide is designed for non‑technical creative students—simple, practical, and visual.</p>
+
+        <nav aria-label="Table of contents" class="toc">
+          <strong style="display:block;margin-bottom:.5rem">📚 Table of contents</strong>
+          <ul>
+            <li><a href="#basics">Basics</a>
+              <ul>
+                <li><a href="#what-is-html">💡 What is HTML?</a></li>
+                <li><a href="#watch-html">🎥 Watch: HTML in ~5 minutes</a></li>
+                <li><a href="#page-skeleton">🏗️ The basic page skeleton</a></li>
+              </ul>
+            </li>
+            <li><a href="#content">Content</a>
+              <ul>
+                <li><a href="#headings-paragraphs">📝 Headings and paragraphs</a></li>
+                <li><a href="#links-images">🔗🖼️ Links and images</a></li>
+                <li><a href="#lists">📋 Lists</a></li>
+              </ul>
+            </li>
+            <li><a href="#structure">Structure</a>
+              <ul>
+                <li><a href="#semantic-tags">🏷️ Semantic tags</a></li>
+              </ul>
+            </li>
+            <li><a href="#accessibility">Accessibility</a>
+              <ul>
+                <li><a href="#a11y-basics">♿ Accessibility basics</a></li>
+              </ul>
+            </li>
+            <li><a href="#practice">Practice</a>
+              <ul>
+                <li><a href="#try-it">🧪 Try it yourself</a></li>
+                <li><a href="#live-demo">⚡ Live HTML demo</a></li>
+              </ul>
+            </li>
+            <li><a href="#reference">Reference</a>
+              <ul>
+                <li><a href="#checklist">✅ Quick checklist</a></li>
+                <li><a href="#mistakes">🚫 Common mistakes</a></li>
+                <li><a href="#next">➡️ Where to go next</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <h2 id="basics" style="margin-top:2rem">Basics</h2>
+        <h2 id="what-is-html">💡 What is HTML?</h2>
+        <p>HTML stands for <strong>HyperText Markup Language</strong>. It tells the browser what each piece of content is. A <em>tag</em> looks like this: <code>&lt;p&gt;...&lt;/p&gt;</code>. Most tags come in pairs and wrap your content.</p>
+
+        <h2 id="watch-html">🎥 Watch: HTML in ~5 minutes</h2>
+        <p>Prefer to watch first? This short video explains the basics quickly.</p>
+        <a class="media-card" href="https://www.youtube.com/watch?v=salY_Sm6mv4" target="_blank" rel="noopener noreferrer" aria-label="Watch a 5-minute introduction to HTML on YouTube (opens in a new tab)">
+          <img src="https://img.youtube.com/vi/salY_Sm6mv4/maxresdefault.jpg" alt="YouTube thumbnail: 5-minute introduction to HTML" style="width:100%;height:auto;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.12)" />
+          <div style="margin-top:.5rem;font-size:.9rem;opacity:.8">Opens YouTube in a new tab · ~5 min</div>
+        </a>
+
+        <h2 id="page-skeleton">🏗️ The basic page skeleton</h2>
+>>>>>>> ad96bda6a467ed187d359efa652b3c7ddca9cea7
         <pre><code>&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8" /&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
-    &lt;title&gt;Page title&lt;/title&gt;
+    &lt;title&gt;My first page&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;main&gt;
-      &lt;h1&gt;Hello HTML&lt;/h1&gt;
-    &lt;/main&gt;
+    &lt;main&gt;Content goes here&lt;/main&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+
+        <figure style="margin:1.25rem 0;">
+          <svg viewBox="0 0 600 260" role="img" aria-labelledby="html-structure-diagram-title html-structure-diagram-desc" style="width:100%;height:auto;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.08)">
+            <title id="html-structure-diagram-title">Visual diagram of an HTML page layout</title>
+            <desc id="html-structure-diagram-desc">Rectangles labeled header, nav, main, and footer show a typical structure.</desc>
+            <rect x="10" y="10" width="580" height="60" rx="10" fill="#E3F2FD" stroke="#90CAF9" />
+            <text x="300" y="45" text-anchor="middle" fill="#0D47A1" font-family="Arial, Helvetica, sans-serif" font-size="18">header</text>
+
+            <rect x="10" y="80" width="120" height="120" rx="10" fill="#E8F5E9" stroke="#A5D6A7" />
+            <text x="70" y="145" text-anchor="middle" fill="#1B5E20" font-family="Arial, Helvetica, sans-serif" font-size="18">nav</text>
+
+            <rect x="140" y="80" width="450" height="120" rx="10" fill="#FFF3E0" stroke="#FFCC80" />
+            <text x="365" y="145" text-anchor="middle" fill="#E65100" font-family="Arial, Helvetica, sans-serif" font-size="18">main</text>
+
+            <rect x="10" y="205" width="580" height="45" rx="10" fill="#F3E5F5" stroke="#CE93D8" />
+            <text x="300" y="235" text-anchor="middle" fill="#4A148C" font-family="Arial, Helvetica, sans-serif" font-size="18">footer</text>
+          </svg>
+          <figcaption style="margin-top:.5rem;font-size:.9rem;opacity:.85">A simple mental model: header and nav on top, main content in the middle, footer at the bottom.</figcaption>
+        </figure>
+
+        <h2 id="content" style="margin-top:2rem">Content</h2>
+        <h2 id="headings-paragraphs">📝 Headings and paragraphs</h2>
+        <p>Use headings to structure your content (like a magazine). <code>&lt;h1&gt;</code> is the main title, then <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, etc. Paragraphs use <code>&lt;p&gt;</code>.</p>
+        <pre><code>&lt;h1&gt;My Portfolio&lt;/h1&gt;
+&lt;h2&gt;Projects&lt;/h2&gt;
+&lt;p&gt;I design digital experiences.&lt;/p&gt;
+</code></pre>
+
+        <h2 id="links-images">🔗🖼️ Links and images</h2>
+        <p>Links use <code>&lt;a&gt;</code> with an <code>href</code>. Images use <code>&lt;img&gt;</code> with a source (<code>src</code>) and an accessible description (<code>alt</code>).</p>
+        <pre><code>&lt;a href="https://example.com"&gt;Visit my site&lt;/a&gt;
+&lt;img src="headshot.jpg" alt="Portrait of me smiling" /&gt;
+</code></pre>
+
+        <figure style="margin:1.25rem 0;">
+          <svg viewBox="0 0 640 240" role="img" aria-labelledby="img-alt-title img-alt-desc" style="width:100%;height:auto;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.08)">
+            <title id="img-alt-title">Why alt text matters</title>
+            <desc id="img-alt-desc">Two simplified images, one without alt text and one with descriptive alt text.</desc>
+            <rect x="20" y="20" width="280" height="200" rx="12" fill="#fff" stroke="#e0e0e0" />
+            <rect x="40" y="40" width="240" height="120" fill="#BBDEFB" />
+            <text x="160" y="190" text-anchor="middle" fill="#9e9e9e" font-family="Arial, Helvetica, sans-serif" font-size="14">No alt text</text>
+            <rect x="340" y="20" width="280" height="200" rx="12" fill="#fff" stroke="#e0e0e0" />
+            <rect x="360" y="40" width="240" height="120" fill="#C8E6C9" />
+            <text x="480" y="170" text-anchor="middle" fill="#2e7d32" font-family="Arial, Helvetica, sans-serif" font-size="14">Good alt: "Designer at a studio desk"</text>
+          </svg>
+          <figcaption style="margin-top:.5rem;font-size:.9rem;opacity:.85">Alt text helps people using screen readers understand images.</figcaption>
+        </figure>
+
+        <h2 id="lists">📋 Lists</h2>
+        <p>Use ordered lists (<code>&lt;ol&gt;</code>) for steps, unordered lists (<code>&lt;ul&gt;</code>) for bullet points.</p>
+        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Art direction&lt;/li&gt;
+  &lt;li&gt;Brand design&lt;/li&gt;
+  &lt;li&gt;Interaction design&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+        <h2 id="structure" style="margin-top:2rem">Structure</h2>
+        <h2 id="semantic-tags">🏷️ Semantic tags (meaningful structure)</h2>
+        <p>These tags describe the role of content, which helps both humans and assistive technologies:</p>
+        <ul>
+          <li><code>&lt;header&gt;</code> top of the page/section</li>
+          <li><code>&lt;nav&gt;</code> navigation</li>
+          <li><code>&lt;main&gt;</code> the unique main content</li>
+          <li><code>&lt;section&gt;</code> a grouped topic</li>
+          <li><code>&lt;article&gt;</code> a self‑contained piece (like a post)</li>
+          <li><code>&lt;footer&gt;</code> bottom area or credits</li>
+        </ul>
+
+        <h2 id="accessibility" style="margin-top:2rem">Accessibility</h2>
+        <h2 id="a11y-basics">♿ Accessibility basics (small habits, big impact)</h2>
+        <ul>
+          <li><strong>Alt text</strong>: describe images with <code>alt</code>.</li>
+          <li><strong>Headings in order</strong>: start at <code>&lt;h1&gt;</code>, don’t skip levels.</li>
+          <li><strong>Link text</strong>: say where the link goes (avoid “click here”).</li>
+          <li><strong>Contrast and size</strong>: readable text helps everyone.</li>
+        </ul>
+
+        <h2 id="practice" style="margin-top:2rem">Practice</h2>
+        <h2 id="try-it">🧪 Try it yourself</h2>
+        <p>Copy this into a file named <code>my-page.html</code> and open it in a browser.</p>
+        <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;title&gt;Hello creative world&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Hello!&lt;/h1&gt;
+      &lt;nav&gt;&lt;a href="#work"&gt;Work&lt;/a&gt; | &lt;a href="#about"&gt;About&lt;/a&gt;&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;h2 id="work"&gt;Selected work&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Brand refresh for Cafe North&lt;/li&gt;
+        &lt;li&gt;Exhibition identity &amp; site&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2 id="about"&gt;About me&lt;/h2&gt;
+      &lt;p&gt;Designer exploring interaction and identity.&lt;/p&gt;
+      &lt;img src="me.jpg" alt="Designer at a studio desk" /&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;&copy; 2025 Me&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+        <h2 id="live-demo">⚡ Live HTML demo</h2>
+        <p>Type HTML on the left, and see the result on the right. This preview is sandboxed (safe) and perfect for quick experiments.</p>
+        <div class="live-demo" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:stretch">
+          <div style="flex:1 1 320px;min-width:280px">
+            <label for="live-html-input" style="display:block;margin-bottom:.5rem;font-weight:600">Your HTML</label>
+            <textarea id="live-html-input" aria-describedby="live-html-help" spellcheck="false" style="width:100%;height:280px;resize:vertical;border:1px solid #e0e0e0;border-radius:10px;padding:12px;font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;line-height:1.4">
+&lt;h1&gt;Hello HTML 👋&lt;/h1&gt;
+&lt;p&gt;Change this text to see live updates.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use headings and paragraphs&lt;/li&gt;
+  &lt;li&gt;Add lists and links&lt;/li&gt;
+  &lt;li&gt;Try images with good alt text&lt;/li&gt;
+&lt;/ul&gt;
+            </textarea>
+            <div id="live-html-help" style="margin-top:.5rem;font-size:.9rem;opacity:.8">Tip: You can paste your own snippet. JavaScript is disabled for safety.</div>
+            <div style="margin-top:.75rem;display:flex;gap:.5rem">
+              <button type="button" id="live-html-reset" style="padding:.5rem .8rem;border:1px solid #e0e0e0;border-radius:8px;background:#fff;cursor:pointer">Reset example</button>
+              <button type="button" id="live-html-copy" style="padding:.5rem .8rem;border:1px solid #e0e0e0;border-radius:8px;background:#fff;cursor:pointer">Copy HTML</button>
+            </div>
+          </div>
+          <div style="flex:1 1 320px;min-width:280px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+              <span style="font-weight:600">Preview</span>
+              <span aria-live="polite" id="live-html-status" style="font-size:.85rem;opacity:.7">Ready</span>
+            </div>
+            <iframe id="live-html-preview" title="Live HTML preview" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin" style="width:100%;height:280px;border:1px solid #e0e0e0;border-radius:10px;background:#fff"></iframe>
+          </div>
+        </div>
+
+        <h2 id="reference" style="margin-top:2rem">Reference</h2>
+        <h2 id="checklist">✅ Quick checklist</h2>
+        <ul>
+          <li>One clear <code>&lt;h1&gt;</code> per page</li>
+          <li>Logical headings and sections</li>
+          <li>Meaningful link text</li>
+          <li>Images have helpful <code>alt</code> text</li>
+          <li>Mobile‑friendly with the viewport meta tag</li>
+        </ul>
+
+        <h2 id="mistakes">🚫 Common mistakes</h2>
+        <ul>
+          <li>Forgetting closing tags (use pairs like <code>&lt;p&gt;...&lt;/p&gt;</code>)</li>
+          <li>Nesting tags in the wrong order</li>
+          <li>Using headings for size instead of structure</li>
+          <li>Links without <code>href</code> or vague link text</li>
+        </ul>
+
+        <h2 id="next">➡️ Where to go next</h2>
+        <p>Style your page with <a href="css.html">CSS</a> and add interactivity with <a href="javascript.html">JavaScript</a>.</p>
+
+        <h2 id="faq" style="margin-top:2rem">❓ FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>What does “semantic HTML” mean? 🏷️</summary>
+            <div>
+              It means using tags that describe meaning and structure (like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>). This improves accessibility, SEO, and maintainability.
+            </div>
+          </details>
+          <details>
+            <summary>How many <code>&lt;h1&gt;</code> elements should a page have? #️⃣</summary>
+            <div>
+              Generally one <code>&lt;h1&gt;</code> per page to represent the main topic. Subsections then use <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, and so on in order.
+            </div>
+          </details>
+          <details>
+            <summary>Do images always need <code>alt</code> text? 🖼️</summary>
+            <div>
+              Yes, unless an image is purely decorative. If decorative, use empty alt (<code>alt=""</code>) so assistive tech skips it. Otherwise write a concise description.
+            </div>
+          </details>
+          <details>
+            <summary>What’s the difference between <code>&lt;section&gt;</code> and <code>&lt;div&gt;</code>? 📦</summary>
+            <div>
+              <code>&lt;section&gt;</code> is semantic (a thematically grouped block with a heading). <code>&lt;div&gt;</code> is a generic container with no meaning—use it when no semantic tag fits.
+            </div>
+          </details>
+          <details>
+            <summary>Why does my HTML look different in each browser? 🌐</summary>
+            <div>
+              Browsers apply default styles. Add a CSS reset or set consistent styles yourself. Always test on multiple browsers and devices.
+            </div>
+          </details>
+        </div>
       </div>
     </main>
 
@@ -53,6 +289,7 @@
       <div class="container">&copy; <span id="year"></span> Berghs Class</div>
     </footer>
 
+    <script src="assets/header.js"></script>
     <script src="assets/script.js"></script>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();

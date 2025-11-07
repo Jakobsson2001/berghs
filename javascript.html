@@ -6,25 +6,44 @@
     <title>JavaScript | Berghs Class</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
-  <body>
-    <header class="navbar">
-      <div class="container">
-        <a class="brand" href="index.html">
-          <span class="brand-badge">B</span>
-          <span>Berghs Class</span>
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <ul class="nav-links">
-          <li><a href="html.html">HTML</a></li>
-          <li><a href="css.html">CSS</a></li>
-          <li><a href="javascript.html" aria-current="page">JavaScript</a></li>
-          <li><a href="git.html">Git</a></li>
-        </ul>
-      </div>
-    </header>
+  <body class="theme-light">
+    <div id="header-container"></div>
 
     <main>
+      <section class="hero">
+        <div class="container">
+          <div class="panel">
+          <div class="split">
+            <div>
+              <span class="kicker">Beginner Guide</span>
+              <h1>Learn JavaScript</h1>
+              <p class="lead">The language that makes web pages come alive. Build interactivity step by step with approachable examples.</p>
+              <div class="actions">
+                <a href="#first-example" class="btn btn-primary">Get Started</a>
+                <a href="#resources" class="btn btn-ghost">Read More</a>
+              </div>
+            </div>
+            <div class="hero-figure" aria-hidden="true">
+              <svg viewBox="0 0 260 200" role="img" width="100%" height="100%">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#ec4899"/>
+                    <stop offset="100%" stop-color="#38bdf8"/>
+                  </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="260" height="200" rx="16" fill="url(#g1)" opacity="0.18"/>
+                <circle cx="70" cy="120" r="34" fill="#f0abfc" opacity="0.9"/>
+                <circle cx="160" cy="80" r="46" fill="#60a5fa" opacity="0.85"/>
+                <rect x="110" y="120" width="90" height="28" rx="8" fill="#f472b6" opacity="0.8"/>
+              </svg>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
       <div class="container prose">
+<<<<<<< HEAD
         <h1>JavaScript</h1>
         <p>Use this page to plan your JavaScript lessons. Consider variables, functions, DOM, events, fetch, and modules.</p>
         <h2>Starter snippet</h2>
@@ -41,16 +60,206 @@
   }
 });
 </code></pre>
+=======
+        <h1>Get Started with JavaScript</h1>
+
+        <h2>What is JavaScript?</h2>
+        <p>JavaScript is the language that makes web pages come alive — the programming language that web browsers understand.</p>
+        <p>It lets you write small instructions that make things happen on the page instantly, without reloading.</p>
+        <p>HTML builds the structure, CSS makes it look nice — and JavaScript makes it react.</p>
+        <p>It can make buttons clickable, lights turn on, or even start a game.</p>
+
+        <h2>How does it work with HTML and CSS?</h2>
+        <p>Imagine you’re building a house:</p>
+        <ul>
+          <li><strong>HTML</strong> is the walls and the floor.</li>
+          <li><strong>CSS</strong> is the paint, the lights, and the furniture.</li>
+          <li><strong>JavaScript</strong> is the electricity — it makes things work when you flip the switch.</li>
+        </ul>
+
+        <h2 id="first-example">A first example</h2>
+        <p>Let’s say you have a button on your page. With JavaScript, you can write: “When someone clicks this button — show the text <em>Hello, world!</em>”. That’s how easy it is to start creating interaction.</p>
+
+        <div class="demo panel" style="margin:16px 0; padding:16px; border:1px solid var(--border); border-radius:12px; background: rgba(56,189,248,0.04);">
+          <button id="helloBtn" class="card" style="display:inline-block; cursor:pointer;">Click me</button>
+          <p id="helloOut" style="margin-top:12px; color: var(--muted);"></p>
+        </div>
+
+        <h2>What can you make with JavaScript?</h2>
+        <ul>
+          <li>Small games</li>
+          <li>Web apps</li>
+          <li>Animations</li>
+          <li>Calculators</li>
+        </ul>
+
+        <h2 id="resources">Tips for getting started</h2>
+        <ul>
+          <li>Try examples on <a href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+          <li>Explore <a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+          <li>Start small — change one thing at a time and see what happens.</li>
+        </ul>
+
+        <div style="background: linear-gradient(135deg, rgba(217,70,239,0.08), rgba(56,189,248,0.08)); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 3rem; text-align: center;">
+          <p style="margin: 0 0 12px; font-size: 18px; font-weight: 600; color: var(--text);">
+            💡 Ready for the next step?
+          </p>
+          <p style="margin: 0; color: var(--muted);">
+            Learn how frameworks like React, Tailwind, and MUI help you build faster.
+          </p>
+          <div style="margin-top: 16px;">
+            <a href="frameworks.html" class="btn btn-primary">Explore Frameworks →</a>
+          </div>
+        </div>
+>>>>>>> ad96bda6a467ed187d359efa652b3c7ddca9cea7
       </div>
     </main>
+
+    <section class="quiz" id="quiz">
+      <div class="container">
+        <div class="prose">
+          <h2>Quick JavaScript Quiz</h2>
+          <div class="quiz-stage" aria-live="polite">
+            <div class="quiz-card" role="group" aria-labelledby="quiz-question">
+              <div class="quiz-body">
+                <p id="quiz-question" class="quiz-question"></p>
+                <div class="quiz-options"></div>
+              </div>
+            </div>
+            <div class="quiz-progress" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <div class="container">&copy; <span id="year"></span> Berghs Class</div>
     </footer>
 
+    <script src="assets/header.js"></script>
     <script src="assets/script.js"></script>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+      (function () {
+        const btn = document.getElementById('helloBtn');
+        const out = document.getElementById('helloOut');
+        if (!btn || !out) return;
+        btn.addEventListener('click', function () {
+          out.textContent = 'Hello, world!';
+        });
+      })();
+
+      // Quiz logic
+      (function () {
+        const quizData = [
+          {
+            q: 'What is JavaScript used for on a web page?',
+            options: [
+              'To build the basic structure',
+              'To style the page and choose colors',
+              'To make the page react and do things',
+              'To store the website on the server'
+            ],
+            answerIdx: 2
+          },
+          {
+            q: 'In the house metaphor on this page, JavaScript is compared to:',
+            options: [
+              'The walls and the floor',
+              'The paint and the furniture',
+              'The electricity',
+              'The front door'
+            ],
+            answerIdx: 2
+          },
+          {
+            q: 'Which of these is something you can build with JavaScript?',
+            options: [
+              'A printed book',
+              'A web app',
+              'A paper poster',
+              'A cardboard box'
+            ],
+            answerIdx: 1
+          }
+        ];
+
+        const stage = document.querySelector('.quiz-stage');
+        const card = stage && stage.querySelector('.quiz-card');
+        const questionEl = stage && stage.querySelector('.quiz-question');
+        const optionsEl = stage && stage.querySelector('.quiz-options');
+        const progressEl = stage && stage.querySelector('.quiz-progress');
+        if (!stage || !card || !questionEl || !optionsEl || !progressEl) return;
+
+        let index = 0;
+        let score = 0;
+
+        function renderProgress() {
+          progressEl.textContent = `${index + 1} / ${quizData.length}`;
+        }
+
+        function renderQuestion() {
+          const item = quizData[index];
+          questionEl.textContent = item.q;
+          optionsEl.innerHTML = '';
+          item.options.forEach((label, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'btn option';
+            btn.type = 'button';
+            btn.textContent = `${String.fromCharCode(97 + i)}) ${label}`; // a) label
+            btn.addEventListener('click', () => handleAnswer(i === item.answerIdx));
+            optionsEl.appendChild(btn);
+          });
+          stage.classList.remove('is-correct', 'is-wrong');
+          renderProgress();
+        }
+
+        function handleAnswer(isCorrect) {
+          stage.classList.toggle('is-correct', isCorrect);
+          stage.classList.toggle('is-wrong', !isCorrect);
+          if (isCorrect) score += 1;
+          // Move to next question after a brief delay
+          setTimeout(() => {
+            index += 1;
+            if (index < quizData.length) {
+              renderQuestion();
+            } else {
+              showResults();
+            }
+          }, 650);
+        }
+
+        function showResults() {
+          card.innerHTML = `
+            <div class="quiz-body">
+              <h3 style="margin:0 0 8px">Great job!</h3>
+              <p>You scored ${score} / ${quizData.length}.</p>
+              <div class="actions">
+                <button class="btn btn-primary" type="button" id="quiz-restart">Try Again</button>
+              </div>
+            </div>
+          `;
+          progressEl.textContent = '';
+          stage.classList.remove('is-correct', 'is-wrong');
+          const restart = document.getElementById('quiz-restart');
+          if (restart) restart.addEventListener('click', resetQuiz);
+        }
+
+        function resetQuiz() {
+          index = 0;
+          score = 0;
+          card.innerHTML = '';
+          const inner = document.createElement('div');
+          inner.className = 'quiz-body';
+          inner.appendChild(questionEl);
+          inner.appendChild(optionsEl);
+          card.appendChild(inner);
+          renderQuestion();
+        }
+
+        // kickoff
+        renderQuestion();
+      })();
     </script>
   </body>
 </html>
