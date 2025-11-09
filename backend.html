@@ -19,7 +19,7 @@
                 <h1>Backend & Databases</h1>
                 <p class="lead">Learn how to store data, build APIs, and connect your frontend to a backend. From databases to Python servers, explore the tools that power modern web applications.</p>
                 <div class="actions">
-                  <a href="#what-is-backend" class="btn btn-primary">Get Started</a>
+                  <a href="#installation" class="btn btn-primary">Get Started</a>
                   <a href="#databases" class="btn btn-ghost">Learn More</a>
                 </div>
               </div>
@@ -66,6 +66,170 @@
           <li><strong>Business logic</strong> — Calculations, validations, and rules that make your app work</li>
         </ul>
 
+        <h2 id="installation">Backend Installation Guide</h2>
+        <p>
+          Before you can start building backends, you need to set up your development environment. This guide covers installing Python (for Flask/FastAPI) and setting up databases.
+        </p>
+
+        <h3>Installing Python (Recommended for Beginners)</h3>
+        <p>
+          <strong>Python</strong> is an excellent choice for backend development. It comes pre-installed on macOS, but you may need to install or update it on Windows.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">📱 macOS (MacBook)</h4>
+          <ol style="margin: 12px 0; padding-left: 20px;">
+            <li>Python 3 is usually pre-installed. Check by opening <strong>Terminal</strong> and running:
+              <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>python3 --version</code></pre>
+            </li>
+            <li>If Python is not installed or you want the latest version:
+              <ul style="margin: 8px 0; padding-left: 20px;">
+                <li>Visit <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">python.org/downloads</a></li>
+                <li>Download the latest Python 3.x version for macOS</li>
+                <li>Run the installer and follow the wizard</li>
+                <li>Make sure to check "Add Python to PATH" if the option appears</li>
+              </ul>
+            </li>
+            <li>Verify installation:
+              <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>python3 --version
+pip3 --version</code></pre>
+            </li>
+          </ol>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">🪟 Windows</h4>
+          <ol style="margin: 12px 0; padding-left: 20px;">
+            <li>Visit <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">python.org/downloads</a></li>
+            <li>Download the latest Python 3.x version for Windows</li>
+            <li>Run the downloaded <code>.exe</code> installer</li>
+            <li><strong>Important:</strong> Check the box "Add Python to PATH" at the bottom of the installer</li>
+            <li>Click "Install Now" and wait for installation to complete</li>
+            <li>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong></li>
+            <li>Verify the installation:
+              <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>python --version
+pip --version</code></pre>
+              You should see version numbers for both commands.
+            </li>
+          </ol>
+        </div>
+
+        <h3>Setting Up Your First Backend Project</h3>
+        <p>
+          Once you have Python installed, you can create your first backend project. We'll use Python with Flask, which is simple and beginner-friendly.
+        </p>
+
+        <h4>Python Flask Backend</h4>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Step 1: Create a Project Folder</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code># Create a new folder
+mkdir my-backend
+cd my-backend</code></pre>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Step 2: Create a Virtual Environment (Recommended)</h4>
+          <p style="margin: 8px 0;">Virtual environments keep your project dependencies isolated:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code># macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+
+# Windows
+python -m venv venv
+venv\Scripts\activate</code></pre>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Step 3: Install Flask</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>pip install flask</code></pre>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Step 4: Create Your First API</h4>
+          <p style="margin: 8px 0;">Create a file called <code>app.py</code>:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/hello', methods=['GET'])
+def hello():
+    return jsonify({'message': 'Hello from backend!'})
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)</code></pre>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Step 5: Run Your Server</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>python app.py</code></pre>
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            💡 Your API will be available at <code>http://localhost:5000/api/hello</code>
+          </p>
+        </div>
+
+        <h3>Setting Up Databases</h3>
+        <p>
+          For your backend project, you'll need a database to store data. Here are two great options for learning:
+        </p>
+
+        <h4>MongoDB (Recommended)</h4>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <p style="margin: 8px 0;"><strong>MongoDB</strong> is a flexible NoSQL database that's great for learning and real projects. It stores data as documents (like JSON), which is intuitive for beginners.</p>
+          
+          <h4 style="margin-top: 16px; color: var(--accent);">Option 1: MongoDB Atlas (Cloud - Free Tier)</h4>
+          <ol style="margin: 12px 0; padding-left: 20px;">
+            <li>Visit <a href="https://www.mongodb.com/cloud/atlas" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">mongodb.com/cloud/atlas</a></li>
+            <li>Sign up for a free account</li>
+            <li>Create a free cluster (M0 - Free tier)</li>
+            <li>Get your connection string from the "Connect" section</li>
+            <li>Install the Python MongoDB driver: <code>pip install pymongo</code></li>
+          </ol>
+
+          <h4 style="margin-top: 16px; color: var(--accent);">Option 2: Local MongoDB Installation</h4>
+          <p style="margin: 8px 0;">You can also install MongoDB locally on your computer:</p>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li><strong>macOS:</strong> <code>brew install mongodb-community</code></li>
+            <li><strong>Windows:</strong> Download from <a href="https://www.mongodb.com/try/download/community" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">mongodb.com/try/download/community</a></li>
+          </ul>
+
+          <h4 style="margin-top: 16px; color: var(--accent);">Python Example with MongoDB</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>from pymongo import MongoClient
+
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+db = client['my_database']
+collection = db['users']
+
+# Insert data
+collection.insert_one({'name': 'Alice', 'age': 30})
+
+# Find data
+users = collection.find({'name': 'Alice'})</code></pre>
+        </div>
+
+        <h4>SQLite (For Simple Projects)</h4>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <p style="margin: 8px 0;"><strong>SQLite</strong> is a file-based database — no server setup needed! Perfect for learning and small projects. It comes built-in with Python.</p>
+          
+          <h4 style="margin-top: 16px; color: var(--accent);">Python (with SQLite)</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code># SQLite comes built-in with Python
+import sqlite3
+
+conn = sqlite3.connect('database.db')
+cursor = conn.cursor()
+
+# Create a table
+cursor.execute('''CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)''')
+
+# Insert data
+cursor.execute("INSERT INTO users (name) VALUES (?)", ('Alice',))
+
+# Query data
+cursor.execute("SELECT * FROM users")
+users = cursor.fetchall()
+
+conn.commit()
+conn.close()</code></pre>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.02)); border-left: 4px solid #10b981; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">✅ Quick Start Recommendation:</p>
+          <p style="margin: 0;">
+            For this class, start with <strong>Python + Flask + MongoDB</strong> or <strong>Python + Flask + SQLite</strong>. 
+            Both are beginner-friendly and give you everything you need to build a working backend.
+          </p>
+        </div>
+
         <h2 id="databases">Choosing a Database</h2>
         <p>
           A <strong>database</strong> is like a digital filing cabinet where you store all your app's data. 
@@ -81,98 +245,62 @@
           </p>
         </div>
 
-        <h3>What Lovable Uses: Supabase (PostgreSQL)</h3>
+        <h3>Recommended Databases: MongoDB and SQLite</h3>
         <p>
-          <strong>Lovable</strong> (a popular development platform) uses <strong>Supabase</strong>, which is built on top of <strong>PostgreSQL</strong>. 
-          This is a great choice for many projects, but let's understand why and what alternatives exist.
-        </p>
-
-        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
-          <h4 style="margin-top: 0; color: var(--accent);">PostgreSQL (via Supabase) — What Lovable Uses</h4>
-          <p style="margin: 8px 0;"><strong>What it is:</strong> A powerful, open-source relational database. Supabase adds a user-friendly interface and built-in authentication.</p>
-          
-          <p style="margin: 8px 0;"><strong>Best for:</strong></p>
-          <ul style="margin: 12px 0; padding-left: 20px;">
-            <li>Structured data with relationships (users, posts, comments)</li>
-            <li>Projects that need authentication and user management</li>
-            <li>Applications requiring complex queries and data integrity</li>
-            <li>Teams that want a managed solution (Supabase handles hosting)</li>
-          </ul>
-
-          <p style="margin: 8px 0;"><strong>Pros:</strong></p>
-          <ul style="margin: 12px 0; padding-left: 20px;">
-            <li>✅ Free tier available (great for learning)</li>
-            <li>✅ Built-in authentication and real-time features</li>
-            <li>✅ SQL is powerful and widely used</li>
-            <li>✅ Excellent documentation and community</li>
-          </ul>
-
-          <p style="margin: 8px 0;"><strong>Cons:</strong></p>
-          <ul style="margin: 12px 0; padding-left: 20px;">
-            <li>❌ Can be overkill for simple projects</li>
-            <li>❌ Requires understanding SQL (Structured Query Language)</li>
-            <li>❌ More complex setup than simpler alternatives</li>
-            <li>❌ <strong>Costs can increase significantly</strong> with high traffic/load — pricing scales with usage</li>
-            <li>❌ <strong>Vendor lock-in risk</strong> — It can be difficult to migrate your data to other database providers later</li>
-          </ul>
-        </div>
-
-        <h3>Alternative Database Options</h3>
-        <p>
-          Depending on your project needs, you might consider these alternatives:
+          For this class, we recommend <strong>MongoDB</strong> or <strong>SQLite</strong>. Both are beginner-friendly and work great with Python.
         </p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 24px 0;">
+          <div style="background: linear-gradient(180deg, rgba(168,85,247,0.10), rgba(168,85,247,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🍃</div>
+            <h4 style="margin: 0 0 6px; font-size: 18px;">MongoDB</h4>
+            <p style="margin: 0 0 12px; color: var(--muted); font-size: 14px;">Recommended for learning and real projects</p>
+            <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
+              <li>NoSQL — flexible document storage</li>
+              <li>Works great with Python</li>
+              <li>Free cloud tier (MongoDB Atlas)</li>
+              <li>Intuitive JSON-like data structure</li>
+            </ul>
+          </div>
+
           <div style="background: linear-gradient(180deg, rgba(16,185,129,0.10), rgba(16,185,129,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
             <div style="font-size: 32px; margin-bottom: 8px;">🗄️</div>
             <h4 style="margin: 0 0 6px; font-size: 18px;">SQLite</h4>
             <p style="margin: 0 0 12px; color: var(--muted); font-size: 14px;">Perfect for small projects and learning</p>
             <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
               <li>No server needed — file-based</li>
+              <li>Built into Python</li>
               <li>Great for prototypes</li>
-              <li>Used by Python, Node.js easily</li>
+              <li>Zero configuration required</li>
             </ul>
           </div>
+        </div>
 
-          <div style="background: linear-gradient(180deg, rgba(59,130,246,0.10), rgba(59,130,246,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🔥</div>
-            <h4 style="margin: 0 0 6px; font-size: 18px;">Firebase</h4>
-            <p style="margin: 0 0 12px; color: var(--muted); font-size: 14px;">Google's all-in-one platform</p>
-            <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
-              <li>Real-time database</li>
-              <li>Built-in authentication</li>
-              <li>Easy to start, scales well</li>
-            </ul>
-          </div>
-
-          <div style="background: linear-gradient(180deg, rgba(168,85,247,0.10), rgba(168,85,247,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🍃</div>
-            <h4 style="margin: 0 0 6px; font-size: 18px;">MongoDB</h4>
-            <p style="margin: 0 0 12px; color: var(--muted); font-size: 14px;">Flexible document database</p>
-            <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
-              <li>NoSQL — more flexible</li>
-              <li>Good for unstructured data</li>
-              <li>Popular with Node.js</li>
-            </ul>
-          </div>
+        <div style="background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(59,130,246,0.02)); border-left: 4px solid #3b82f6; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">💡 Note about Supabase:</p>
+          <p style="margin: 0;">
+            If you're working with <strong>Lovable</strong> or prefer a managed database solution, <strong>Supabase</strong> is also perfectly fine to use. 
+            It's built on PostgreSQL and provides a user-friendly interface. While we recommend MongoDB or SQLite for learning Python backends, 
+            Supabase is a valid choice, especially if you're already using it in Lovable.
+          </p>
         </div>
 
         <h3>When to Choose What?</h3>
         <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.02)); border-left: 4px solid #10b981; border-radius: 12px; padding: 18px; margin: 24px 0;">
           <p style="margin: 0 0 8px; font-weight: 600;">💡 Quick Decision Guide:</p>
           <ul style="margin: 8px 0 0; padding-left: 20px;">
-            <li><strong>Learning/Prototyping:</strong> SQLite or Supabase (free tier)</li>
-            <li><strong>Simple app with auth:</strong> Supabase or Firebase</li>
-            <li><strong>Complex relationships:</strong> PostgreSQL (Supabase) or MySQL</li>
-            <li><strong>Real-time features:</strong> Firebase or Supabase</li>
-            <li><strong>Python project:</strong> SQLite (simple) or PostgreSQL (production)</li>
+            <li><strong>Learning/Prototyping:</strong> SQLite (simplest) or MongoDB (more realistic)</li>
+            <li><strong>Python project:</strong> Both work great! SQLite for simple apps, MongoDB for more complex data</li>
+            <li><strong>Using Lovable:</strong> Supabase is a good choice (works well with the platform)</li>
+            <li><strong>Need cloud hosting:</strong> MongoDB Atlas or Supabase (both have free tiers)</li>
+            <li><strong>Want zero setup:</strong> SQLite (comes with Python)</li>
           </ul>
         </div>
 
-        <h2 id="backend-options">Backend Options: Python, Node.js, and More</h2>
+        <h2 id="backend-options">Backend Options: Python (Recommended)</h2>
         <p>
           Your backend needs a programming language and a framework to handle requests and connect to your database. 
-          Here are the most common options:
+          For this class, we'll focus on <strong>Python</strong>, which is beginner-friendly and powerful.
         </p>
 
         <h3>Python (Recommended for Beginners)</h3>
@@ -217,44 +345,28 @@ if __name__ == '__main__':
           </p>
         </div>
 
-        <h3>Node.js (JavaScript on the Server)</h3>
+        <h3>Node.js (Alternative Option)</h3>
         <p>
-          If you already know JavaScript, <strong>Node.js</strong> lets you use the same language for both frontend and backend. 
-          This is convenient and popular in modern web development.
+          <strong>Node.js</strong> is another popular backend option that lets you use JavaScript on the server. 
+          If you already know JavaScript from frontend development, this can be convenient.
         </p>
 
         <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
-          <h4 style="margin-top: 0; color: var(--accent);">Popular Node.js Frameworks</h4>
+          <h4 style="margin-top: 0; color: var(--accent);">About Node.js</h4>
           <ul style="margin: 12px 0; padding-left: 20px;">
-            <li><strong>Express</strong> — Most popular, simple and flexible</li>
-            <li><strong>Next.js</strong> — Full-stack React framework (we'll cover this more below)</li>
-            <li><strong>Fastify</strong> — Fast and low overhead</li>
+            <li>✅ Uses JavaScript (same language as frontend)</li>
+            <li>✅ Popular frameworks like Express and Next.js</li>
+            <li>✅ Large ecosystem and community</li>
+            <li>✅ Used by many companies</li>
           </ul>
-        </div>
 
-        <h3>Next.js: Frontend + Backend in One</h3>
-        <p>
-          <strong>Next.js</strong> is special because it lets you build both your frontend and backend in the same project. 
-          You can create API routes that run on the server, and your React components can call them directly.
-        </p>
-
-        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
-          <h4 style="margin-top: 0; color: var(--accent);">How Next.js Works</h4>
-          <p style="margin: 8px 0;">In a Next.js project, you can create API routes in the <code>pages/api</code> folder (or <code>app/api</code> in App Router):</p>
-          
-          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>// pages/api/users.js (or app/api/users/route.js)
-export default function handler(req, res) {
-  // This runs on the server
-  const users = [
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' }
-  ];
-  res.status(200).json(users);
-}</code></pre>
-
-          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
-            💡 Your React components can call this API using <code>fetch('/api/users')</code> — no separate backend server needed!
-          </p>
+          <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02)); border-left: 4px solid #ef4444; border-radius: 12px; padding: 18px; margin-top: 16px;">
+            <p style="margin: 0 0 8px; font-weight: 600;">⚠️ Important Note:</p>
+            <p style="margin: 0;">
+              <strong>Node.js is perfectly fine to use</strong> for your project, but I haven't personally used it much, so I may have limited ability to help with Node.js-specific issues. 
+              You'll need to rely more on documentation and online resources. Python is recommended because I can provide better support and guidance.
+            </p>
+          </div>
         </div>
 
         <h2 id="connecting-frontend-backend">Connecting Frontend to Backend</h2>
@@ -310,29 +422,6 @@ function UserList() {
 }</code></pre>
         </div>
 
-        <h3>Method 2: Next.js API Routes (Simplest for React)</h3>
-        <p>
-          If you're using <strong>Next.js</strong>, you can create API routes in the same project. 
-          This is the easiest way to connect React to a backend — no separate server needed!
-        </p>
-
-        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
-          <h4 style="margin-top: 0; color: var(--accent);">Next.js Direct Database Access</h4>
-          <p style="margin: 8px 0;">You can even connect directly to a database from Next.js API routes:</p>
-          
-          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>// pages/api/products.js
-import { sql } from '@vercel/postgres'; // or your database client
-
-export default async function handler(req, res) {
-  // Query database directly
-  const result = await sql`SELECT * FROM products`;
-  res.status(200).json(result.rows);
-}</code></pre>
-
-          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
-            💡 This is great for simple projects, but for production apps, you might want a separate backend for better security and organization.
-          </p>
-        </div>
 
         <h3>Method 3: GraphQL (Advanced)</h3>
         <p>
@@ -360,7 +449,7 @@ export default async function handler(req, res) {
           <p style="margin: 0 0 8px; font-weight: 600;">✅ For This Class:</p>
           <p style="margin: 0;">
             For learning and simple projects, you can start with basic API calls. Security becomes more important as your projects grow. 
-            Platforms like Supabase and Firebase handle many security concerns for you automatically.
+            Always validate data on the backend and never trust input from the frontend.
           </p>
         </div>
 
@@ -371,20 +460,20 @@ export default async function handler(req, res) {
 
         <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
           <h4 style="margin-top: 0; color: var(--accent);">Step 1: Start Simple</h4>
-          <p style="margin: 8px 0;">Use <strong>Next.js</strong> with API routes and connect to <strong>Supabase</strong> or <strong>SQLite</strong>:</p>
+          <p style="margin: 8px 0;">Build a Python backend with <strong>Flask</strong> and connect to <strong>SQLite</strong>:</p>
           <ul style="margin: 12px 0; padding-left: 20px;">
-            <li>Create a Next.js project</li>
-            <li>Set up a simple database (Supabase free tier or local SQLite)</li>
+            <li>Create a Flask server (see installation guide above)</li>
+            <li>Set up SQLite database (comes with Python)</li>
             <li>Create API routes that read/write data</li>
-            <li>Call those routes from your React components</li>
+            <li>Test your API with a tool like Postman or curl</li>
           </ul>
 
-          <h4 style="margin-top: 24px; color: var(--accent);">Step 2: Learn Python Backend</h4>
-          <p style="margin: 8px 0;">Build a separate backend with <strong>Python (Flask or FastAPI)</strong>:</p>
+          <h4 style="margin-top: 24px; color: var(--accent);">Step 2: Connect to MongoDB</h4>
+          <p style="margin: 8px 0;">Upgrade to <strong>MongoDB</strong> for more realistic projects:</p>
           <ul style="margin: 12px 0; padding-left: 20px;">
-            <li>Create a Flask/FastAPI server</li>
-            <li>Connect to PostgreSQL or SQLite</li>
-            <li>Create REST API endpoints</li>
+            <li>Set up MongoDB Atlas (free cloud tier) or install locally</li>
+            <li>Connect your Flask backend to MongoDB using pymongo</li>
+            <li>Create REST API endpoints that interact with MongoDB</li>
             <li>Connect your React frontend to this Python backend</li>
           </ul>
 
@@ -405,10 +494,17 @@ export default async function handler(req, res) {
         </p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 24px 0;">
-          <div style="background: linear-gradient(180deg, rgba(16,185,129,0.10), rgba(16,185,129,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
-            <h4 style="margin: 0 0 8px; font-size: 18px;">🗄️ Databases</h4>
+          <div style="background: linear-gradient(180deg, rgba(168,85,247,0.10), rgba(168,85,247,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <h4 style="margin: 0 0 8px; font-size: 18px;">🍃 MongoDB</h4>
             <p style="margin: 0; font-size: 14px; color: var(--muted);">
-              Supabase (PostgreSQL) is great for most projects. SQLite for learning, Firebase for real-time features.
+              Recommended for learning and real projects. Flexible NoSQL database that works great with Python.
+            </p>
+          </div>
+
+          <div style="background: linear-gradient(180deg, rgba(16,185,129,0.10), rgba(16,185,129,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <h4 style="margin: 0 0 8px; font-size: 18px;">🗄️ SQLite</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--muted);">
+              Perfect for learning and small projects. File-based, zero setup, built into Python.
             </p>
           </div>
 
@@ -416,13 +512,6 @@ export default async function handler(req, res) {
             <h4 style="margin: 0 0 8px; font-size: 18px;">🐍 Python Backend</h4>
             <p style="margin: 0; font-size: 14px; color: var(--muted);">
               Recommended for beginners. Use Flask or FastAPI to build REST APIs that connect to your database.
-            </p>
-          </div>
-
-          <div style="background: linear-gradient(180deg, rgba(168,85,247,0.10), rgba(168,85,247,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
-            <h4 style="margin: 0 0 8px; font-size: 18px;">⚛️ Next.js</h4>
-            <p style="margin: 0; font-size: 14px; color: var(--muted);">
-              Simplest option: build frontend and backend in one project. Great for learning and small projects.
             </p>
           </div>
 
@@ -439,16 +528,16 @@ export default async function handler(req, res) {
             🚀 Ready to build?
           </p>
           <p style="margin: 0; color: var(--muted);">
-            Start with Next.js + Supabase for the easiest path, or try Python + Flask for more control.
+            Start with Python + Flask + MongoDB for a realistic setup, or Python + Flask + SQLite for the simplest path.
           </p>
         </div>
 
         <h2 id="resources">Additional Resources</h2>
         <ul>
-          <li><a href="https://supabase.com/docs" target="_blank" rel="noopener noreferrer">Supabase Documentation</a> — Learn about PostgreSQL and Supabase</li>
+          <li><a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer">MongoDB Documentation</a> — Learn about MongoDB and how to use it</li>
           <li><a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask Documentation</a> — Python web framework</li>
           <li><a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI Documentation</a> — Modern Python API framework</li>
-          <li><a href="https://nextjs.org/docs" target="_blank" rel="noopener noreferrer">Next.js Documentation</a> — Full-stack React framework</li>
+          <li><a href="https://www.sqlite.org/docs.html" target="_blank" rel="noopener noreferrer">SQLite Documentation</a> — Learn about SQLite database</li>
           <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer">MDN: Fetch API</a> — How to make API calls from JavaScript</li>
         </ul>
       </div>
