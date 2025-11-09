@@ -21,6 +21,7 @@
         { href: 'css.html', text: 'CSS' },
         { href: 'javascript.html', text: 'JavaScript' },
         { href: 'frameworks.html', text: 'Frameworks' },
+        { href: 'backend.html', text: 'Backend' },
         { href: 'git.html', text: 'Git' }
       ],
       extraLinks: [] // Can be used to add extra links like "Get Started" button
