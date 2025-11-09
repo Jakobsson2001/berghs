@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Backend & Databases | Berghs Class</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body class="theme-light">
+    <div id="header-container"></div>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="panel">
+            <div class="split">
+              <div>
+                <span class="kicker">Backend Fundamentals</span>
+                <h1>Backend & Databases</h1>
+                <p class="lead">Learn how to store data, build APIs, and connect your frontend to a backend. From databases to Python servers, explore the tools that power modern web applications.</p>
+                <div class="actions">
+                  <a href="#what-is-backend" class="btn btn-primary">Get Started</a>
+                  <a href="#databases" class="btn btn-ghost">Learn More</a>
+                </div>
+              </div>
+              <div class="hero-figure" aria-hidden="true">
+                <svg viewBox="0 0 260 200" role="img" width="100%" height="100%">
+                  <defs>
+                    <linearGradient id="g3" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#10b981"/>
+                      <stop offset="100%" stop-color="#3b82f6"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="0" y="0" width="260" height="200" rx="16" fill="url(#g3)" opacity="0.18"/>
+                  <circle cx="70" cy="120" r="34" fill="#34d399" opacity="0.9"/>
+                  <circle cx="160" cy="80" r="46" fill="#60a5fa" opacity="0.85"/>
+                  <rect x="110" y="120" width="90" height="28" rx="8" fill="#4ade80" opacity="0.8"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container prose">
+        <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(59,130,246,0.08)); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 2rem; text-align: center;">
+          <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--text);">
+            💡 The backend is where your data lives and your business logic runs — the engine behind every interactive website.
+          </p>
+        </div>
+
+        <h2 id="what-is-backend">What is a Backend?</h2>
+        <p>
+          Think of a website like a restaurant. The <strong>frontend</strong> is what customers see — the menu, the dining room, the plates. 
+          The <strong>backend</strong> is the kitchen — where orders are processed, ingredients are stored, and food is prepared. 
+          Customers don't see the kitchen, but it's essential for the restaurant to function.
+        </p>
+
+        <p>
+          In web development, the backend handles:
+        </p>
+        <ul>
+          <li><strong>Storing data</strong> — User accounts, posts, products, anything that needs to be saved</li>
+          <li><strong>Processing requests</strong> — When a user submits a form or clicks a button, the backend decides what to do</li>
+          <li><strong>Security</strong> — Protecting sensitive information and validating user actions</li>
+          <li><strong>Business logic</strong> — Calculations, validations, and rules that make your app work</li>
+        </ul>
+
+        <h2 id="databases">Choosing a Database</h2>
+        <p>
+          A <strong>database</strong> is like a digital filing cabinet where you store all your app's data. 
+          When you create a user account, post a comment, or save a product, that information goes into a database.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(59,130,246,0.02)); border-left: 4px solid #3b82f6; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">📐 Database Design in Real Projects:</p>
+          <p style="margin: 0;">
+            In professional projects, teams typically create a <strong>UML (Unified Modeling Language) diagram</strong> or an <strong>Entity Relationship Diagram (ERD)</strong> 
+            to document the database structure before writing any code. This helps everyone agree on the data model, relationships between tables, 
+            and ensures the database design is well thought out. For this class, you can start simple, but it's good to know this is standard practice in real development.
+          </p>
+        </div>
+
+        <h3>What Lovable Uses: Supabase (PostgreSQL)</h3>
+        <p>
+          <strong>Lovable</strong> (a popular development platform) uses <strong>Supabase</strong>, which is built on top of <strong>PostgreSQL</strong>. 
+          This is a great choice for many projects, but let's understand why and what alternatives exist.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">PostgreSQL (via Supabase) — What Lovable Uses</h4>
+          <p style="margin: 8px 0;"><strong>What it is:</strong> A powerful, open-source relational database. Supabase adds a user-friendly interface and built-in authentication.</p>
+          
+          <p style="margin: 8px 0;"><strong>Best for:</strong></p>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li>Structured data with relationships (users, posts, comments)</li>
+            <li>Projects that need authentication and user management</li>
+            <li>Applications requiring complex queries and data integrity</li>
+            <li>Teams that want a managed solution (Supabase handles hosting)</li>
+          </ul>
+
+          <p style="margin: 8px 0;"><strong>Pros:</strong></p>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li>✅ Free tier available (great for learning)</li>
+            <li>✅ Built-in authentication and real-time features</li>
+            <li>✅ SQL is powerful and widely used</li>
+            <li>✅ Excellent documentation and community</li>
+          </ul>
+
+          <p style="margin: 8px 0;"><strong>Cons:</strong></p>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li>❌ Can be overkill for simple projects</li>
+            <li>❌ Requires understanding SQL (Structured Query Language)</li>
+            <li>❌ More complex setup than simpler alternatives</li>
+            <li>❌ <strong>Costs can increase significantly</strong> with high traffic/load — pricing scales with usage</li>
+            <li>❌ <strong>Vendor lock-in risk</strong> — It can be difficult to migrate your data to other database providers later</li>
+          </ul>
+        </div>
+
+        <h3>Alternative Database Options</h3>
+        <p>
+          Depending on your project needs, you might consider these alternatives:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 24px 0;">
+          <div style="background: linear-gradient(180deg, rgba(16,185,129,0.10), rgba(16,185,129,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🗄️</div>
+            <h4 style="margin: 0 0 6px; font-size: 18px;">SQLite</h4>
+            <p style="margin: 0 0 12px; color: var(--muted); font-size: 14px;">Perfect for small projects and learning</p>
+            <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
+              <li>No server needed — file-based</li>
+              <li>Great for prototypes</li>
+              <li>Used by Python, Node.js easily</li>
+            </ul>
+          </div>
+
+          <div style="background: linear-gradient(180deg, rgba(59,130,246,0.10), rgba(59,130,246,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🔥</div>
+            <h4 style="margin: 0 0 6px; font-size: 18px;">Firebase</h4>
+            <p style="margin: 0 0 12px; color: var(--muted); font-size: 14px;">Google's all-in-one platform</p>
+            <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
+              <li>Real-time database</li>
+              <li>Built-in authentication</li>
+              <li>Easy to start, scales well</li>
+            </ul>
+          </div>
+
+          <div style="background: linear-gradient(180deg, rgba(168,85,247,0.10), rgba(168,85,247,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🍃</div>
+            <h4 style="margin: 0 0 6px; font-size: 18px;">MongoDB</h4>
+            <p style="margin: 0 0 12px; color: var(--muted); font-size: 14px;">Flexible document database</p>
+            <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
+              <li>NoSQL — more flexible</li>
+              <li>Good for unstructured data</li>
+              <li>Popular with Node.js</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>When to Choose What?</h3>
+        <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.02)); border-left: 4px solid #10b981; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">💡 Quick Decision Guide:</p>
+          <ul style="margin: 8px 0 0; padding-left: 20px;">
+            <li><strong>Learning/Prototyping:</strong> SQLite or Supabase (free tier)</li>
+            <li><strong>Simple app with auth:</strong> Supabase or Firebase</li>
+            <li><strong>Complex relationships:</strong> PostgreSQL (Supabase) or MySQL</li>
+            <li><strong>Real-time features:</strong> Firebase or Supabase</li>
+            <li><strong>Python project:</strong> SQLite (simple) or PostgreSQL (production)</li>
+          </ul>
+        </div>
+
+        <h2 id="backend-options">Backend Options: Python, Node.js, and More</h2>
+        <p>
+          Your backend needs a programming language and a framework to handle requests and connect to your database. 
+          Here are the most common options:
+        </p>
+
+        <h3>Python (Recommended for Beginners)</h3>
+        <p>
+          <strong>Python</strong> is an excellent choice for learning backend development. It's readable, beginner-friendly, and has powerful frameworks.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Why Python?</h4>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li>✅ Easy to read and write — looks almost like English</li>
+            <li>✅ Huge community and excellent documentation</li>
+            <li>✅ Great libraries for databases, APIs, and more</li>
+            <li>✅ Used by major companies (Instagram, Spotify, Netflix)</li>
+          </ul>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Popular Python Frameworks</h4>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li><strong>Flask</strong> — Simple and lightweight, perfect for learning</li>
+            <li><strong>FastAPI</strong> — Modern, fast, with automatic API documentation</li>
+            <li><strong>Django</strong> — Full-featured, includes admin panel and ORM</li>
+          </ul>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Simple Python Backend Example</h4>
+          <p style="margin: 8px 0;">Here's a basic Flask server that returns JSON data:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/users', methods=['GET'])
+def get_users():
+    users = [
+        {'id': 1, 'name': 'Alice'},
+        {'id': 2, 'name': 'Bob'}
+    ]
+    return jsonify(users)
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            💡 This creates an API endpoint at <code>http://localhost:5000/api/users</code> that your frontend can call to get user data.
+          </p>
+        </div>
+
+        <h3>Node.js (JavaScript on the Server)</h3>
+        <p>
+          If you already know JavaScript, <strong>Node.js</strong> lets you use the same language for both frontend and backend. 
+          This is convenient and popular in modern web development.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Popular Node.js Frameworks</h4>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li><strong>Express</strong> — Most popular, simple and flexible</li>
+            <li><strong>Next.js</strong> — Full-stack React framework (we'll cover this more below)</li>
+            <li><strong>Fastify</strong> — Fast and low overhead</li>
+          </ul>
+        </div>
+
+        <h3>Next.js: Frontend + Backend in One</h3>
+        <p>
+          <strong>Next.js</strong> is special because it lets you build both your frontend and backend in the same project. 
+          You can create API routes that run on the server, and your React components can call them directly.
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">How Next.js Works</h4>
+          <p style="margin: 8px 0;">In a Next.js project, you can create API routes in the <code>pages/api</code> folder (or <code>app/api</code> in App Router):</p>
+          
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>// pages/api/users.js (or app/api/users/route.js)
+export default function handler(req, res) {
+  // This runs on the server
+  const users = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' }
+  ];
+  res.status(200).json(users);
+}</code></pre>
+
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            💡 Your React components can call this API using <code>fetch('/api/users')</code> — no separate backend server needed!
+          </p>
+        </div>
+
+        <h2 id="connecting-frontend-backend">Connecting Frontend to Backend</h2>
+        <p>
+          There are several ways to connect your frontend (React, HTML, etc.) to your backend. 
+          The method you choose depends on your security needs and project complexity.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.02)); border-left: 4px solid #10b981; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">🏗️ Architecture Note: Monolith vs Microservices</p>
+          <p style="margin: 0;">
+            In professional development, teams often debate between <strong>monolith</strong> (everything in one codebase) and 
+            <strong>microservices</strong> (separate services for different features). For this class, you can keep everything in the same project — 
+            your frontend, backend API routes, and database connections can all live together. This is simpler to learn and manage, 
+            and perfectly fine for most projects. You can always split things later if needed!
+          </p>
+        </div>
+
+        <h3>Method 1: REST API (Most Common)</h3>
+        <p>
+          <strong>REST API</strong> is the standard way to connect frontend and backend. Your frontend makes HTTP requests (GET, POST, PUT, DELETE) 
+          to your backend, which responds with data (usually JSON).
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">How It Works</h4>
+          <ol style="margin: 12px 0; padding-left: 20px;">
+            <li>Frontend sends a request: <code>fetch('https://api.example.com/users')</code></li>
+            <li>Backend processes the request and queries the database</li>
+            <li>Backend sends back JSON data: <code>{ users: [...] }</code></li>
+            <li>Frontend receives the data and updates the UI</li>
+          </ol>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Example: Fetching Data in React</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>// In your React component
+function UserList() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from your backend API
+    fetch('http://localhost:5000/api/users')
+      .then(response => response.json())
+      .then(data => setUsers(data));
+  }, []);
+
+  return (
+    &lt;div&gt;
+      {users.map(user => (
+        &lt;p key={user.id}&gt;{user.name}&lt;/p&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}</code></pre>
+        </div>
+
+        <h3>Method 2: Next.js API Routes (Simplest for React)</h3>
+        <p>
+          If you're using <strong>Next.js</strong>, you can create API routes in the same project. 
+          This is the easiest way to connect React to a backend — no separate server needed!
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Next.js Direct Database Access</h4>
+          <p style="margin: 8px 0;">You can even connect directly to a database from Next.js API routes:</p>
+          
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>// pages/api/products.js
+import { sql } from '@vercel/postgres'; // or your database client
+
+export default async function handler(req, res) {
+  // Query database directly
+  const result = await sql`SELECT * FROM products`;
+  res.status(200).json(result.rows);
+}</code></pre>
+
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            💡 This is great for simple projects, but for production apps, you might want a separate backend for better security and organization.
+          </p>
+        </div>
+
+        <h3>Method 3: GraphQL (Advanced)</h3>
+        <p>
+          <strong>GraphQL</strong> is an alternative to REST that lets you request exactly the data you need. 
+          It's more flexible but also more complex. For this class, REST APIs are recommended.
+        </p>
+
+        <h2 id="security">Security Considerations (Optional)</h2>
+        <p>
+          When connecting frontend to backend, security is important — especially if you're handling user data, payments, or sensitive information.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02)); border-left: 4px solid #ef4444; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">🔒 Important Security Basics:</p>
+          <ul style="margin: 8px 0 0; padding-left: 20px;">
+            <li><strong>Never expose API keys in frontend code</strong> — Use environment variables or backend-only storage</li>
+            <li><strong>Validate data on the backend</strong> — Don't trust data from the frontend</li>
+            <li><strong>Use HTTPS</strong> — Encrypt data in transit</li>
+            <li><strong>Implement authentication</strong> — Verify users are who they say they are</li>
+            <li><strong>Use CORS properly</strong> — Control which websites can access your API</li>
+          </ul>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.02)); border-left: 4px solid #10b981; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">✅ For This Class:</p>
+          <p style="margin: 0;">
+            For learning and simple projects, you can start with basic API calls. Security becomes more important as your projects grow. 
+            Platforms like Supabase and Firebase handle many security concerns for you automatically.
+          </p>
+        </div>
+
+        <h2 id="recommendations">Recommended Learning Path</h2>
+        <p>
+          Here's a suggested path for learning backend development:
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Step 1: Start Simple</h4>
+          <p style="margin: 8px 0;">Use <strong>Next.js</strong> with API routes and connect to <strong>Supabase</strong> or <strong>SQLite</strong>:</p>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li>Create a Next.js project</li>
+            <li>Set up a simple database (Supabase free tier or local SQLite)</li>
+            <li>Create API routes that read/write data</li>
+            <li>Call those routes from your React components</li>
+          </ul>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Step 2: Learn Python Backend</h4>
+          <p style="margin: 8px 0;">Build a separate backend with <strong>Python (Flask or FastAPI)</strong>:</p>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li>Create a Flask/FastAPI server</li>
+            <li>Connect to PostgreSQL or SQLite</li>
+            <li>Create REST API endpoints</li>
+            <li>Connect your React frontend to this Python backend</li>
+          </ul>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Step 3: Understand Security</h4>
+          <p style="margin: 8px 0;">As your projects grow, learn about:</p>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li>Authentication (JWT tokens, sessions)</li>
+            <li>Input validation and sanitization</li>
+            <li>Environment variables for secrets</li>
+            <li>CORS and API security</li>
+          </ul>
+        </div>
+
+        <h2 id="summary">Summary</h2>
+        <p>
+          Backend development involves choosing the right database, building APIs, and connecting them to your frontend. 
+          Here are the key takeaways:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 24px 0;">
+          <div style="background: linear-gradient(180deg, rgba(16,185,129,0.10), rgba(16,185,129,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <h4 style="margin: 0 0 8px; font-size: 18px;">🗄️ Databases</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--muted);">
+              Supabase (PostgreSQL) is great for most projects. SQLite for learning, Firebase for real-time features.
+            </p>
+          </div>
+
+          <div style="background: linear-gradient(180deg, rgba(59,130,246,0.10), rgba(59,130,246,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <h4 style="margin: 0 0 8px; font-size: 18px;">🐍 Python Backend</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--muted);">
+              Recommended for beginners. Use Flask or FastAPI to build REST APIs that connect to your database.
+            </p>
+          </div>
+
+          <div style="background: linear-gradient(180deg, rgba(168,85,247,0.10), rgba(168,85,247,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <h4 style="margin: 0 0 8px; font-size: 18px;">⚛️ Next.js</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--muted);">
+              Simplest option: build frontend and backend in one project. Great for learning and small projects.
+            </p>
+          </div>
+
+          <div style="background: linear-gradient(180deg, rgba(239,68,68,0.10), rgba(239,68,68,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
+            <h4 style="margin: 0 0 8px; font-size: 18px;">🔗 REST APIs</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--muted);">
+              Standard way to connect frontend and backend. Frontend makes HTTP requests, backend responds with JSON.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(59,130,246,0.08)); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 3rem; text-align: center;">
+          <p style="margin: 0 0 12px; font-size: 18px; font-weight: 600; color: var(--text);">
+            🚀 Ready to build?
+          </p>
+          <p style="margin: 0; color: var(--muted);">
+            Start with Next.js + Supabase for the easiest path, or try Python + Flask for more control.
+          </p>
+        </div>
+
+        <h2 id="resources">Additional Resources</h2>
+        <ul>
+          <li><a href="https://supabase.com/docs" target="_blank" rel="noopener noreferrer">Supabase Documentation</a> — Learn about PostgreSQL and Supabase</li>
+          <li><a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask Documentation</a> — Python web framework</li>
+          <li><a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI Documentation</a> — Modern Python API framework</li>
+          <li><a href="https://nextjs.org/docs" target="_blank" rel="noopener noreferrer">Next.js Documentation</a> — Full-stack React framework</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer">MDN: Fetch API</a> — How to make API calls from JavaScript</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
+    </footer>
+
+    <script src="assets/header.js"></script>
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
