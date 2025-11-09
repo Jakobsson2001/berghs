@@ -120,29 +120,31 @@ npm --version</code></pre>
           </ol>
         </div>
 
-        <h3>Step 2: Install Yarn (Optional but Recommended)</h3>
+        <h3>Step 2: Create Your First React Project</h3>
         <p>
-          <strong>Yarn</strong> is an alternative package manager to npm. Many developers prefer it for its speed and reliability. You can use either npm or Yarn — both work with React projects.
+          Once you have Node.js and npm installed, you can create a new React project. React provides an official tool called <strong>Create React App</strong> that sets up everything you need.
         </p>
 
-        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
-          <h4 style="margin-top: 0; color: var(--accent);">📱 macOS (MacBook)</h4>
-          <p style="margin: 8px 0;">Open Terminal and run:</p>
-          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>npm install -g yarn</code></pre>
-          <p style="margin: 8px 0;">Verify installation:</p>
-          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>yarn --version</code></pre>
+        <h4>Why Use Create React App?</h4>
+        <p>
+          Instead of manually configuring build tools, bundlers, and development servers, <strong>Create React App</strong> gives you a <strong>standard template</strong> with everything pre-configured. Here's what you get:
+        </p>
 
-          <h4 style="margin-top: 24px; color: var(--accent);">🪟 Windows</h4>
-          <p style="margin: 8px 0;">Open Command Prompt or PowerShell and run:</p>
-          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>npm install -g yarn</code></pre>
-          <p style="margin: 8px 0;">Verify installation:</p>
-          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>yarn --version</code></pre>
+        <ul>
+          <li><strong>Pre-configured build tools</strong> — Webpack, Babel, and other tools are set up and hidden so you can focus on coding</li>
+          <li><strong>Development server</strong> — Hot reloading (your changes appear instantly in the browser)</li>
+          <li><strong>Standard project structure</strong> — Organized folders and files following React best practices</li>
+          <li><strong>Production-ready build</strong> — Optimized code for deployment with one command (<code>npm run build</code>)</li>
+          <li><strong>Testing setup</strong> — Jest testing framework pre-configured</li>
+          <li><strong>No configuration needed</strong> — Everything works out of the box</li>
+        </ul>
+
+        <div style="background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(56,189,248,0.02)); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">💡 Without Create React App:</p>
+          <p style="margin: 0;">
+            You'd need to manually install and configure webpack, Babel, ESLint, and other tools — a process that can take hours and requires deep knowledge of build systems. Create React App does all this for you in seconds, giving you a professional, industry-standard starting point.
+          </p>
         </div>
-
-        <h3>Step 3: Create Your First React Project</h3>
-        <p>
-          Once you have npm (or Yarn) installed, you can create a new React project. React provides an official tool called <strong>Create React App</strong> that sets up everything you need.
-        </p>
 
         <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
           <h4 style="margin-top: 0; color: var(--accent);">Using npm:</h4>
@@ -154,6 +156,13 @@ npm start</code></pre>
           <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>yarn create react-app my-first-app
 cd my-first-app
 yarn start</code></pre>
+
+          <h4 style="margin-top: 16px; color: var(--accent);">Using TypeScript (Optional):</h4>
+          <p style="margin: 8px 0;">If you want to use TypeScript instead of JavaScript, add the <code>--template typescript</code> flag:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>npx create-react-app my-first-app --template typescript</code></pre>
+          <p style="margin: 8px 0; color: var(--muted); font-size: 14px;">
+            This will create files with <code>.tsx</code> extensions instead of <code>.js</code>. For this class, JavaScript (<code>.js</code>) is sufficient unless you're already familiar with TypeScript.
+          </p>
 
           <p style="margin: 16px 0 0; color: var(--muted); font-size: 14px;">
             💡 Replace <code>my-first-app</code> with your desired project name. The <code>npm start</code> or <code>yarn start</code> command will open your React app in the browser at <code>http://localhost:3000</code>.
@@ -187,26 +196,338 @@ yarn start</code></pre>
             <li><strong>name:</strong> Your project's name</li>
             <li><strong>version:</strong> The current version of your project</li>
             <li><strong>dependencies:</strong> Lists all the libraries your project needs (like React, React DOM, etc.)</li>
-            <li><strong>scripts:</strong> Commands you can run with <code>npm run</code> or <code>yarn</code> (e.g., <code>npm start</code> runs the "start" script)</li>
+            <li><strong>scripts:</strong> Commands you can run with <code>npm run</code> (e.g., <code>npm start</code> runs the "start" script)</li>
           </ul>
 
-          <h4 style="margin-top: 24px; color: var(--accent);">Installing Additional Packages</h4>
-          <p style="margin: 8px 0;">When you install a new package (like Tailwind CSS or MUI), it gets added to your <code>package.json</code>:</p>
-          
-          <p style="margin: 12px 0 4px; font-weight: 600;">Using npm:</p>
-          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>npm install tailwindcss</code></pre>
-
-          <p style="margin: 12px 0 4px; font-weight: 600;">Using Yarn:</p>
-          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>yarn add tailwindcss</code></pre>
-
           <p style="margin: 16px 0 0; color: var(--muted); font-size: 14px;">
-            💡 After installation, you'll see the new package listed in the <code>dependencies</code> section of your <code>package.json</code>. This file ensures that anyone who works on your project can install the exact same packages by running <code>npm install</code> or <code>yarn install</code>.
+            💡 When you install packages (see the "Adding Packages" section below), they get added to the <code>dependencies</code> section. This file ensures that anyone who works on your project can install the exact same packages by running <code>npm install</code>.
+          </p>
+        </div>
+
+        <h3>Adding Packages: CLI vs UI</h3>
+        <p>
+          <strong>Important:</strong> You cannot install npm packages directly from a UI in most editors — npm installation always requires the command line (CLI) under the hood. Even when you use UI tools, they're just triggering CLI commands for you.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02)); border-left: 4px solid #ef4444; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">💪 Don't be afraid of the command line!</p>
+          <p style="margin: 0;">
+            The terminal/command line might seem intimidating at first, but it's the standard way developers work. Learning it will make you a better developer. Start with the basics — you'll get comfortable quickly!
+          </p>
+        </div>
+
+        <h4>Command Line (CLI) - Required and Recommended</h4>
+        <p>
+          The command line is the <strong>standard and most reliable</strong> way to add packages. This is what you'll use in real projects:
+        </p>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 12px 0;">
+          <pre style="margin: 0; overflow-x: auto;"><code># Navigate to your project folder first
+cd my-first-app
+
+# Then install packages
+npm install tailwindcss
+# or
+yarn add tailwindcss</code></pre>
+        </div>
+
+        <h4>VS Code Extensions That Can Help</h4>
+        <p>
+          While you still need to use the CLI, some VS Code extensions can make it easier by providing buttons and menus that run CLI commands for you:
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Recommended: "npm" Extension (by eg2)</h4>
+          <p style="margin: 8px 0;">This extension provides a semi-graphical interface for npm inside VS Code:</p>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li><strong>✅ Shows npm scripts</strong> — Displays scripts from <code>package.json</code> in a Run menu</li>
+            <li><strong>✅ Validates dependencies</strong> — Warns if modules are missing or mismatched</li>
+            <li><strong>✅ Quick fixes</strong> — Click "Run npm install" to fix missing packages</li>
+            <li><strong>✅ Context menu</strong> — Right-click <code>package.json</code> to run npm commands</li>
+            <li><strong>✅ Command palette</strong> — Use <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac) → type "npm:" to see available commands</li>
+          </ul>
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            <strong>Note:</strong> This extension still runs <code>npm install</code> behind the scenes — it just makes it easier to trigger. You can't browse or search npm packages directly from the UI.
+          </p>
+        </div>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Other Helpful Extensions</h4>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li><strong>npm Intellisense</strong> — Auto-completes package names as you type in <code>package.json</code></li>
+            <li><strong>NPM UI</strong> or <strong>Package Manager GUI</strong> — Adds a sidebar for dependency management (can search npm registry and click install)</li>
+            <li><strong>Terminal in VS Code</strong> — Use the integrated terminal (View → Terminal) to run commands without leaving your editor</li>
+          </ul>
+        </div>
+
+        <h4>Full Graphical Package Management</h4>
+        <p>
+          If you want a complete graphical interface to browse and install packages (like a "package store"), you can use:
+        </p>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 12px 0;">
+          <pre style="margin: 0; overflow-x: auto;"><code># Install and run npm-gui (opens a web interface)
+npx npm-gui</code></pre>
+          <p style="margin: 8px 0; color: var(--muted); font-size: 14px;">
+            This opens <code>http://localhost:1337</code> in your browser where you can browse and install packages visually.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(56,189,248,0.02)); border-left: 4px solid #38bdf8; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">🧠 Important Understanding:</p>
+          <p style="margin: 0;">
+            <strong>Even when you "install from UI," what actually happens is:</strong> The UI triggers an internal process that calls the npm CLI (like <code>npm install packagename</code>). The package gets added to <code>package.json</code> and downloaded into <code>node_modules</code> — the same result as running the command yourself. The CLI is just hidden behind a button.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.02)); border-left: 4px solid #22c55e; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">✅ For This Class:</p>
+          <p style="margin: 0;">
+            We recommend learning the CLI first — it's what you'll use in real projects and job interviews. Once you're comfortable, you can use extensions to speed things up. The "npm" extension by eg2 is a good starting point if you want some UI assistance.
+          </p>
+        </div>
+
+        <h3>Understanding React Project Structure</h3>
+        <p>
+          When you create a React app with <code>create-react-app</code>, it generates a standard folder structure. Understanding this structure helps you navigate and organize your code:
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Standard Create React App Structure (JavaScript)</h4>
+          <p style="margin: 8px 0; color: var(--muted); font-size: 14px;">
+            <strong>Note:</strong> This shows the default JavaScript setup. If you use the TypeScript template, files will have <code>.tsx</code> extensions instead of <code>.js</code> (e.g., <code>App.tsx</code>, <code>index.tsx</code>).
+          </p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto; font-size: 13px;"><code>my-first-app/
+├── public/
+│   ├── index.html          # Main HTML file
+│   ├── favicon.ico         # Site icon
+│   └── manifest.json       # App metadata
+├── src/
+│   ├── App.js              # Main App component (App.tsx if TypeScript)
+│   ├── App.css             # App styles
+│   ├── index.js             # Entry point (index.tsx if TypeScript)
+│   ├── index.css            # Global styles
+│   └── components/          # Your custom components (create this)
+├── package.json             # Project dependencies & scripts
+├── package-lock.json        # Locked dependency versions
+└── README.md                # Project documentation</code></pre>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Key Files Explained</h4>
+          <ul style="margin: 12px 0; padding-left: 20px;">
+            <li><strong><code>src/index.js</code></strong> (or <code>index.tsx</code> for TypeScript) — The entry point. This file renders your <code>App</code> component into the HTML.</li>
+            <li><strong><code>src/App.js</code></strong> (or <code>App.tsx</code> for TypeScript) — Your main React component. This is where you'll write most of your application logic.</li>
+            <li><strong><code>public/index.html</code></strong> — The HTML template. In React apps, this file mostly contains <strong>meta tags</strong> (for SEO, social sharing, viewport settings, etc.) and a single <code>&lt;div id="root"&gt;&lt;/div&gt;</code> element where React injects all your components. You rarely need to edit this file — most of your HTML structure is created by React components.</li>
+            <li><strong><code>src/components/</code></strong> — Create this folder to organize your reusable components (e.g., <code>Button.js</code> or <code>Button.tsx</code>, <code>Card.js</code> or <code>Card.tsx</code>).</li>
+          </ul>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">What does index.html look like?</h4>
+          <p style="margin: 8px 0;">Here's a typical <code>public/index.html</code> in a React app:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto; font-size: 13px;"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;meta name="theme-color" content="#000000" /&gt;
+    &lt;meta name="description" content="My React app" /&gt;
+    &lt;title&gt;React App&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;noscript&gt;You need to enable JavaScript to run this app.&lt;/noscript&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    &lt;!-- React injects all components here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            💡 Notice how minimal this is! The <code>&lt;head&gt;</code> contains mostly meta tags, and the <code>&lt;body&gt;</code> has just one <code>&lt;div id="root"&gt;</code> where React renders everything. All your actual HTML structure (headers, buttons, forms, etc.) is created by React components in your <code>src/</code> folder.
+          </p>
+        </div>
+
+        <h3>Creating Your First Component</h3>
+        <p>
+          React apps are built from <strong>components</strong> — reusable pieces of UI. Here's the standard structure for a React component:
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Example: Button Component</h4>
+          <p style="margin: 8px 0;">Create a file: <code>src/components/Button.js</code> (or <code>Button.tsx</code> if using TypeScript)</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>// 1. Import React (required for JSX)
+import React from 'react';
+
+// 2. Define your component (function or class)
+function Button({ text, onClick }) {
+  // 3. Return JSX (looks like HTML but it's JavaScript)
+  return (
+    &lt;button onClick={onClick} className="btn-primary"&gt;
+      {text}
+    &lt;/button&gt;
+  );
+}
+
+// 4. Export the component so other files can use it
+export default Button;</code></pre>
+
+          <h4 style="margin-top: 24px; color: var(--accent);">Using the Component</h4>
+          <p style="margin: 8px 0;">In <code>src/App.js</code> (or <code>App.tsx</code> if using TypeScript), import and use your component:</p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>// Import the component
+import Button from './components/Button';
+
+function App() {
+  const handleClick = () => {
+    alert('Button clicked!');
+  };
+
+  return (
+    &lt;div className="App"&gt;
+      &lt;h1&gt;My App&lt;/h1&gt;
+      &lt;Button text="Click Me" onClick={handleClick} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;</code></pre>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(217,70,239,0.06), rgba(56,189,248,0.06)); border-left: 4px solid var(--accent); border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0;">
+            💡 <strong>Component Best Practices:</strong>
+          </p>
+          <ul style="margin: 8px 0 0; padding-left: 20px;">
+            <li>One component per file (e.g., <code>Button.js</code> or <code>Button.tsx</code> contains only the Button component)</li>
+            <li>Use descriptive names (PascalCase: <code>UserProfile</code>, not <code>userProfile</code>)</li>
+            <li>Keep components small and focused on one task</li>
+            <li>Store reusable components in <code>src/components/</code></li>
+            <li>Use props to pass data from parent to child components</li>
+          </ul>
+        </div>
+
+        <h3>Adding Material UI (MUI) to Your Project</h3>
+        <p>
+          Material UI (MUI) provides beautiful, pre-built React components that follow Google's Material Design principles. Here's how to add it to your project and use your first component.
+        </p>
+        <p>
+          For the official installation guide, see the <a href="https://mui.com/material-ui/getting-started/installation/" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">MUI Installation documentation</a>.
+        </p>
+
+        <h4>Step 1: Install MUI</h4>
+        <p>
+          Navigate to your project folder and install MUI using npm:
+        </p>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 12px 0;">
+          <pre style="margin: 0; overflow-x: auto;"><code>cd my-first-app
+npm install @mui/material @emotion/react @emotion/styled</code></pre>
+        </div>
+        <p style="margin: 8px 0; color: var(--muted); font-size: 14px;">
+          💡 <code>@emotion/react</code> and <code>@emotion/styled</code> are required peer dependencies for MUI's styling system.
+        </p>
+
+        <h4>Step 2: Set Up a Theme (Optional but Recommended)</h4>
+        <p>
+          MUI uses a theme system that lets you customize colors, typography, and spacing across your entire app. Here's how to set up a basic theme:
+        </p>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Create a Theme File</h4>
+          <p style="margin: 8px 0;">Create a new file: <code>src/theme.js</code></p>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Blue
+    },
+    secondary: {
+      main: '#dc004e', // Pink
+    },
+  },
+  typography: {
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+});
+
+export default theme;</code></pre>
+        </div>
+
+        <h4>Step 3: Wrap Your App with ThemeProvider</h4>
+        <p>
+          Update your <code>src/App.js</code> to use the theme:
+        </p>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Updated App.js</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import theme from './theme';
+
+function App() {
+  return (
+    &lt;ThemeProvider theme={theme}&gt;
+      &lt;CssBaseline /&gt;
+      &lt;div className="App"&gt;
+        &lt;h1&gt;My App with MUI&lt;/h1&gt;
+        {/* Your components go here */}
+      &lt;/div&gt;
+    &lt;/ThemeProvider&gt;
+  );
+}
+
+export default App;</code></pre>
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            💡 <code>CssBaseline</code> provides consistent CSS resets across browsers. <code>ThemeProvider</code> makes the theme available to all MUI components.
+          </p>
+        </div>
+
+        <h4>Step 4: Add Your First MUI Component (Button)</h4>
+        <p>
+          Now you can use MUI components! Here's how to add a Button:
+        </p>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
+          <h4 style="margin-top: 0; color: var(--accent);">Using MUI Button in App.js</h4>
+          <pre style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 12px; margin: 8px 0; overflow-x: auto;"><code>import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Button from '@mui/material/Button';
+import theme from './theme';
+
+function App() {
+  const handleClick = () => {
+    alert('MUI Button clicked!');
+  };
+
+  return (
+    &lt;ThemeProvider theme={theme}&gt;
+      &lt;CssBaseline /&gt;
+      &lt;div className="App"&gt;
+        &lt;h1&gt;My App with MUI&lt;/h1&gt;
+        &lt;Button variant="contained" color="primary" onClick={handleClick}&gt;
+          Click Me
+        &lt;/Button&gt;
+        &lt;Button variant="outlined" color="secondary" sx={{ ml: 2 }}&gt;
+          Another Button
+        &lt;/Button&gt;
+      &lt;/div&gt;
+    &lt;/ThemeProvider&gt;
+  );
+}
+
+export default App;</code></pre>
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            💡 MUI Button has built-in variants (<code>contained</code>, <code>outlined</code>, <code>text</code>) and uses your theme colors automatically. The <code>sx</code> prop lets you add custom styles.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(14,165,233,0.08), rgba(14,165,233,0.02)); border-left: 4px solid #0ea5e9; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0 0 8px; font-weight: 600;">🎨 Customizing Your Theme:</p>
+          <p style="margin: 0;">
+            You can customize colors, typography, spacing, and more in your theme file. Visit the <a href="https://mui.com/material-ui/customization/theming/" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">MUI Theming documentation</a> to learn about all available options.
           </p>
         </div>
 
         <div style="background: linear-gradient(135deg, rgba(217,70,239,0.06), rgba(56,189,248,0.06)); border-left: 4px solid var(--accent); border-radius: 12px; padding: 18px; margin: 24px 0;">
           <p style="margin: 0;">
-            ✅ <strong>You're all set!</strong> Once you've completed these steps, you have everything you need to start building React applications. The next section will explain how React works under the hood.
+            ✅ <strong>You're all set!</strong> Once you've completed these steps, you have everything you need to start building React applications with MUI. The next section will explain how React works under the hood.
           </p>
         </div>
 
@@ -311,11 +632,163 @@ function Card() {
           </p>
         </div>
 
+        <h2 id="build-tools">Choosing Your Build Tool: Vite or Next.js</h2>
+        <p>
+          As we move toward the final project, it's time to decide which build tool to use for your web app.
+          Both <strong>Vite</strong> and <strong>Next.js</strong> are excellent, modern choices — they simply serve slightly different purposes.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(56,189,248,0.02)); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0;">
+            💡 <strong>Important:</strong> You'll be graded on <em>functionality, clarity, code quality, use of Git, and reflection</em> — not on which framework you choose.
+          </p>
+        </div>
+
+        <h3 id="vite">Vite (Recommended for this course)</h3>
+        <p>
+          <strong>Vite</strong> is fast, minimal, and beginner-friendly. It's perfect for learning React and Tailwind CSS without extra configuration.
+          If you're unsure which to pick — start with Vite.
+        </p>
+        <ul>
+          <li>⚡ Extremely fast dev server and build times</li>
+          <li>🎯 Great for single-page apps and prototypes</li>
+          <li>🧩 Works perfectly with Tailwind CSS and MUI</li>
+          <li>☁️ Easy to host (GitHub Pages, Netlify, or Vercel)</li>
+        </ul>
+
+        <h4>🧰 Create a Vite + React app</h4>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 12px 0;">
+          <pre style="margin: 0; overflow-x: auto;"><code># Create app
+npm create vite@latest my-app -- --template react
+
+# Enter folder
+cd my-app
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev</code></pre>
+        </div>
+        <p style="color: var(--muted); font-size: 14px;">
+          Visit <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">vitejs.dev</a> for full documentation.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(56,189,248,0.02)); border-left: 4px solid #38bdf8; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0;">
+            💬 <strong>When to choose Vite:</strong> Use it if you're building a single-page site, dashboard, or interactive tool that runs in the browser only. You'll learn faster and spend less time on setup.
+          </p>
+        </div>
+
+        <h3 id="nextjs">Next.js (Optional)</h3>
+        <p>
+          <strong>Next.js</strong> builds on top of React and adds features like routing, server-side rendering (SSR), and static generation (SSG).
+          It's ideal for projects that need better SEO, dynamic routing, or content loading from a server.
+        </p>
+        <ul>
+          <li>🗂️ Built-in page routing (no extra setup)</li>
+          <li>🌍 Great for multi-page, SEO-friendly sites</li>
+          <li>⚙️ Supports SSR/SSG for faster load times</li>
+          <li>🧠 Slightly more complex but very powerful</li>
+        </ul>
+
+        <h4>🚀 Create a Next.js app</h4>
+        <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 12px 0;">
+          <pre style="margin: 0; overflow-x: auto;"><code># Create app
+npx create-next-app@latest my-app
+
+# Enter folder
+cd my-app
+
+# Run development server
+npm run dev</code></pre>
+        </div>
+        <p style="color: var(--muted); font-size: 14px;">
+          Visit <a href="https://nextjs.org/docs" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">nextjs.org/docs</a> for documentation.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(56,189,248,0.02)); border-left: 4px solid #38bdf8; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0;">
+            💬 <strong>When to choose Next.js:</strong> Pick it if your project idea involves multiple pages, SEO optimization, or server-rendered content — for example, a blog, portfolio site, or startup landing page.
+          </p>
+        </div>
+
+        <h3 id="comparison">Quick Comparison</h3>
+        <div style="overflow-x: auto; margin: 20px 0;">
+          <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 8px;">
+            <thead>
+              <tr style="background: rgba(56,189,248,0.1);">
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid var(--border);">Feature</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid var(--border);">Vite</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid var(--border);">Next.js</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);"><strong>Best for</strong></td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">Single-page apps, prototypes</td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">SEO-heavy or multi-page sites</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);"><strong>Setup speed</strong></td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">Very fast</td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">Moderate</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);"><strong>Routing</strong></td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">Manual setup (React Router)</td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">Built-in file-based routing</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);"><strong>Server-side rendering</strong></td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">❌ No</td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">✅ Yes</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);"><strong>Hosting</strong></td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">Easy (static)</td>
+                <td style="padding: 12px; border-bottom: 1px solid var(--border);">Easy (Vercel)</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px;"><strong>Learning curve</strong></td>
+                <td style="padding: 12px;">Beginner-friendly</td>
+                <td style="padding: 12px;">Intermediate</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="final">Final Notes</h3>
+        <p>
+          You're free to experiment with either tool. Sometimes it's common to start with Vite for its simplicity and speed, and later explore Next.js if your project needs features like server-side rendering or built-in routing.
+        </p>
+        <p>
+          Your grade focuses on how you apply what you've learned — not the specific tool you choose.
+          Use version control (Git), document your process, and have fun building something meaningful.
+        </p>
+
+        <div style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.02)); border-left: 4px solid #22c55e; border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0;">
+            ✅ <strong>Recommended setup for most students:</strong><br />
+            <code>Vite + React + Tailwind</code> — simple, fast, and flexible enough for everything you'll need in this course.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(217,70,239,0.06), rgba(56,189,248,0.06)); border-left: 4px solid var(--accent); border-radius: 12px; padding: 18px; margin: 24px 0;">
+          <p style="margin: 0;">
+            💡 <strong>Optional challenges:</strong><br />
+            - Try adding MUI components to your project<br />
+            - Deploy your app on Netlify or Vercel<br />
+            - Experiment with an open-source AI API if you want (not required)
+          </p>
+        </div>
+
         <h2>Next Steps</h2>
         <p>
           Ready to dive deeper? Check out the official documentation:
         </p>
         <ul>
+          <li><a href="https://create-react-app.dev/docs/getting-started/" target="_blank" rel="noopener noreferrer">Create React App Documentation</a> — Official guide for setting up React projects (recommended)</li>
           <li><a href="https://react.dev" target="_blank" rel="noopener noreferrer">React Documentation</a> — Learn React step by step</li>
           <li><a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer">Tailwind CSS</a> — Utility-first CSS framework</li>
           <li><a href="https://mui.com" target="_blank" rel="noopener noreferrer">Material UI</a> — React component library</li>
