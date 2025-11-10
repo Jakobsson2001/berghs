@@ -365,14 +365,14 @@ button[type="button"]:hover,
 
 /* Content */
 main {
-  padding: 24px 0 64px;
+  padding: 32px 0 80px;
 }
 
 .prose {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 20px; /* match hero */
-  padding: 32px;       /* match hero */
+  padding: 40px 36px;  /* increased padding for better breathing room */
   box-shadow: var(--shadow);
 }
 
@@ -402,9 +402,37 @@ main {
   text-decoration: underline;
 }
 
+.prose h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
 .prose h2 {
   position: relative;
-  padding-top: 6px;
+  padding-top: 8px;
+  margin-top: 48px;  /* more space before h2 sections */
+  margin-bottom: 16px;
+}
+
+.prose h3 {
+  margin-top: 32px;   /* space before h3 */
+  margin-bottom: 12px;
+}
+
+.prose p {
+  margin: 16px 0;    /* increased paragraph spacing */
+  line-height: 1.7;  /* better line height for readability */
+}
+
+.prose ul,
+.prose ol {
+  margin: 16px 0 16px 24px;  /* better list spacing */
+  padding-left: 8px;
+}
+
+.prose li {
+  margin: 8px 0;      /* spacing between list items */
+  line-height: 1.7;
 }
 
 .prose h2::after {
@@ -641,8 +669,21 @@ main {
   box-shadow: 0 10px 30px rgba(239,68,68,0.22);
 }
 
-.prose h2 {
+/* Additional spacing improvements */
+.prose > *:first-child {
   margin-top: 0;
+}
+
+.prose > *:last-child {
+  margin-bottom: 0;
+}
+
+.prose pre {
+  margin: 20px 0;  /* more space around code blocks */
+}
+
+.prose figure {
+  margin: 24px 0;   /* more space around figures */
 }
 
 .prose a {
@@ -652,11 +693,42 @@ main {
 footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
-  padding: 28px 0 40px;
+  padding: 40px 0 48px;
+  margin-top: 48px;  /* space above footer */
+}
+
+footer .container {
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 15px;
 }
 
 /* Mobile */
 @media (max-width: 720px) {
+  .prose {
+    padding: 24px 20px;  /* reduced padding on mobile */
+  }
+
+  .prose h2 {
+    margin-top: 36px;    /* slightly less space on mobile */
+  }
+
+  .prose h3 {
+    margin-top: 24px;
+  }
+
+  .prose p {
+    margin: 14px 0;      /* slightly less paragraph spacing on mobile */
+  }
+
+  footer {
+    padding: 32px 0 40px;
+    margin-top: 32px;
+  }
+
   .nav-toggle {
     display: inline-flex;
     align-items: center;

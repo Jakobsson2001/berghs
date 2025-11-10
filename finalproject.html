@@ -4,36 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Final Project – Programming & Methods Pt. 1</title>
-    <style>
-      :root{
-        --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --accent:#4f46e5; --line:#e5e7eb;
-      }
-      html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, sans-serif;}
-      .wrap{max-width:960px;margin:0 auto;padding:32px 20px 64px;}
-      h1{font-size:2rem;margin:0 0 8px}
-      h2{font-size:1.375rem;margin:24px 0 8px}
-      h3{font-size:1.05rem;margin:16px 0 6px}
-      p{margin:10px 0;color:var(--ink)}
-      .muted{color:var(--muted)}
-      .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0;box-shadow:0 1px 0 rgba(15,23,42,.03)}
-      .list{margin:8px 0 8px 20px}
-      .tip{border-left:4px solid var(--accent);padding:8px 12px;margin:12px 0;background:#eef2ff}
-      a{color:var(--accent);text-decoration:none}
-      a:hover{text-decoration:underline}
-      code{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:6px;padding:1px 6px;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
-      .header{padding:18px 0 10px;border-bottom:1px solid var(--line);margin-bottom:10px}
-    </style>
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
     <div id="header-container"></div>
 
-    <div class="wrap">
-      <header class="header">
+    <main>
+      <div class="container prose">
         <h1>🎯 Final Project – Bringing It All Together</h1>
-        <p class="muted">Programming & Methods Pt. 1 • Berghs School of Communication</p>
-      </header>
+        <p style="color: var(--muted); margin-bottom: 32px; font-size: 17px;">Programming & Methods Pt. 1 • Berghs School of Communication</p>
 
-      <section class="card">
         <h2>Overview</h2>
         <p>
           In the final part of the course you'll build an individual or small-team project that shows your ability to combine
@@ -44,29 +24,23 @@
           Pick a concept you care about: a portfolio, a company site, a small product prototype, or something experimental.
           Make it meaningful and achievable within the timeframe.
         </p>
-      </section>
 
-      <section class="card">
         <h2>When to Start</h2>
         <p>
           Most focused build time is in the <strong>last week</strong>, but I strongly recommend you start earlier:
           explore ideas, try stacks (React, Tailwind, simple APIs), and set up your repo.
           Starting now makes it easier to ask for help and iterate calmly.
         </p>
-      </section>
 
-      <section class="card">
         <h2>Technical Requirements</h2>
-        <ul class="list">
+        <ul>
           <li>Use <strong>Git</strong> for version control (frequent commits, branching, PRs).</li>
           <li>Include <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> — or use a framework such as <strong>React</strong>.</li>
           <li><em>Recommended:</em> <strong>Tailwind CSS</strong> and/or <strong>MUI</strong> for consistent, fast styling.</li>
           <li><em>Recommended:</em> connect to a simple <strong>API</strong> or an <strong>AI model</strong> (optional if cost is an issue).</li>
           <li><em>Optional:</em> host on <strong>Vercel</strong>, <strong>Netlify</strong> or <strong>GitHub Pages</strong>.</li>
         </ul>
-      </section>
 
-      <section class="card">
         <h2>Working With or Without a Backend</h2>
         <p>
           If your idea is primarily a <strong>static front-end</strong> (portfolio, company site, landing page), that's fine for the final deliverable.
@@ -74,35 +48,31 @@
           <code>backend/experiment</code> where you try a lightweight Python/Node API or data handling.
           <strong>Do not merge</strong> this branch into your production branch unless you truly need it.
         </p>
-        <div class="tip">💡 Keep production clean. Use branches to explore safely.</div>
-      </section>
+        <div style="border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; background: rgba(217,70,239,0.08); border-radius: 6px; line-height: 1.6;">
+          💡 <strong>Tip:</strong> Keep production clean. Use branches to explore safely.
+        </div>
 
-      <section class="card">
         <h2>GitHub & Collaboration Setup</h2>
         <p>
           Invite me to your repository on GitHub: <strong>jakobsson2001</strong>.
           This lets me review your <em>commit history</em>, <em>branching strategy</em> and overall Git hygiene.
         </p>
-        <ul class="list">
+        <ul>
           <li>Work in <strong>branches</strong> (e.g., <code>feature/...</code>, <code>fix/...</code>, <code>experiment/...</code>).</li>
           <li>Open <strong>pull requests</strong> (PRs) to merge changes — even when working solo.</li>
           <li><strong>Review your own PRs</strong> or use AI tools (Cursor Auto Mode, Lovable, Copilot) to comment on diffs.</li>
           <li>Prefer <strong>Squash &amp; merge</strong> to keep history tidy.</li>
           <li>Write clear, descriptive commit messages.</li>
         </ul>
-      </section>
 
-      <section class="card">
         <h2>Project Management (Trello + GitHub)</h2>
         <p>
           Create a simple Trello board (Backlog → In Progress → Done). For each card, create a matching branch and PR.
           This gives you checkpoints and makes scope visible. Treat it like a real project, even if you're working alone.
         </p>
-      </section>
 
-      <section class="card">
         <h2>Two Recommended Workflows</h2>
-        <ul class="list">
+        <ul>
           <li>
             <strong>Option 1 — Start with Lovable:</strong> Prototype quickly, then export or rebuild parts locally in an IDE
             (e.g., Cursor) for finer control, Git discipline, and final polish.
@@ -116,51 +86,43 @@
           Choose the path that fits how you like to work. Remember: <em>we don't want to reinvent the wheel</em> —
           use frameworks and libraries to move faster and focus on design, logic, and content.
         </p>
-      </section>
 
-      <section class="card">
         <h2>Grading Criteria</h2>
         <h3>Pass (P)</h3>
-        <ul class="list">
+        <ul>
           <li>Shows understanding of fundamentals (HTML, CSS, JS, Git).</li>
           <li>Working front-end with at least one interactive element.</li>
           <li>Consistent Git usage (commits/branches/PRs) and a clear repo.</li>
           <li><strong>README.md</strong> (markdown format) with short reflection on process and learning.</li>
         </ul>
         <h3>Pass with Distinction (PD)</h3>
-        <ul class="list">
+        <ul>
           <li>Demonstrates independent problem solving and thoughtful design choices.</li>
           <li>Explores back-end concepts/APIs/data handling (a separate branch is acceptable).</li>
           <li>Smart, transparent use of AI-assisted tools with notes in the README.md.</li>
           <li>Professional Git workflow: branches, PRs, reviews, and clean history (squash merges).</li>
         </ul>
-        <p class="muted" style="margin-top: 12px;">
+        <p style="color: var(--muted); margin-top: 12px;">
           <em>Note:</em> Frameworks (React, Tailwind, MUI) are recommended but not required. Using HTML/CSS is perfectly acceptable — choose the approach that best fits your project.
         </p>
-      </section>
 
-      <section class="card">
         <h2>Presentation & Submission</h2>
-        <ul class="list">
+        <ul>
           <li>Final presentations: <strong>around November 26</strong>.</li>
           <li>Submit your <strong>GitHub repository link</strong> via Canvas. The <strong>README.md</strong> (markdown format) should be in your repository — it's not too important to post it separately on Canvas since I can view it directly on GitHub where it will render nicely.</li>
           <li>If deployed, include the <strong>live link</strong> (optional but encouraged).</li>
         </ul>
-        <p class="muted">
+        <p style="color: var(--muted);">
           Unsure about your idea or setup? Reach out early — it's much easier to guide you before the final week.
         </p>
-      </section>
-    </div>
+      </div>
+    </main>
 
-    <footer>
-      <div class="container">&copy; <span id="year"></span> Berghs Class</div>
-    </footer>
+    <div id="footer-container"></div>
 
     <script src="assets/header.js"></script>
+    <script src="assets/footer.js"></script>
     <script src="assets/script.js"></script>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>
 
