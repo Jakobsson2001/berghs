@@ -165,6 +165,7 @@ if __name__ == '__main__':
         <h4>MongoDB (Recommended)</h4>
         <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0;">
           <p style="margin: 8px 0;"><strong>MongoDB</strong> is a flexible NoSQL database that's great for learning and real projects. It stores data as documents (like JSON), which is intuitive for beginners.</p>
+          <p style="margin: 8px 0;">MongoDB is excellent for handling files, images, and other binary data. You can store file metadata (like filenames, sizes, upload dates) in documents, and use MongoDB's <strong>GridFS</strong> feature to store large files directly in the database. This makes it perfect for projects that need to manage user uploads, images, PDFs, or other file types.</p>
           
           <h4 style="margin-top: 16px; color: var(--accent);">Option 1: MongoDB Atlas (Cloud - Free Tier)</h4>
           <ol style="margin: 12px 0; padding-left: 20px;">
@@ -195,6 +196,9 @@ collection.insert_one({'name': 'Alice', 'age': 30})
 
 # Find data
 users = collection.find({'name': 'Alice'})</code></pre>
+          <p style="margin: 12px 0 0; color: var(--muted); font-size: 14px;">
+            💡 <strong>Recommended tutorial:</strong> If you're using Next.js instead of Python, check out <a href="https://medium.com/@turingvang/next-js-beginner-mongodb-crud-example-tutorial-db2afdb68e25" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">Next.js Beginner MongoDB CRUD Example Tutorial</a> for a step-by-step guide on connecting Next.js to MongoDB.
+          </p>
         </div>
 
         <h4>SQLite (For Simple Projects)</h4>
@@ -260,6 +264,7 @@ conn.close()</code></pre>
               <li>Works great with Python</li>
               <li>Free cloud tier (MongoDB Atlas)</li>
               <li>Intuitive JSON-like data structure</li>
+              <li>Great for handling files, images, and binary data</li>
             </ul>
           </div>
 
@@ -497,7 +502,7 @@ function UserList() {
           <div style="background: linear-gradient(180deg, rgba(168,85,247,0.10), rgba(168,85,247,0.02)); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
             <h4 style="margin: 0 0 8px; font-size: 18px;">🍃 MongoDB</h4>
             <p style="margin: 0; font-size: 14px; color: var(--muted);">
-              Recommended for learning and real projects. Flexible NoSQL database that works great with Python.
+              Recommended for learning and real projects. Flexible NoSQL database that works great with Python and handles files, images, and binary data.
             </p>
           </div>
 
@@ -535,6 +540,7 @@ function UserList() {
         <h2 id="resources">Additional Resources</h2>
         <ul>
           <li><a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer">MongoDB Documentation</a> — Learn about MongoDB and how to use it</li>
+          <li><a href="https://medium.com/@turingvang/next-js-beginner-mongodb-crud-example-tutorial-db2afdb68e25" target="_blank" rel="noopener noreferrer">Next.js + MongoDB CRUD Tutorial</a> — Practical guide for connecting Next.js to MongoDB (recommended if using Next.js)</li>
           <li><a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask Documentation</a> — Python web framework</li>
           <li><a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI Documentation</a> — Modern Python API framework</li>
           <li><a href="https://www.sqlite.org/docs.html" target="_blank" rel="noopener noreferrer">SQLite Documentation</a> — Learn about SQLite database</li>
