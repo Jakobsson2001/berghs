@@ -1,0 +1,24 @@
+import { ReactNode } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import { Box } from '@mui/material';
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Header />
+      <Box component="main" sx={{ flex: 1, py: 4 }}>
+        {children}
+      </Box>
+      <Footer />
+    </Box>
+  );
+};
+
+export default Layout;
+
+
