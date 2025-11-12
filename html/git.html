@@ -169,6 +169,113 @@
       /* Focus visibility */
       :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
 
+      /* Stepper component */
+      .stepper-container {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin: 32px 0;
+        box-shadow: var(--shadow);
+      }
+      .stepper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        margin-bottom: 32px;
+      }
+      .stepper::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 5%;
+        right: 5%;
+        height: 2px;
+        background: var(--border);
+        z-index: 0;
+      }
+      .step {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+      }
+      .step-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--border);
+        color: var(--muted);
+        margin-bottom: 12px;
+        transition: all 0.3s;
+        font-size: 20px;
+      }
+      .step.active .step-icon {
+        background: var(--accent2);
+        color: white;
+      }
+      .step-label {
+        text-align: center;
+        margin-top: 8px;
+      }
+      .step-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+      .step-description {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .prompt-container {
+        background: #0d142a;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 24px;
+        margin-bottom: 16px;
+        min-height: 200px;
+      }
+      .prompt-label {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .prompt-content {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 16px;
+        margin-bottom: 16px;
+        color: #bae6fd;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: pre-wrap;
+      }
+      .stepper-nav {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+      }
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
       /* Octocat runner */
       .octo { position: fixed; left: -60px; bottom: 24px; z-index: 60; font-size: 32px; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.5)); pointer-events: none; }
       .octo.run { animation: runAcross 1.6s linear both; }
@@ -336,6 +443,51 @@ git push -u origin feat/login
         </div>
       </section>
 
+      <!-- Section: Learn Git with ChatGPT -->
+      <section id="chatgpt-stepper" aria-labelledby="stepper-title">
+        <div class="container">
+          <h2 id="stepper-title">Learn Git with ChatGPT</h2>
+          <p class="muted">Use these prompts with ChatGPT to learn Git step by step. Each prompt is designed to help you understand different aspects of version control.</p>
+          
+          <div class="stepper-container">
+            <div class="stepper" id="stepper" role="tablist">
+              <div class="step active" data-step="0" role="tab">
+                <div class="step-icon">▶</div>
+                <div class="step-label">
+                  <div class="step-title">Get Started</div>
+                  <div class="step-description">Learn the basics</div>
+                </div>
+              </div>
+              <div class="step" data-step="1" role="tab">
+                <div class="step-icon">🌳</div>
+                <div class="step-label">
+                  <div class="step-title">Work Together</div>
+                  <div class="step-description">Branches & collaboration</div>
+                </div>
+              </div>
+              <div class="step" data-step="2" role="tab">
+                <div class="step-icon">🎓</div>
+                <div class="step-label">
+                  <div class="step-title">Best Practices</div>
+                  <div class="step-description">Professional workflows</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prompt-container">
+              <div class="prompt-label">💬 ChatGPT Prompt:</div>
+              <div class="prompt-content" id="prompt-content"></div>
+              <button class="btn" id="copy-btn">Copy Prompt</button>
+            </div>
+
+            <div class="stepper-nav">
+              <button class="btn secondary" id="back-btn" disabled>Back</button>
+              <button class="btn" id="next-btn">Next</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Mini-quiz -->
       <section id="quiz" aria-labelledby="quiz-title">
         <div class="container">
@@ -349,7 +501,6 @@ git push -u origin feat/login
           </div>
         </div>
       </section>
->>>>>>> ad96bda6a467ed187d359efa652b3c7ddca9cea7
     </main>
 
     <footer role="contentinfo">
@@ -372,6 +523,101 @@ git push -u origin feat/login
         entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
       }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
       sections.forEach(s => io.observe(s));
+
+      // Stepper functionality
+      const steps = [
+        {
+          label: 'Get Started',
+          description: 'Learn the basics',
+          prompt: 'I\'m a beginner learning Git for version control. Can you explain how to initialize a Git repository, make my first commit, and understand the basic workflow? Please provide step-by-step instructions with examples I can follow.'
+        },
+        {
+          label: 'Work Together',
+          description: 'Branches & collaboration',
+          prompt: 'I need help understanding Git branches and how to collaborate with others. Can you explain how to create branches, switch between them, merge changes, and handle conflicts? Also, how do I push my code to GitHub and work with remote repositories?'
+        },
+        {
+          label: 'Best Practices',
+          description: 'Professional workflows',
+          prompt: 'I want to learn Git best practices for my backend project. Can you explain common workflows like feature branches, pull requests, and how to write good commit messages? Also, what are some common mistakes beginners make and how can I avoid them?'
+        }
+      ];
+
+      let activeStep = 0;
+      const stepperEl = document.getElementById('stepper');
+      const promptContentEl = document.getElementById('prompt-content');
+      const backBtn = document.getElementById('back-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const copyBtn = document.getElementById('copy-btn');
+      const stepElements = stepperEl.querySelectorAll('.step');
+
+      function updateStepper() {
+        // Update step classes
+        stepElements.forEach((step, index) => {
+          if (index === activeStep) {
+            step.classList.add('active');
+          } else {
+            step.classList.remove('active');
+          }
+        });
+
+        // Update prompt content
+        promptContentEl.textContent = steps[activeStep].prompt;
+
+        // Update button states
+        backBtn.disabled = activeStep === 0;
+        nextBtn.disabled = activeStep === steps.length - 1;
+      }
+
+      // Step click handlers
+      stepElements.forEach((step, index) => {
+        step.addEventListener('click', () => {
+          activeStep = index;
+          updateStepper();
+        });
+      });
+
+      // Navigation buttons
+      backBtn.addEventListener('click', () => {
+        if (activeStep > 0) {
+          activeStep--;
+          updateStepper();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (activeStep < steps.length - 1) {
+          activeStep++;
+          updateStepper();
+        }
+      });
+
+      // Copy button
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(steps[activeStep].prompt).then(() => {
+          const originalText = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => {
+            copyBtn.textContent = originalText;
+          }, 2000);
+        }).catch(() => {
+          // Fallback for older browsers
+          const textarea = document.createElement('textarea');
+          textarea.value = steps[activeStep].prompt;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+          const originalText = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => {
+            copyBtn.textContent = originalText;
+          }, 2000);
+        });
+      });
+
+      // Initialize stepper
+      updateStepper();
 
       // Quiz data
       const questions = [
