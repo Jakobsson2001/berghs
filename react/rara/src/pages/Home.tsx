@@ -6,7 +6,9 @@ const Home = () => {
     { href: '/html', title: 'HTML', description: 'Structure content with semantic markup and accessible patterns.' },
     { href: '/css', title: 'CSS', description: 'Style your pages with responsive, modern layouts.' },
     { href: '/javascript', title: 'JavaScript', description: 'Add interactivity and dynamic behavior using vanilla JS.' },
-    { href: '/backend', title: 'Backend', description: 'Databases, APIs, and connecting frontend to backend.' },
+    { href: '/backend', title: 'Backend', description: 'APIs, secrets protection, and connecting to external services.' },
+    { href: '/resources', title: 'Resources', description: 'CMS and email service recommendations for your projects.' },
+    { href: '/spin-the-wheel', title: '🎡 Spin the Wheel', description: 'Live example: React frontend connecting to Flask backend (no database!).' },
     { href: '/git', title: 'Git', description: 'Version control fundamentals and everyday workflows.' },
     { href: '/finalproject', title: 'Final Project', description: 'Bringing it all together — build your final project.' },
   ];
@@ -84,6 +86,37 @@ const Home = () => {
               </CardContent>
             </Card>
           ))}
+        </Box>
+
+        <Box
+          sx={{
+            background: 'linear-gradient(135deg, rgba(217,70,239,0.10), rgba(59,130,246,0.10))',
+            border: '1px solid var(--border)',
+            borderRadius: 4,
+            p: 3,
+            mb: 4,
+          }}
+        >
+          <Typography variant="h3" sx={{ fontSize: '20px', mb: 1, color: 'var(--text)' }}>
+            🎯 Don't Reinvent the Wheel
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'var(--text)', lineHeight: 1.7, mb: 1.5 }}>
+            Prefer CMS and email services for content and messaging. Use a thin backend to protect keys and validate input. <strong>Databases are optional.</strong>
+          </Typography>
+          <Box
+            sx={{
+              borderLeft: '3px solid var(--accent)',
+              pl: 2,
+              mb: 1.5,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--text)', lineHeight: 1.7, fontWeight: 500, mb: 0.5 }}>
+              Frontend = what users touch. Backend = where secrets live and decisions happen. CMS = editable content without code.
+            </Typography>
+          </Box>
+          <Typography variant="body2" sx={{ color: 'var(--muted)', lineHeight: 1.6, fontSize: '14px' }}>
+            You need a backend when you must hide keys, validate input, or call services securely. For this course, build a thin backend (Next.js API routes or Flask) and integrate CMS/email — no database required.
+          </Typography>
         </Box>
 
         <Box component="figure" sx={{ m: 0, mb: 4 }}>

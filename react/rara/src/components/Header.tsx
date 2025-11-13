@@ -13,6 +13,8 @@ const Header = () => {
     { href: '/javascript', text: 'JavaScript' },
     { href: '/frameworks', text: 'Frameworks' },
     { href: '/backend', text: 'Backend' },
+    { href: '/resources', text: 'Resources' },
+    { href: '/spin-the-wheel', text: '🎡 Spin Wheel' },
     { href: '/git', text: 'Git' },
     { href: '/finalproject', text: 'Final Project' },
   ];
