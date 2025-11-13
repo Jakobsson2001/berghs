@@ -1,14 +1,12 @@
-# Example: Flask Backend for Spin the Wheel App
-# File: server/app.py
-# This is a simple backend with in-memory storage (no database required!)
-# Perfect for learning: demonstrates GET, POST, DELETE endpoints
+# Spin the Wheel Game Routes
+# Handles all endpoints for the spin the wheel game
 
-from flask import Flask, jsonify, request
-from flask_cors import CORS  # Allows frontend to call this API
+from flask import Blueprint, jsonify, request
 import random
+import urllib.parse
 
-app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+# Create a Blueprint for spin the wheel routes
+spin_the_wheel_bp = Blueprint('spin_the_wheel', __name__)
 
 # In-memory storage (starts with initial names)
 # No database needed - this list lives in memory while the server runs
@@ -31,7 +29,7 @@ names = [
     "Zorro",
 ]
 
-@app.route('/api/names', methods=['GET'])
+@spin_the_wheel_bp.route('/api/names', methods=['GET'])
 def get_names():
     """Get all names in the list"""
     return jsonify({
@@ -39,7 +37,7 @@ def get_names():
         'count': len(names)
     })
 
-@app.route('/api/names', methods=['POST'])
+@spin_the_wheel_bp.route('/api/names', methods=['POST'])
 def add_name():
     """Add a new name to the list"""
     data = request.get_json()
@@ -63,11 +61,10 @@ def add_name():
         'count': len(names)
     }), 201
 
-@app.route('/api/names/<name>', methods=['DELETE'])
+@spin_the_wheel_bp.route('/api/names/<name>', methods=['DELETE'])
 def remove_name(name):
     """Remove a name from the list"""
     # Decode URL-encoded name (handles spaces, special characters)
-    import urllib.parse
     decoded_name = urllib.parse.unquote(name)
     
     if decoded_name not in names:
@@ -82,7 +79,7 @@ def remove_name(name):
         'count': len(names)
     })
 
-@app.route('/api/spin', methods=['GET'])
+@spin_the_wheel_bp.route('/api/spin', methods=['GET'])
 def spin_wheel():
     """Randomly select a name from the list (spin the wheel!)"""
     if not names:
@@ -96,7 +93,7 @@ def spin_wheel():
         'remaining_count': len(names)
     })
 
-@app.route('/api/reset', methods=['POST'])
+@spin_the_wheel_bp.route('/api/reset', methods=['POST'])
 def reset_names():
     """Reset the list to initial names (useful for testing)"""
     global names
@@ -107,16 +104,4 @@ def reset_names():
         'names': names,
         'count': len(names)
     })
-
-if __name__ == '__main__':
-    print("🎡 Spin the Wheel Backend Server")
-    print("=" * 40)
-    print("Available endpoints:")
-    print("  GET    /api/names      - Get all names")
-    print("  POST   /api/names      - Add a name (body: {'name': 'John Doe'})")
-    print("  DELETE /api/names/<name> - Remove a name")
-    print("  GET    /api/spin       - Randomly select a name")
-    print("  POST   /api/reset      - Reset to initial names")
-    print("=" * 40)
-    app.run(debug=True, port=5000)
 

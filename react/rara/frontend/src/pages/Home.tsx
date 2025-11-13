@@ -8,7 +8,7 @@ const Home = () => {
     { href: '/javascript', title: 'JavaScript', description: 'Add interactivity and dynamic behavior using vanilla JS.' },
     { href: '/backend', title: 'Backend', description: 'APIs, secrets protection, and connecting to external services.' },
     { href: '/resources', title: 'Resources', description: 'CMS and email service recommendations for your projects.' },
-    { href: '/spin-the-wheel', title: '🎡 Spin the Wheel', description: 'Live example: React frontend connecting to Flask backend (no database!).' },
+    { href: '/minigame', title: '🎮 Mini Games', description: 'Interactive games: Spin the Wheel and Memory Game connecting React frontend to Flask backend (no database!).' },
     { href: '/git', title: 'Git', description: 'Version control fundamentals and everyday workflows.' },
     { href: '/finalproject', title: 'Final Project', description: 'Bringing it all together — build your final project.' },
   ];

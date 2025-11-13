@@ -11,12 +11,15 @@ cURL is a command-line tool for making HTTP requests. It's perfect for testing y
 
 Make sure your Flask backend is running:
 ```bash
-python flask-spin-the-wheel.py
+cd backend
+python app.py
 ```
 
 ## cURL Examples
 
-### 1. Get All Names (GET)
+### Spin the Wheel Endpoints
+
+#### 1. Get All Names (GET)
 
 ```bash
 curl http://localhost:5000/api/names
@@ -39,7 +42,7 @@ curl http://localhost:5000/api/names
 curl http://localhost:5000/api/names | jq
 ```
 
-### 2. Add a Name (POST)
+#### 2. Add a Name (POST)
 
 ```bash
 curl -X POST http://localhost:5000/api/names \
@@ -62,7 +65,7 @@ curl -X POST http://localhost:5000/api/names \
 curl -X POST http://localhost:5000/api/names -H "Content-Type: application/json" -d '{\"name\": \"Test Person\"}'
 ```
 
-### 3. Remove a Name (DELETE)
+#### 3. Remove a Name (DELETE)
 
 ```bash
 curl -X DELETE "http://localhost:5000/api/names/Test%20Person"
@@ -83,7 +86,7 @@ curl -X DELETE "http://localhost:5000/api/names/Test Person"
 }
 ```
 
-### 4. Spin the Wheel (GET)
+#### 4. Spin the Wheel (GET)
 
 ```bash
 curl http://localhost:5000/api/spin
@@ -98,7 +101,7 @@ curl http://localhost:5000/api/spin
 }
 ```
 
-### 5. Reset Names (POST)
+#### 5. Reset Names (POST)
 
 ```bash
 curl -X POST http://localhost:5000/api/reset
@@ -114,11 +117,83 @@ curl -X POST http://localhost:5000/api/reset
 }
 ```
 
+### Memory Game Endpoints
+
+#### 1. Start New Game (POST)
+
+```bash
+curl -X POST http://localhost:5000/api/memory/new
+```
+
+**Response:**
+```json
+{
+  "ok": true,
+  "message": "New game started",
+  "cards": [...],
+  "matches": 0,
+  "moves": 0
+}
+```
+
+#### 2. Get Game State (GET)
+
+```bash
+curl http://localhost:5000/api/memory/state
+```
+
+**Response:**
+```json
+{
+  "ok": true,
+  "cards": [...],
+  "matches": 0,
+  "moves": 0
+}
+```
+
+#### 3. Flip a Card (POST)
+
+```bash
+curl -X POST http://localhost:5000/api/memory/flip \
+  -H "Content-Type: application/json" \
+  -d '{"cardId": 0}'
+```
+
+**Response:**
+```json
+{
+  "ok": true,
+  "cards": [...],
+  "isMatch": false,
+  "matches": 0,
+  "moves": 1,
+  "flippedCards": [0, 1]
+}
+```
+
+#### 4. Reset Flipped Cards (POST)
+
+```bash
+curl -X POST http://localhost:5000/api/memory/reset
+```
+
+**Response:**
+```json
+{
+  "ok": true,
+  "cards": [...],
+  "matches": 0,
+  "moves": 1
+}
+```
+
 ## Testing Workflow Example
 
 Here's a complete workflow to test all endpoints:
 
 ```bash
+# Spin the Wheel
 # 1. Get initial names
 curl http://localhost:5000/api/names
 
@@ -136,8 +211,17 @@ curl http://localhost:5000/api/spin
 # 5. Remove the name we added
 curl -X DELETE "http://localhost:5000/api/names/New%20Student"
 
-# 6. Reset everything
-curl -X POST http://localhost:5000/api/reset
+# Memory Game
+# 6. Start a new memory game
+curl -X POST http://localhost:5000/api/memory/new
+
+# 7. Get game state
+curl http://localhost:5000/api/memory/state
+
+# 8. Flip a card
+curl -X POST http://localhost:5000/api/memory/flip \
+  -H "Content-Type: application/json" \
+  -d '{"cardId": 0}'
 ```
 
 ## Using cURL in VS Code Terminal

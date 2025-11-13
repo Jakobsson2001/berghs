@@ -11,6 +11,9 @@ This guide shows you how to run both the Flask backend and React frontend so the
 ## Step 1: Install Backend Dependencies
 
 ```bash
+# Navigate to backend directory
+cd backend
+
 # Install Flask and flask-cors (recommended: use requirements.txt)
 pip install -r requirements.txt
 ```
@@ -27,21 +30,27 @@ pip install flask>=2.3.0 flask-cors>=4.0.0
 Open a terminal and navigate to your project directory:
 
 ```bash
-cd docs/examples
-python flask-spin-the-wheel.py
+cd backend
+python app.py
 ```
 
 You should see:
 ```
-🎡 Spin the Wheel Backend Server
-========================================
-Available endpoints:
-  GET    /api/names      - Get all names
-  POST   /api/names      - Add a name (body: {'name': 'John Doe'})
-  DELETE /api/names/<name> - Remove a name
-  GET    /api/spin       - Randomly select a name
-  POST   /api/reset      - Reset to initial names
-========================================
+🎮 Mini Games Backend Server
+==================================================
+SPIN THE WHEEL endpoints:
+  GET    /api/names           - Get all names
+  POST   /api/names           - Add a name (body: {'name': 'John Doe'})
+  DELETE /api/names/<name>    - Remove a name
+  GET    /api/spin            - Randomly select a name
+  POST   /api/reset           - Reset to initial names
+
+MEMORY GAME endpoints:
+  POST   /api/memory/new      - Start a new game
+  GET    /api/memory/state    - Get current game state
+  POST   /api/memory/flip     - Flip a card (body: {'cardId': 0})
+  POST   /api/memory/reset    - Reset flipped cards
+==================================================
  * Running on http://127.0.0.1:5000
 ```
 
@@ -69,8 +78,8 @@ const API_URL = 'http://localhost:5000/api';
 ## Step 5: Test the Connection
 
 1. Open your React app in the browser: `http://localhost:5173`
-2. Navigate to your spin-the-wheel page/component
-3. Try adding a name, spinning the wheel, etc.
+2. Navigate to your mini games page (`/minigame`)
+3. Try adding a name, spinning the wheel, or playing the memory game
 
 ## Troubleshooting
 
@@ -91,7 +100,7 @@ CORS(app)  # Enable CORS for all routes
 
 ### Port Already in Use
 
-If port 5000 is already in use, you can change it in `flask-spin-the-wheel.py`:
+If port 5000 is already in use, you can change it in `backend/app.py`:
 
 ```python
 app.run(debug=True, port=5001)  # Use a different port
@@ -113,7 +122,7 @@ Then add to `package.json`:
 {
   "scripts": {
     "dev": "vite",
-    "dev:full": "concurrently \"npm run dev\" \"python docs/examples/flask-spin-the-wheel.py\""
+    "dev:full": "concurrently \"npm run dev\" \"cd backend && python app.py\""
   }
 }
 ```

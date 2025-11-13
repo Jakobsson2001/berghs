@@ -14,7 +14,7 @@ const Header = () => {
     { href: '/frameworks', text: 'Frameworks' },
     { href: '/backend', text: 'Backend' },
     { href: '/resources', text: 'Resources' },
-    { href: '/spin-the-wheel', text: '🎡 Spin Wheel' },
+    { href: '/minigame', text: '🎮 Mini Games' },
     { href: '/git', text: 'Git' },
     { href: '/finalproject', text: 'Final Project' },
   ];

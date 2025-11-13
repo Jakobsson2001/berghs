@@ -41,7 +41,7 @@ STRAPI_API_TOKEN=your_strapi_token
 
 1. Create API routes in `app/api/[route-name]/route.ts`
 2. Use `process.env.API_KEY` to access environment variables
-3. See examples in `docs/examples/contact-route.ts` and `docs/examples/subscribe-route.ts`
+3. See examples in `backend/examples/contact-route.ts` and `backend/examples/subscribe-route.ts`
 
 ### Flask (Python)
 
@@ -49,7 +49,7 @@ STRAPI_API_TOKEN=your_strapi_token
 2. Create your Flask app in `server/app.py`
 3. Use `os.getenv('API_KEY')` to access environment variables
 4. Load environment variables with `load_dotenv()` at the start of your app
-5. See examples in `docs/examples/flask-contact-route.py` and `docs/examples/flask-subscribe-route.py`
+5. See examples in `backend/examples/flask-contact-route.py` and `backend/examples/flask-subscribe-route.py`
 
 ### Example Frontend Call
 
@@ -66,20 +66,20 @@ const handleSubmit = async (email: string, message: string) => {
 };
 ```
 
-## Example: Spin the Wheel Backend (No Database!)
+## Example: Mini Games Backend (No Database!)
 
 A complete example showing in-memory storage (no database required):
 
-1. **Backend:** `docs/examples/flask-spin-the-wheel.py`
-2. **Frontend example:** `docs/examples/spin-the-wheel-frontend-example.tsx`
-3. **Setup guide:** `docs/examples/SETUP-GUIDE.md`
-4. **Testing with cURL:** `docs/examples/TESTING-WITH-CURL.md`
+1. **Backend:** `backend/app.py` (modular structure with separate game modules)
+2. **Setup guide:** `backend/SETUP.md`
+3. **Testing with cURL:** `backend/TESTING.md`
+4. **Full documentation:** `backend/README.md`
 
 **Quick start:**
 ```bash
 # Terminal 1: Start Flask backend
-cd docs/examples
-python flask-spin-the-wheel.py
+cd backend
+python app.py
 
 # Terminal 2: Start React frontend (from project root)
 npm run dev

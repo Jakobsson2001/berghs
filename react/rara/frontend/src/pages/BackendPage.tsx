@@ -203,7 +203,7 @@ pip --version`}</code>
           <li><strong>Newsletter subscribe</strong> → Frontend POST → <code>/api/subscribe</code> → Mailchimp/Brevo/ConvertKit/MailerLite</li>
           <li><strong>Content feed via CMS</strong> → Frontend GET → <code>/api/posts</code> → Sanity/Contentful/Strapi (server route uses token)</li>
           <li><strong>Public API proxy</strong> → Frontend GET → <code>/api/weather?city=…</code> → server calls a public API and returns trimmed JSON</li>
-          <li><strong>Spin the wheel app</strong> → In-memory list (no DB!) → <code>/api/names</code>, <code>/api/spin</code> → Perfect learning example! See <code>docs/examples/flask-spin-the-wheel.py</code></li>
+          <li><strong>Spin the wheel app</strong> → In-memory list (no DB!) → <code>/api/names</code>, <code>/api/spin</code> → Perfect learning example! See <code>backend/app.py</code> and <code>backend/games/</code></li>
           <li><strong>Webhook → rebuild hint</strong> (optional) → CMS calls your <code>/api/revalidate</code> after publishing to refresh your site cache</li>
         </Box>
         <Box
@@ -329,7 +329,7 @@ export async function POST(req: Request) {
 }`}</code>
           </Paper>
           <Typography variant="body2" sx={{ mt: 1.5, color: 'var(--muted)' }}>
-            See example routes in <code>docs/examples/</code> for both Next.js and Flask implementations.
+            See example routes in <code>backend/examples/</code> for both Next.js and Flask implementations.
           </Typography>
         </Paper>
 
