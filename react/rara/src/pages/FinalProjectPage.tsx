@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Paper, Link as MuiLink } from '@mui/material';
+import { Container, Box, Typography, Link as MuiLink } from '@mui/material';
 
 const FinalProjectPage = () => {
   return (
@@ -53,14 +53,59 @@ const FinalProjectPage = () => {
           <li><em>Recommended:</em> connect to a simple <strong>API</strong> or an <strong>AI model</strong> (optional if cost is an issue).</li>
           <li><em>Optional:</em> host on <strong>Vercel</strong>, <strong>Netlify</strong> or <strong>GitHub Pages</strong>.</li>
         </Box>
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(217,70,239,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, mb: 1, fontWeight: 600 }}>
+            💡 Backend & Database Requirements
+          </Typography>
+          <Typography sx={{ m: 0 }}>
+            Backends are for secrets, validation, and calling external services (CMS, email, public APIs). <strong>Databases are optional and not required to pass this course.</strong> For examples of DB-free backends, see the <MuiLink href="/backend" sx={{ color: 'var(--accent)' }}>Backend page</MuiLink> and <MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>Resources page</MuiLink>.
+          </Typography>
+        </Box>
 
         <Typography variant="h2" sx={{ fontSize: '28px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Working With or Without a Backend
         </Typography>
         <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
           If your idea is primarily a <strong>static front-end</strong> (portfolio, company site, landing page), that's fine for the final deliverable.
-          To still learn the connection between front-end and back-end, create a separate branch such as
-          <code>backend/experiment</code> where you try a lightweight Python/Node API or data handling.
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          <strong>Backend with .env for handling keys is optional.</strong> If you want to explore backend functionality, consider:
+        </Typography>
+        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
+          <li><strong>CMS integration</strong> — Try a headless CMS like <strong>Strapi</strong> to manage content without touching code. Perfect for content engineers!</li>
+          <li><strong>Email marketing</strong> — Integrate with <strong>Mailchimp</strong> or similar services for newsletter subscriptions or contact forms</li>
+          <li><strong>API proxies</strong> — Create backend routes that call external APIs while keeping your keys safe</li>
+        </Box>
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(217,70,239,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            💡 Don't Reinvent the Wheel
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            You <em>could</em> build your own CMS or email marketing system (like Mailchimp) with a backend and database. 
+            But these services exist for a reason — they handle complex infrastructure, deliverability, templates, and more. 
+            It's usually not worth building these yourself. Use existing services and focus on your unique project value.
+          </Typography>
+        </Box>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          To experiment safely, create a separate branch such as <code>backend/experiment</code> where you try a lightweight Python/Node API.
           <strong>Do not merge</strong> this branch into your production branch unless you truly need it.
         </Typography>
         <Box
@@ -137,6 +182,7 @@ const FinalProjectPage = () => {
         <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
           <li>Demonstrates independent problem solving and thoughtful design choices.</li>
           <li>Explores back-end concepts/APIs/data handling (a separate branch is acceptable).</li>
+          <li>Integration with CMS, email services, or external APIs (optional but earns plus points).</li>
           <li>Smart, transparent use of AI-assisted tools with notes in the README.md.</li>
           <li>Professional Git workflow: branches, PRs, reviews, and clean history (squash merges).</li>
         </Box>
@@ -160,19 +206,14 @@ const FinalProjectPage = () => {
           Recommended Tutorials & Resources
         </Typography>
         <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
-          Here are some helpful guides for common project setups:
+          For CMS, email services, and API integration examples, see the <MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>Resources page</MuiLink>. Here are some helpful guides for common project setups:
         </Typography>
         <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
           <li>
-            <MuiLink
-              href="https://medium.com/@turingvang/next-js-beginner-mongodb-crud-example-tutorial-db2afdb68e25"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: 'var(--accent)' }}
-            >
-              Next.js + MongoDB CRUD Tutorial
+            <MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>
+              CMS & Email Services
             </MuiLink>
-            {' '}— If you're using Next.js with MongoDB, this step-by-step guide covers connecting your database and building CRUD operations.
+            {' '}— Recommended headless CMS platforms (Sanity, Contentful, Strapi) and email services (SendGrid, Mailchimp) for your project.
           </li>
         </Box>
       </Box>
