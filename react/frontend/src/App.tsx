@@ -14,6 +14,7 @@ import FinalProjectPage from './pages/FinalProjectPage';
 import AboutRasmus from './pages/AboutRasmus';
 import SeoPage from './pages/SeoPage';
 import FileStoragePage from './pages/FileStoragePage';
+import BlackjackPage from './pages/BlackjackPage';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path="/file-storage" element={<FileStoragePage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/minigame" element={<MiniGamePage />} />
+        {/* Blackjack route adds the new card game subpage without touching other pages */}
+        <Route path="/blackjack" element={<BlackjackPage />} />
         <Route path="/git" element={<GitPage />} />
         <Route path="/finalproject" element={<FinalProjectPage />} />
         <Route path="/about-rasmus" element={<AboutRasmus />} />
