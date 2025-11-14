@@ -27,6 +27,7 @@ const Header = () => {
 
   const otherLinks = [
     { href: '/minigame', text: '🎮 Mini Games' },
+    { href: '/blackjack', text: 'Blackjack' },
     { href: '/git', text: 'Git' },
     { href: '/finalproject', text: 'Final Project' },
   ];
