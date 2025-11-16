@@ -14,6 +14,7 @@ import FinalProjectPage from './pages/FinalProjectPage';
 import AboutRasmus from './pages/AboutRasmus';
 import SeoPage from './pages/SeoPage';
 import FileStoragePage from './pages/FileStoragePage';
+import AiMlPage from './pages/AiMlPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/backend" element={<BackendPage />} />
         <Route path="/seo" element={<SeoPage />} />
         <Route path="/file-storage" element={<FileStoragePage />} />
+        <Route path="/ai-ml" element={<AiMlPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/minigame" element={<MiniGamePage />} />
         <Route path="/git" element={<GitPage />} />

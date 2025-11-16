@@ -9,6 +9,7 @@ const Home = () => {
     { href: '/javascript', title: 'JavaScript', description: 'Add interactivity and dynamic behavior using vanilla JS.' },
     { href: '/backend', title: 'Backend', description: 'APIs, secrets protection, and connecting to external services.' },
     { href: '/seo', title: 'SEO & SSR', description: 'Search engine optimization and server-side rendering explained for beginners.' },
+    { href: '/ai-ml', title: 'AI & ML', description: 'Open-source models, Hugging Face, datasets, and OpenAI API integration.' },
     { href: '/resources', title: 'Resources', description: 'CMS and email service recommendations for your projects.' },
     { href: '/minigame', title: '🎮 Mini Games', description: 'Interactive games: Spin the Wheel and Memory Game connecting React frontend to Flask backend (no database!).' },
     { href: '/git', title: 'Git', description: 'Version control fundamentals and everyday workflows.' },

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Container, Box, Typography, Paper, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
+import { Container, Box, Typography, Paper, List, ListItem, ListItemText } from '@mui/material';
 
 const FileStoragePage = () => {
   return (
@@ -273,30 +272,149 @@ def serve_file(filename):
         </Box>
 
         <Typography variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
-          Method 3: Cloud Storage (Production Best Practice)
+          Method 3: Object Storage / Cloud Storage (Production Best Practice)
         </Typography>
         <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
-          For production apps, use cloud storage services like <strong>Cloudinary</strong> (images), <strong>AWS S3</strong> (any files), or <strong>Cloudflare Images</strong>. They handle optimization, CDN delivery, and scaling automatically.
+          For production apps, use <strong>object storage</strong> services like <strong>Cloudinary</strong> (images), <strong>AWS S3</strong> (any files), or <strong>Cloudflare Images</strong>. Object storage stores files as "objects" in the cloud rather than on your server's file system. They handle optimization, CDN delivery, and scaling automatically.
         </Typography>
 
         <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
           <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
-            Cloud Storage Benefits
+            Local File System vs Object Storage
+          </Typography>
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, gap: 2, mt: 2 }}>
+            <Box>
+              <Typography variant="h5" sx={{ fontSize: '16px', mb: 1, color: 'var(--accent)' }}>
+                📁 Local File System
+              </Typography>
+              <List sx={{ m: '8px 0', pl: 2.5 }}>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Files stored on your server's hard drive" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="✅ Simple setup, no external service needed" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="✅ No additional costs" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="❌ Limited by server storage space" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="❌ No automatic backups" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="❌ Slower for users far from your server" />
+                </ListItem>
+              </List>
+            </Box>
+            <Box>
+              <Typography variant="h5" sx={{ fontSize: '16px', mb: 1, color: 'var(--accent)' }}>
+                ☁️ Object Storage (Cloud)
+              </Typography>
+              <List sx={{ m: '8px 0', pl: 2.5 }}>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Files stored in cloud &quot;buckets&quot; (like folders)" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="✅ Unlimited storage (scales automatically)" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="✅ Automatic backups and redundancy" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="✅ CDN delivery (fast worldwide)" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="✅ Built-in image optimization" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="❌ Costs money (usually pay per GB stored/transferred)" />
+                </ListItem>
+              </List>
+            </Box>
+          </Box>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Popular Object Storage Services
           </Typography>
           <List sx={{ m: '12px 0', pl: 2.5 }}>
             <ListItem sx={{ display: 'list-item', pl: 0 }}>
-              <ListItemText primary="✅ Automatic image optimization (resize, compress, format conversion)" />
+              <ListItemText primary={<><strong>Cloudinary</strong> — Best for images. Automatic optimization, transformations, and CDN. Free tier available.</>} />
             </ListItem>
             <ListItem sx={{ display: 'list-item', pl: 0 }}>
-              <ListItemText primary="✅ CDN delivery (files served from servers close to users)" />
+              <ListItemText primary={<><strong>AWS S3</strong> — Industry standard for any file type. Very reliable, integrates with other AWS services.</>} />
             </ListItem>
             <ListItem sx={{ display: 'list-item', pl: 0 }}>
-              <ListItemText primary="✅ Scalability (handles millions of files without issues)" />
+              <ListItemText primary={<><strong>Cloudflare Images</strong> — Fast, affordable image storage with automatic optimization.</>} />
             </ListItem>
             <ListItem sx={{ display: 'list-item', pl: 0 }}>
-              <ListItemText primary="✅ Backup and redundancy (files are automatically backed up)" />
+              <ListItemText primary={<><strong>Supabase Storage</strong> — Open-source alternative, good free tier, easy to use.</>} />
             </ListItem>
           </List>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Example: Uploading to Cloudinary (Python/Flask)
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            Here's how to upload an image to Cloudinary from your backend:
+          </Typography>
+          <Paper component="pre" sx={{ background: 'rgba(0, 0, 0, 0.3)', borderRadius: 2, p: 1.5, my: 1, overflow: 'auto' }}>
+            <code style={{ color: '#bae6fd', whiteSpace: 'pre-wrap' }}>{`from flask import Flask, request, jsonify
+import cloudinary
+import cloudinary.uploader
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+app = Flask(__name__)
+
+# Configure Cloudinary (get these from cloudinary.com dashboard)
+cloudinary.config(
+    cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.getenv('CLOUDINARY_API_KEY'),
+    api_secret=os.getenv('CLOUDINARY_API_SECRET')
+)
+
+@app.route('/api/upload-image', methods=['POST'])
+def upload_image():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file provided'}), 400
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No file selected'}), 400
+    
+    try:
+        # Upload to Cloudinary
+        result = cloudinary.uploader.upload(
+            file,
+            folder='uploads',  # Optional: organize files in folders
+            transformation=[
+                {'width': 800, 'height': 600, 'crop': 'limit'},  # Resize
+                {'quality': 'auto'},  # Auto optimize quality
+            ]
+        )
+        
+        # result['secure_url'] is the CDN URL you can use in your frontend
+        return jsonify({
+            'ok': True,
+            'url': result['secure_url'],
+            'public_id': result['public_id']
+        })
+    except Exception as e:
+        print(f'Upload error: {e}')
+        return jsonify({'error': 'Failed to upload image'}), 500`}</code>
+          </Paper>
+          <Typography variant="body2" sx={{ mt: 1.5, color: 'var(--muted)' }}>
+            <strong>Install:</strong> <code>pip install cloudinary</code><br />
+            <strong>Note:</strong> Cloudinary automatically optimizes images, generates thumbnails, and serves them via CDN. The URL returned can be used directly in your frontend <code>&lt;img&gt;</code> tags.
+          </Typography>
         </Paper>
 
         <Box

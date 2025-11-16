@@ -22,6 +22,7 @@ const Header = () => {
     { href: '/backend', text: 'Backend & APIs' },
     { href: '/seo', text: 'SEO & SSR' },
     { href: '/file-storage', text: 'File Storage' },
+    { href: '/ai-ml', text: 'AI & ML' },
     { href: '/resources', text: 'Resources (CMS & Email)' },
   ];
 
