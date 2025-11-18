@@ -16,6 +16,7 @@ const Header = () => {
     { href: '/javascript', text: 'JavaScript' },
     { href: '/frameworks', text: 'Frameworks' },
     { href: '/file-storage', text: 'File Storage' },
+    { href: '/hosting-domain', text: 'Hosting & Domain' },
   ];
 
   const backendLinks = [
@@ -24,7 +25,6 @@ const Header = () => {
     { href: '/file-storage', text: 'File Storage' },
     { href: '/ai-ml', text: 'AI & ML' },
     { href: '/resources', text: 'Resources (CMS & Email)' },
-    { href: '/hosting-domain', text: 'Hosting & Domain' },
   ];
 
   const otherLinks = [

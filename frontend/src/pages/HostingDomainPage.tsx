@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Paper, List, ListItem, ListItemText } from '@mui/material';
+import { Container, Box, Typography, Paper, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
 
 const HostingDomainPage = () => {
   return (
@@ -33,7 +33,7 @@ const HostingDomainPage = () => {
               Hosting & Domain Setup
             </Typography>
             <Typography variant="body1" sx={{ color: 'var(--muted)', mb: 2, lineHeight: 1.7 }}>
-              Learn how to connect your custom domain to your hosted application, configure DNS records, and understand different hosting options and their costs.
+              Learn how to host your frontend application, connect your custom domain, configure DNS records, and understand different hosting options and their costs. This course focuses on hosting frontend applications.
             </Typography>
           </Box>
           <Box sx={{ width: '100%', maxWidth: 420, ml: 'auto' }}>
@@ -65,7 +65,7 @@ const HostingDomainPage = () => {
       >
         <Box sx={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(6,182,212,0.08))', border: '1px solid var(--border)', borderRadius: 4, p: 2.5, mb: 3, textAlign: 'center' }}>
           <Typography sx={{ fontSize: '18px', fontWeight: 600, color: 'var(--text)' }}>
-            🌐 Your domain is your address. DNS records are the directions that tell the internet where to find your website.
+            🌐 Your domain is your address. DNS records are the directions that tell the internet where to find your website. This course focuses on hosting frontend applications.
           </Typography>
         </Box>
 
@@ -331,6 +331,133 @@ const HostingDomainPage = () => {
             <ListItemText primary="Set it to 300 (5 minutes) for faster updates, or 3600 (1 hour) for better performance" />
           </ListItem>
         </List>
+
+        <Typography id="backend-hosting" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Hosting Backend (Advanced - Not Part of This Course)
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          This course focuses on hosting frontend applications. However, you might wonder: can you host your backend and serve your React build files from it? The short answer is: <strong>yes, but it's much more complicated and not recommended for this course.</strong>
+        </Typography>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid #ef4444',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(239,68,68,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            ⚠️ Important: Not Part of This Course
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            Hosting backend and frontend together, or hosting them separately and connecting them, introduces significant complexity including CORS issues, deployment configurations, and additional costs. This is beyond the scope of this course, which focuses on hosting frontend applications.
+          </Typography>
+        </Box>
+
+        <Typography variant="h3" sx={{ fontSize: '20px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          Serving React Build Files from Flask
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          It is technically possible to build your React app and serve the static files from Flask templates. You would:
+        </Typography>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1 }}>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary={<><>Build your React app (e.g., <code>npm run build</code>)</></>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary="Copy the build files to your Flask app's static/templates folders" />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary="Configure Flask to serve the static files and handle routing" />
+          </ListItem>
+        </List>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Why This Approach is Problematic
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Much more complicated</strong> — Requires manual build steps, file copying, and Flask configuration</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Not free</strong> — Backend hosting typically costs money (unlike frontend hosting on Render's free tier)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Not best practice</strong> — Separating frontend and backend is the modern standard. Mixing them makes deployment and scaling harder</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Deployment complexity</strong> — Every change requires rebuilding and redeploying the entire stack</>} />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid #f59e0b',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(245,158,11,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', mb: 0.5 }}>
+              📚 Reference
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              If you're curious about how this works, see this <MuiLink href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask" target="_blank" rel="noopener noreferrer" sx={{ color: 'var(--accent)' }}>Stack Overflow discussion</MuiLink>. But remember: it works, but it's not a best practice approach.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Typography variant="h3" sx={{ fontSize: '20px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          Why Hosting Backend and Frontend Separately is a Pain
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          If you host your backend and frontend on different domains (e.g., frontend on Render, backend on another service), you'll face several challenges:
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Common Issues with Separate Hosting
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>CORS issues</strong> — Browsers block requests between different origins. You'll need to configure CORS on your backend, which can be tricky and error-prone</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Multiple deployments</strong> — Every change requires deploying both frontend and backend separately</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Configuration complexity</strong> — Managing environment variables, API endpoints, and connection settings across two services</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Cost</strong> — Backend hosting typically costs money, unlike free frontend hosting options</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Debugging difficulty</strong> — Issues can span both services, making troubleshooting more complex</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(139,92,246,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            💡 Course Focus
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            For this course, we focus on hosting frontend applications. This keeps things simple, free, and aligned with modern best practices. If you need backend functionality, consider using serverless functions, API services, or CMS solutions that can be called from your frontend without hosting your own backend.
+          </Typography>
+        </Box>
 
         <Typography id="summary" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Summary
