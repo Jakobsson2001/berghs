@@ -126,6 +126,119 @@ const HostingDomainPage = () => {
           </List>
         </Paper>
 
+        <Typography id="hosting-platforms" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Frontend Hosting Platforms
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          For hosting your frontend application, there are many options. For this course, we recommend <strong>Render</strong> because it's simple, free, and perfect for static frontend sites. Let's compare it with other options like <strong>DigitalOcean</strong>.
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Render (Recommended for This Course)
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Free tier available</strong> — Perfect for learning and small projects</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Simple deployment</strong> — Connect your GitHub repo, and it auto-deploys on every push</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Zero configuration</strong> — Works out of the box for React, Vue, and other static sites</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Automatic HTTPS</strong> — SSL certificates included for free</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Easy custom domains</strong> — Simple CNAME setup for your domain</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>No server management</strong> — Focus on your code, not infrastructure</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5, mt: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            DigitalOcean (More Complex)
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            DigitalOcean is a powerful cloud platform, but it's more suited for advanced use cases:
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Paid service</strong> — Starts at $4-6/month (no free tier for hosting)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Server management required</strong> — You need to set up and maintain a server (Droplet)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Manual configuration</strong> — Need to install web server (Nginx), configure SSL, set up deployment scripts</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>More technical knowledge needed</strong> — Requires understanding of Linux, servers, and deployment</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Better for backend hosting</strong> — Great for hosting Flask/Django apps, databases, and complex infrastructure</>} />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid #f59e0b',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(245,158,11,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              💡 When to Use DigitalOcean
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              DigitalOcean is excellent when you need full control over your server, want to host backend applications, or need specific server configurations. For simple frontend hosting, Render is much easier and free.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(139,92,246,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            🎯 Why Render for This Course?
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            For this course, we focus on frontend hosting. Render is perfect because it's <strong>free</strong>, <strong>simple</strong>, and requires <strong>zero server management</strong>. You can deploy your React app in minutes without learning Linux, Nginx, or server administration. DigitalOcean is powerful, but it's overkill for static frontend sites and adds unnecessary complexity for beginners.
+          </Typography>
+        </Box>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Other Frontend Hosting Options
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Vercel</strong> — Similar to Render, excellent for React/Next.js, free tier available</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Netlify</strong> — Great for static sites, free tier, easy deployment</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>GitHub Pages</strong> — Free, simple, but more limited than Render/Vercel</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Cloudflare Pages</strong> — Free, fast, good for static sites</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
         <Typography id="connecting-domain" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Connecting Your Domain to Render
         </Typography>
