@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Paper, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
+import { Container, Box, Typography, Paper, List, ListItem, ListItemText } from '@mui/material';
 
 const HostingDomainPage = () => {
   return (
