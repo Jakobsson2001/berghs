@@ -14,6 +14,8 @@ import AboutRasmus from './pages/AboutRasmus';
 import SeoPage from './pages/SeoPage';
 import FileStoragePage from './pages/FileStoragePage';
 import AiMlPage from './pages/AiMlPage';
+import HostingDomainPage from './pages/HostingDomainPage';
+import StartupJourneyPage from './pages/StartupJourneyPage';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/seo" element={<SeoPage />} />
         <Route path="/file-storage" element={<FileStoragePage />} />
         <Route path="/ai-ml" element={<AiMlPage />} />
+        <Route path="/hosting-domain" element={<HostingDomainPage />} />
+        <Route path="/startup-journey" element={<StartupJourneyPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/minigame" element={<MiniGamePage />} />
         <Route path="/git" element={<GitPage />} />

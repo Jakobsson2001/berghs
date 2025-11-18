@@ -8,10 +8,12 @@ const Home = () => {
     { href: '/javascript', title: 'JavaScript', description: 'Add interactivity and dynamic behavior using vanilla JS.' },
     { href: '/backend', title: 'Backend', description: 'APIs, secrets protection, and connecting to external services.' },
     { href: '/seo', title: 'SEO & SSR', description: 'Search engine optimization and server-side rendering explained for beginners.' },
+    { href: '/hosting-domain', title: 'Hosting & Domain', description: 'Connect your custom domain to your hosted application, configure DNS records, and understand hosting options.' },
     { href: '/ai-ml', title: 'AI & ML', description: 'Open-source models, Hugging Face, datasets, and OpenAI API integration.' },
     { href: '/resources', title: 'Resources', description: 'CMS and email service recommendations for your projects.' },
     { href: '/minigame', title: '🎮 Mini Games', description: 'Interactive games: Spin the Wheel and Memory Game connecting React frontend to Flask backend (no database!).' },
     { href: '/git', title: 'Git', description: 'Version control fundamentals and everyday workflows.' },
+    { href: '/startup-journey', title: 'Startup Journey', description: 'Learn the fundamentals of building a startup from idea to execution, based on Sam Altman\'s Startup Playbook.' },
     { href: '/finalproject', title: 'Final Project', description: 'Bringing it all together — build your final project.' },
   ];
 

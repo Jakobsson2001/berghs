@@ -24,11 +24,13 @@ const Header = () => {
     { href: '/file-storage', text: 'File Storage' },
     { href: '/ai-ml', text: 'AI & ML' },
     { href: '/resources', text: 'Resources (CMS & Email)' },
+    { href: '/hosting-domain', text: 'Hosting & Domain' },
   ];
 
   const otherLinks = [
     { href: '/minigame', text: '🎮 Mini Games' },
     { href: '/git', text: 'Git' },
+    { href: '/startup-journey', text: 'Startup Journey' },
     { href: '/finalproject', text: 'Final Project' },
   ];
 
