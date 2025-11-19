@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 interface SEOProps {
   title: string;
@@ -9,34 +9,62 @@ interface SEOProps {
 }
 
 const SEO = ({ title, description, path = '', image = '/vite.svg', type = 'website' }: SEOProps) => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
-  const fullUrl = `${siteUrl}${path}`;
-  const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+  useEffect(() => {
+    // Update document title
+    document.title = title;
 
-  return (
-    <Helmet>
-      {/* Primary Meta Tags */}
-      <title>{title}</title>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
-      <link rel="canonical" href={fullUrl} />
+    // Helper function to update or create meta tags
+    const updateMetaTag = (property: string, content: string, isProperty = false) => {
+      const attribute = isProperty ? 'property' : 'name';
+      let element = document.querySelector(`meta[${attribute}="${property}"]`);
+      
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attribute, property);
+        document.head.appendChild(element);
+      }
+      
+      element.setAttribute('content', content);
+    };
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={imageUrl} />
+    // Helper function to update or create link tags
+    const updateLinkTag = (rel: string, href: string) => {
+      let element = document.querySelector(`link[rel="${rel}"]`);
+      
+      if (!element) {
+        element = document.createElement('link');
+        element.setAttribute('rel', rel);
+        document.head.appendChild(element);
+      }
+      
+      element.setAttribute('href', href);
+    };
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={fullUrl} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={imageUrl} />
-    </Helmet>
-  );
+    const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
+    const fullUrl = `${siteUrl}${path}`;
+    const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+
+    // Primary Meta Tags
+    updateMetaTag('title', title);
+    updateMetaTag('description', description);
+    updateLinkTag('canonical', fullUrl);
+
+    // Open Graph / Facebook
+    updateMetaTag('og:type', type, true);
+    updateMetaTag('og:url', fullUrl, true);
+    updateMetaTag('og:title', title, true);
+    updateMetaTag('og:description', description, true);
+    updateMetaTag('og:image', imageUrl, true);
+
+    // Twitter
+    updateMetaTag('twitter:card', 'summary_large_image');
+    updateMetaTag('twitter:url', fullUrl);
+    updateMetaTag('twitter:title', title);
+    updateMetaTag('twitter:description', description);
+    updateMetaTag('twitter:image', imageUrl);
+  }, [title, description, path, image, type]);
+
+  return null;
 };
 
 export default SEO;
-
