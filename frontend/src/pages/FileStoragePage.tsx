@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Paper, List, ListItem, ListItemText } from '@mui/material';
+import SEO from '../components/SEO';
 
 const FileStoragePage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="File Storage Solutions Guide | Berghs Class"
+        description="Learn about file storage solutions for web applications. Understand how to store and serve images, documents, and other files in your projects."
+        path="/file-storage"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -479,6 +486,7 @@ def upload_image():
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Paper, Link as MuiLink } from '@mui/material';
+import SEO from '../components/SEO';
 
 const ResourcesPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Resources - CMS & Email Services | Berghs Class"
+        description="Discover recommended CMS (Content Management Systems) and email service providers for your web projects. Learn how to integrate content management and email functionality."
+        path="/resources"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         className="prose"
         sx={{
@@ -274,6 +281,7 @@ const ResourcesPage = () => {
         </Typography>
       </Box>
     </Container>
+    </>
   );
 };
 

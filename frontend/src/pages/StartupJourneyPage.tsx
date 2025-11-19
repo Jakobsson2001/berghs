@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Paper, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
+import SEO from '../components/SEO';
 
 const StartupJourneyPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Startup Journey - Building a Startup from Idea to Execution | Berghs Class"
+        description="Learn the fundamentals of building a startup from idea to execution, based on Sam Altman's Startup Playbook. Essential guide for aspiring entrepreneurs."
+        path="/startup-journey"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -464,6 +471,7 @@ const StartupJourneyPage = () => {
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

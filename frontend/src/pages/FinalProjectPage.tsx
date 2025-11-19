@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Link as MuiLink } from '@mui/material';
+import SEO from '../components/SEO';
 
 const FinalProjectPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Final Project - Bring It All Together | Berghs Class"
+        description="Complete your web development journey with a final project. Combine HTML, CSS, JavaScript, frameworks, and backend knowledge to build a comprehensive web application."
+        path="/finalproject"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         className="prose"
         sx={{
@@ -218,6 +225,7 @@ const FinalProjectPage = () => {
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

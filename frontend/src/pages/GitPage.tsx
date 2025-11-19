@@ -3,6 +3,7 @@ import { Container, Box, Typography, Paper, RadioGroup, FormControlLabel, Radio,
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import SchoolIcon from '@mui/icons-material/School';
+import SEO from '../components/SEO';
 
 const GitPage = () => {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
@@ -90,7 +91,13 @@ const GitPage = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Git Version Control Tutorial | Berghs Class"
+        description="Learn Git fundamentals and version control workflows. Master essential commands, branching, merging, and collaboration. Includes interactive quiz to test your Git knowledge."
+        path="/git"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -409,6 +416,7 @@ git push -u origin feat/login
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

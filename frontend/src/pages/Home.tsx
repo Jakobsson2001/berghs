@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Box, Typography, Card, CardContent, Container } from '@mui/material';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const cards = [
@@ -18,7 +19,13 @@ const Home = () => {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Berghs Class - Web Development Course | Home"
+        description="Welcome to Berghs Class - A comprehensive web development course covering HTML, CSS, JavaScript, frameworks, backend development, SEO, AI/ML, and more. Learn modern web development practices with hands-on projects and interactive mini-games."
+        path="/"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box className="hero" sx={{ py: 8, pb: 3 }}>
         <Box
           className="panel"
@@ -124,13 +131,23 @@ const Home = () => {
         </Box>
 
         <Box component="figure" sx={{ m: 0, mb: 4 }}>
-          <img src="/assets/Neda.png" alt="Portrait of Neda" style={{ maxWidth: '100%', height: 'auto', display: 'block' }} />
+          <img 
+            src="/assets/Neda.png" 
+            alt="Portrait of Neda" 
+            style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+            loading="lazy"
+          />
         </Box>
       </Box>
 
       <Box component="section" sx={{ mb: 4 }}>
         <Box component="figure" sx={{ m: 0 }}>
-          <img src="/assets/Neda.HEIC" alt="Portrait of Neda" style={{ maxWidth: '100%', height: 'auto', display: 'block' }} />
+          <img 
+            src="/assets/Neda.HEIC" 
+            alt="Portrait of Neda" 
+            style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+            loading="lazy"
+          />
         </Box>
       </Box>
 
@@ -154,6 +171,7 @@ const Home = () => {
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

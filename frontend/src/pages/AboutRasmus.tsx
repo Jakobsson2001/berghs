@@ -1,8 +1,15 @@
 import { Container, Box, Typography } from '@mui/material';
+import SEO from '../components/SEO';
 
 const AboutRasmus = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="About Rasmus | Berghs Class"
+        description="Learn more about Rasmus and the Berghs Class web development course."
+        path="/about-rasmus"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -53,6 +60,7 @@ const AboutRasmus = () => {
         </Typography>
       </Box>
     </Container>
+    </>
   );
 };
 

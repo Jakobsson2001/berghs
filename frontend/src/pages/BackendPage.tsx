@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Paper, Link as MuiLink, Button, List, ListItem, ListItemText } from '@mui/material';
+import SEO from '../components/SEO';
 
 const BackendPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Backend Development & APIs Guide | Berghs Class"
+        description="Learn backend development fundamentals: APIs, secrets protection, connecting to external services, authentication, and server-side logic. Build secure and scalable backend solutions."
+        path="/backend"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -678,6 +685,7 @@ CORS(app)  # Allow requests from any origin (fine for development)`}</code>
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

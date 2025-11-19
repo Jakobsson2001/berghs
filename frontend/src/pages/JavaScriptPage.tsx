@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Container, Box, Typography, Button, Link as MuiLink } from '@mui/material';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const JavaScriptPage = () => {
   const [helloText, setHelloText] = useState('');
@@ -66,7 +67,13 @@ const JavaScriptPage = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="JavaScript Tutorial - Learn Web Programming | Berghs Class"
+        description="Learn JavaScript fundamentals for web development. Master variables, functions, DOM manipulation, events, and interactivity. Includes interactive examples and quiz to test your knowledge."
+        path="/javascript"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -301,6 +308,7 @@ const JavaScriptPage = () => {
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

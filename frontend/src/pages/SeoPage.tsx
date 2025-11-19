@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Paper, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
+import SEO from '../components/SEO';
 
 const SeoPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="SEO, GEO & Server-Side Rendering Guide | Berghs Class"
+        description="Learn SEO (Search Engine Optimization), GEO (Generative Engine Optimization), and Server-Side Rendering. Understand how search engines find your website, how AI tools recommend content, and why rendering matters."
+        path="/seo"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -525,6 +532,7 @@ def blog_post(slug):
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

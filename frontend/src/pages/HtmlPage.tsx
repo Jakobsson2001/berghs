@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Container, Box, Typography, Paper, TextField, Button, Accordion, AccordionSummary, AccordionDetails, Link as MuiLink } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const HtmlPage = () => {
   const [htmlInput, setHtmlInput] = useState(`<h1>Hello HTML 👋</h1>
@@ -56,7 +57,13 @@ const HtmlPage = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="HTML Tutorial - Learn Web Structure | Berghs Class"
+        description="Learn HTML fundamentals for web development. Master semantic markup, accessibility, forms, media, and document structure. Includes live HTML editor and beginner-friendly examples."
+        path="/html"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         className="prose"
         sx={{
@@ -79,7 +86,12 @@ const HtmlPage = () => {
           Starter snippet
         </Typography>
         <Box component="figure" sx={{ m: '1.25rem 0' }}>
-          <img src="/assets/Dog meme.jpeg" alt="Dog meme" style={{ maxWidth: '100%', height: 'auto', display: 'block', marginBottom: '1rem' }} />
+          <img 
+            src="/assets/Dog meme.jpeg" 
+            alt="Dog meme" 
+            style={{ maxWidth: '100%', height: 'auto', display: 'block', marginBottom: '1rem' }}
+            loading="lazy"
+          />
           <Typography component="figcaption" variant="caption" sx={{ display: 'block', mt: 1 }}>
             Dog meme
           </Typography>
@@ -714,6 +726,7 @@ const HtmlPage = () => {
         </Accordion>
       </Box>
     </Container>
+    </>
   );
 };
 

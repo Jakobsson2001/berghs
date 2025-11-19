@@ -61,7 +61,7 @@ const Header = () => {
       }}
     >
       <Toolbar sx={{ maxWidth: '1080px', width: '100%', mx: 'auto', px: 2, justifyContent: 'space-between' }}>
-        <Link to="/" className="flex items-center gap-2.5 no-underline">
+        <Link to="/" className="flex items-center gap-2.5 no-underline" aria-label="Berghs Class - Go to homepage">
           <Badge
             sx={{
               width: 28,
@@ -74,6 +74,7 @@ const Header = () => {
               fontWeight: 800,
               boxShadow: 'var(--shadow)',
             }}
+            aria-hidden="true"
           >
             B
           </Badge>
@@ -82,7 +83,7 @@ const Header = () => {
           </Typography>
         </Link>
 
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }}>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }} role="navigation" aria-label="Main navigation">
           {/* Frontend Dropdown */}
           <Button
             onClick={handleFrontendMenuOpen}
@@ -99,15 +100,21 @@ const Header = () => {
               },
             }}
             endIcon={<ArrowDropDownIcon />}
+            aria-expanded={Boolean(frontendMenuAnchor)}
+            aria-haspopup="true"
+            aria-controls="frontend-menu"
           >
             Frontend
           </Button>
           <Menu
+            id="frontend-menu"
             anchorEl={frontendMenuAnchor}
             open={Boolean(frontendMenuAnchor)}
             onClose={handleMenuClose}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+            role="menu"
+            aria-label="Frontend navigation menu"
           >
             {frontendLinks.map((link) => (
               <MenuItem
@@ -142,15 +149,21 @@ const Header = () => {
               },
             }}
             endIcon={<ArrowDropDownIcon />}
+            aria-expanded={Boolean(backendMenuAnchor)}
+            aria-haspopup="true"
+            aria-controls="backend-menu"
           >
             Backend
           </Button>
           <Menu
+            id="backend-menu"
             anchorEl={backendMenuAnchor}
             open={Boolean(backendMenuAnchor)}
             onClose={handleMenuClose}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+            role="menu"
+            aria-label="Backend navigation menu"
           >
             {backendLinks.map((link) => (
               <MenuItem
@@ -196,13 +209,21 @@ const Header = () => {
         <IconButton
           sx={{ display: { xs: 'flex', md: 'none' }, color: 'var(--text)' }}
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation-menu"
         >
           <MenuIcon />
         </IconButton>
       </Toolbar>
 
       {mobileOpen && (
-        <Box sx={{ display: { xs: 'flex', md: 'none' }, flexDirection: 'column', p: 2, gap: 1 }}>
+        <Box 
+          id="mobile-navigation-menu"
+          sx={{ display: { xs: 'flex', md: 'none' }, flexDirection: 'column', p: 2, gap: 1 }}
+          role="navigation"
+          aria-label="Mobile navigation menu"
+        >
           <Typography variant="overline" sx={{ px: 1.5, py: 0.5, color: 'var(--muted)', fontSize: '11px', fontWeight: 700 }}>
             FRONTEND
           </Typography>

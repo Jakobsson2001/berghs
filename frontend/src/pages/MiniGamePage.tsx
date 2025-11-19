@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Container, Box, Typography, Paper, Tabs, Tab } from '@mui/material';
 import SpinTheWheel from '../components/SpinTheWheel';
 import MemoryGame from '../components/MemoryGame';
+import SEO from '../components/SEO';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -33,7 +34,13 @@ const MiniGamePage = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Interactive Mini Games - Spin the Wheel & Memory Game | Berghs Class"
+        description="Play interactive mini games: Spin the Wheel and Memory Game. Learn how to connect React frontend to Flask backend with these fun, educational examples."
+        path="/minigame"
+      />
+      <Container maxWidth="md" sx={{ px: 2 }}>
       <Box
         className="prose"
         sx={{
@@ -80,7 +87,8 @@ const MiniGamePage = () => {
           <MemoryGame />
         </TabPanel>
       </Box>
-    </Container>
+      </Container>
+    </>
   );
 };
 

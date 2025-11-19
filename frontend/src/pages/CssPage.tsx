@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Container, Box, Typography, Paper, Radio, RadioGroup, FormControlLabel, FormControl, Button } from '@mui/material';
+import SEO from '../components/SEO';
 
 const CssPage = () => {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
@@ -49,7 +50,13 @@ const CssPage = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="CSS Tutorial - Learn Web Styling | Berghs Class"
+        description="Master CSS (Cascading Style Sheets) for web design. Learn selectors, box model, flexbox, grid, responsive design, animations, and best practices. Includes interactive quiz and examples."
+        path="/css"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         className="prose"
         sx={{
@@ -482,6 +489,7 @@ p {
         </Typography>
       </Box>
     </Container>
+    </>
   );
 };
 

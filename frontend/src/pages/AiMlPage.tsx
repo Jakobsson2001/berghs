@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Paper, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
+import SEO from '../components/SEO';
 
 const AiMlPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="AI & ML Integration Guide | Berghs Class"
+        description="Learn how to integrate AI and machine learning into your web projects. Explore open-source models, Hugging Face, datasets, and OpenAI API integration."
+        path="/ai-ml"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -758,6 +765,7 @@ const handleChat = async (message: string) => {
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 

@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Paper, Link as MuiLink, Button } from '@mui/material';
+import SEO from '../components/SEO';
 
 const FrameworksPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Web Frameworks Guide - React, Tailwind, MUI | Berghs Class"
+        description="Learn modern web frameworks: React for UI components, Tailwind CSS for styling, and Material-UI (MUI) for design systems. Build faster with these powerful tools."
+        path="/frameworks"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -247,6 +254,7 @@ npm --version`}</code>
         </Typography>
       </Box>
     </Container>
+    </>
   );
 };
 

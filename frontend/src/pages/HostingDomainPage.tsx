@@ -1,8 +1,15 @@
 import { Container, Box, Typography, Paper, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
+import SEO from '../components/SEO';
 
 const HostingDomainPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ px: 2 }}>
+    <>
+      <SEO
+        title="Hosting & Domain Setup Guide | Berghs Class"
+        description="Learn how to connect your custom domain to your hosted application, configure DNS records, and understand different hosting options for web projects."
+        path="/hosting-domain"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
       <Box
         sx={{
           background: 'var(--panel)',
@@ -706,6 +713,7 @@ const HostingDomainPage = () => {
         </Box>
       </Box>
     </Container>
+    </>
   );
 };
 
