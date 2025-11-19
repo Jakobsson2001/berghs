@@ -344,6 +344,77 @@ const StartupJourneyPage = () => {
           </List>
         </Paper>
 
+        <Typography id="yc-resources" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Y Combinator (YC) Resources for Startups
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          <strong>Y Combinator (YC)</strong> is one of the world's most successful startup accelerators, having funded companies like Airbnb, Dropbox, Stripe, and Reddit. They provide valuable resources and partnerships that can help startups, including hosting and infrastructure credits.
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            YC Startup Resources
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Hosting credits</strong> — YC companies often receive credits for hosting platforms like AWS, Google Cloud, and other infrastructure providers</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Startup School</strong> — Free online course covering startup fundamentals, including technical infrastructure and hosting</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>YC Startup Playbook</strong> — Comprehensive guide to building startups (this page is based on this playbook)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Partner deals</strong> — YC companies get access to discounted or free services from various tech partners</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Community and network</strong> — Access to a network of successful founders and investors</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(139,92,246,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            💡 YC and Infrastructure
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            While YC doesn't directly provide hosting, they help startups by providing credits and partnerships with major cloud providers. For early-stage startups, platforms like Render (see our <MuiLink href="/hosting-domain" sx={{ color: 'var(--accent)' }}>Hosting & Domain page</MuiLink>) are often sufficient and free. As companies grow, they may leverage YC's partner credits for more advanced infrastructure needs. The key is to start simple and scale as needed.
+          </Typography>
+        </Box>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Learn More About YC
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            Y Combinator offers many free resources for entrepreneurs:
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><>Visit <MuiLink href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" sx={{ color: 'var(--accent)' }}>ycombinator.com</MuiLink> to learn about their programs</></>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><>Check out <MuiLink href="https://www.startupschool.org/" target="_blank" rel="noopener noreferrer" sx={{ color: 'var(--accent)' }}>Startup School</MuiLink> for free online courses</></>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><>Read the <MuiLink href="https://playbook.samaltman.com/" target="_blank" rel="noopener noreferrer" sx={{ color: 'var(--accent)' }}>Startup Playbook</MuiLink> by Sam Altman (former YC president)</></>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Explore YC's blog and resources for startup advice and technical guidance" />
+            </ListItem>
+          </List>
+        </Paper>
+
         <Typography id="summary" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Summary
         </Typography>
