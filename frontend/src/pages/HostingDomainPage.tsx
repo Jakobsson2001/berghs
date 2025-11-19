@@ -310,6 +310,111 @@ const HostingDomainPage = () => {
           </List>
         </Paper>
 
+        <Typography id="deploying-to-render" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Deploying to Render
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          To deploy your React app to Render, you need to configure your deployment settings. Here's how to set it up:
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 1: Install serve Package
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            First, install the <code>serve</code> package. Running <code>npm install serve</code> will automatically install the package and add it to your <code>package.json</code> dependencies:
+          </Typography>
+          <Box sx={{ background: 'rgba(0, 0, 0, 0.3)', borderRadius: 2, p: 2, mb: 2, fontFamily: 'monospace', fontSize: '14px', overflowX: 'auto' }}>
+            <Typography component="pre" sx={{ m: 0, color: 'var(--text)', whiteSpace: 'pre-wrap' }}>
+{`npm install serve`}
+            </Typography>
+          </Box>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            Then manually add a start script to your <code>package.json</code>:
+          </Typography>
+          <Box sx={{ background: 'rgba(0, 0, 0, 0.3)', borderRadius: 2, p: 2, mb: 2, fontFamily: 'monospace', fontSize: '14px', overflowX: 'auto' }}>
+            <Typography component="pre" sx={{ m: 0, color: 'var(--text)', whiteSpace: 'pre-wrap' }}>
+{`"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "start": "serve -s dist"
+}`}
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 2: Configure Render Deployment Settings
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            In your Render dashboard, configure the following settings for your static site:
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText 
+                primary={
+                  <>
+                    <strong>Root Directory:</strong> <code>frontend</code>
+                  </>
+                }
+              />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText 
+                primary={
+                  <>
+                    <strong>Build Command:</strong> <code>npm install && npm run build</code>
+                  </>
+                }
+              />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText 
+                primary={
+                  <>
+                    <strong>Start Command:</strong> <code>npm run start</code>
+                  </>
+                }
+              />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid var(--accent)',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(139,92,246,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              💡 Note
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              Make sure your <code>package.json</code> includes the <code>serve</code> package in dependencies and has the <code>start</code> script configured. Render will automatically detect these settings and deploy your app.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid #f59e0b',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(245,158,11,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            ⚠️ Important: Set TTL to 600
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            When configuring your DNS records (see below), make sure to set the <strong>TTL (Time To Live)</strong> to <strong>600 seconds</strong> (10 minutes). This ensures that DNS changes propagate faster, which is especially helpful during initial setup and testing. You can increase it later once everything is working correctly.
+          </Typography>
+        </Box>
+
         <Typography id="connecting-domain" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Connecting Your Domain to Render
         </Typography>
@@ -490,7 +595,7 @@ const HostingDomainPage = () => {
               💡 Pro Tip
             </Typography>
             <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
-              When you're actively making DNS changes, set TTL to a low value (e.g., 300 seconds) so updates appear faster. Once everything is working, you can increase TTL to improve performance.
+              When you're actively making DNS changes, set TTL to <strong>600 seconds</strong> (10 minutes) so updates appear faster. This is especially important when setting up your domain for the first time. Once everything is working, you can increase TTL to improve performance.
             </Typography>
           </Box>
         </Paper>
@@ -512,7 +617,7 @@ const HostingDomainPage = () => {
             <ListItemText primary="Look for a TTL field (usually in seconds)" />
           </ListItem>
           <ListItem sx={{ display: 'list-item', pl: 0 }}>
-            <ListItemText primary="Set it to 300 (5 minutes) for faster updates, or 3600 (1 hour) for better performance" />
+            <ListItemText primary="Set it to 600 (10 minutes) for faster updates during setup, or 3600 (1 hour) for better performance once everything is working" />
           </ListItem>
         </List>
 
