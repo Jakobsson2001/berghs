@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Box, Typography, Paper, Button, Alert, CircularProgress, Grid } from '@mui/material';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import { API_BASE_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = `${API_BASE_URL}/api`;
 
 interface Card {
   id: number;
@@ -40,7 +41,7 @@ const MemoryGame = () => {
       setMoves(data.moves || 0);
     } catch (error) {
       console.error('Error fetching game state:', error);
-      setError('Cannot connect to backend. Make sure Flask is running on http://localhost:5000');
+      setError('Cannot connect to backend. Make sure Flask is running.');
     } finally {
       setLoading(false);
     }

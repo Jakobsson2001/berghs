@@ -7,6 +7,7 @@ A Flask backend for mini games (Spin the Wheel and Memory Game) using in-memory 
 - ✅ **No database required** - Uses in-memory list storage
 - ✅ **REST API** - GET, POST, DELETE endpoints
 - ✅ **CORS enabled** - Works with React frontend
+- ✅ **Security configured** - CORS restricted to allowed origins only
 - ✅ **Modular structure** - Separate modules for each game
 - ✅ **Perfect for learning** - Simple, clear code
 
@@ -66,6 +67,14 @@ curl http://localhost:5000/api/spin
 ## Running with React Frontend
 
 See [SETUP.md](./SETUP.md) for instructions on running both the backend and React frontend together.
+
+## Security Configuration
+
+The backend is configured to only accept requests from specific allowed origins. This prevents unauthorized access from other websites.
+
+**For production deployment**, you must set the `ALLOWED_ORIGINS` environment variable with your frontend URL(s).
+
+See [SECURITY.md](./SECURITY.md) for detailed security configuration instructions.
 
 ## API Endpoints
 

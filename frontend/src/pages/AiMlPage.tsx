@@ -433,9 +433,11 @@ if __name__ == '__main__':
           </Typography>
           <Paper component="pre" sx={{ background: 'rgba(0, 0, 0, 0.3)', borderRadius: 2, p: 1.5, my: 1, overflow: 'auto' }}>
             <code style={{ color: '#bae6fd', whiteSpace: 'pre-wrap' }}>{`// React component example
+import { API_BASE_URL } from '../config/api';
+
 const handleChat = async (message: string) => {
   try {
-    const response = await fetch('http://localhost:5000/api/chat', {
+    const response = await fetch(\`\${API_BASE_URL}/api/chat\`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

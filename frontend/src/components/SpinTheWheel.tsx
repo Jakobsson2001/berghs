@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { Box, Typography, Paper, Button, TextField, List, ListItem, ListItemText, IconButton, Alert, CircularProgress } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import { API_BASE_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = `${API_BASE_URL}/api`;
 
 const SpinTheWheel = () => {
   const [names, setNames] = useState<string[]>([]);
@@ -29,7 +30,7 @@ const SpinTheWheel = () => {
       setNames(data.names || []);
     } catch (error) {
       console.error('Error fetching names:', error);
-      setError('Cannot connect to backend. Make sure Flask is running on http://localhost:5000');
+      setError('Cannot connect to backend. Make sure Flask is running.');
     } finally {
       setLoading(false);
     }

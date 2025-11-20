@@ -1,13 +1,60 @@
 # Flask Backend for Mini Games
 # Main application file that imports and registers all game modules
 
-from flask import Flask
+import os
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from games.spin_the_wheel import spin_the_wheel_bp
 from games.memory_game import memory_game_bp
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+
+# Configure CORS to only allow specific origins
+# Get allowed origins from environment variable (comma-separated list)
+# In production, set ALLOWED_ORIGINS to your frontend URL(s)
+# Example: ALLOWED_ORIGINS=https://your-frontend.onrender.com,https://www.yourdomain.com
+allowed_origins_env = os.getenv('ALLOWED_ORIGINS', '')
+
+# Build list of allowed origins
+allowed_origins = []
+if allowed_origins_env:
+    # Split by comma and strip whitespace
+    allowed_origins = [origin.strip() for origin in allowed_origins_env.split(',') if origin.strip()]
+
+# Always allow localhost for development
+# Add common localhost variations
+localhost_origins = [
+    'http://localhost:5173',  # Vite default
+    'http://localhost:3000',  # React default
+    'http://127.0.0.1:5173',
+    'http://127.0.0.1:3000',
+]
+
+# Combine allowed origins
+all_allowed_origins = localhost_origins + allowed_origins
+
+# Configure CORS with specific origins
+CORS(app, origins=all_allowed_origins, supports_credentials=True)
+
+# Additional security: Validate Origin header for all requests
+@app.before_request
+def check_origin():
+    # Skip origin check for OPTIONS requests (CORS preflight)
+    if request.method == 'OPTIONS':
+        return None
+    
+    origin = request.headers.get('Origin')
+    
+    # Allow requests without Origin header (e.g., direct API calls, Postman)
+    # In production, you might want to be stricter and reject these
+    if origin is None:
+        return None
+    
+    # Check if origin is in allowed list
+    if origin not in all_allowed_origins:
+        return jsonify({'error': 'Origin not allowed'}), 403
+    
+    return None
 
 # Register game blueprints
 app.register_blueprint(spin_the_wheel_bp)
