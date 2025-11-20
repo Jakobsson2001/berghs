@@ -558,10 +558,202 @@ const HostingDomainPage = () => {
         </List>
 
         <Typography id="backend-hosting" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
-          Hosting Backend (Advanced - Not Part of This Course)
+          Hosting Backend on Render (Optional - Advanced)
         </Typography>
         <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
-          This course focuses on hosting frontend applications. However, you might wonder: can you host your backend and serve your React build files from it? The short answer is: <strong>yes, but it's much more complicated and not recommended for this course.</strong>
+          While this course focuses on frontend hosting, you can also deploy your Flask backend to Render. This allows your frontend and backend to communicate in production. Here's how we set it up:
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 1: Create a Web Service on Render
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="In Render dashboard, click 'New +' → 'Web Service'" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Connect your GitHub repository" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Set Root Directory to: <code>backend</code>" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Set Build Command: <code>pip install -r requirements.txt</code>" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Set Start Command: <code>gunicorn app:app</code>" />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid var(--accent)',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(139,92,246,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              💡 Important: Gunicorn Required
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              Make sure <code>gunicorn</code> is in your <code>requirements.txt</code>. Flask's development server is not suitable for production. Gunicorn is a production-ready WSGI server.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 2: Configure CORS and Security
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            To secure your backend and allow only your frontend to access it, you need to configure CORS (Cross-Origin Resource Sharing). We've implemented this in our backend code:
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Check <code>backend/app.py</code> to see how we configured CORS with allowed origins" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="The code reads from an <code>ALLOWED_ORIGINS</code> environment variable" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="In development, localhost origins are automatically allowed" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="In production, you must set the <code>ALLOWED_ORIGINS</code> environment variable" />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 3: Set Environment Variables in Render
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            In your Render backend service, go to the <strong>Environment</strong> tab to configure environment variables. You can access it from your service dashboard or directly via the URL pattern: <code>dashboard.render.com/web/[your-service-id]/env</code>
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Navigate to your backend service in Render dashboard" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Click on the <strong>Environment</strong> tab in the sidebar" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Click '+ Add' under Environment Variables" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Add <code>ALLOWED_ORIGINS</code> with your frontend URL(s):" />
+              <List sx={{ m: '8px 0', pl: 2.5, listStyleType: 'disc' }}>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Single origin: <code>https://your-frontend.onrender.com</code>" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Multiple origins (comma-separated): <code>https://www.yourdomain.com,https://yourdomain.com,https://your-frontend.onrender.com</code>" />
+                </ListItem>
+              </List>
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Save and redeploy your backend service" />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid #f59e0b',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(245,158,11,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              🔗 Access Environment Variables
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              You can access the Environment Variables page directly from your service dashboard. Look for the <strong>Environment</strong> option in the left sidebar, or navigate to: <MuiLink href="https://dashboard.render.com/web/srv-d4feo2lrnu6s73e2a9i0/env" target="_blank" rel="noopener noreferrer" sx={{ color: 'var(--accent)' }}>Render Environment Variables</MuiLink> (replace with your service ID).
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 4: Update Frontend Environment Variable
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            In your frontend service on Render, set the <code>VITE_API_BASE_URL</code> environment variable to point to your backend:
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Go to your frontend service in Render" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Navigate to <strong>Environment</strong> tab" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Add <code>VITE_API_BASE_URL</code> with your backend URL: <code>https://your-backend.onrender.com</code>" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Save and redeploy your frontend" />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(139,92,246,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            🔍 How It Works
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            When your frontend makes a request to the backend, the browser sends an <code>Origin</code> header with your frontend's URL. The backend checks this against the <code>ALLOWED_ORIGINS</code> list. If it matches, the request is allowed. If not, you'll get a <code>403 Forbidden</code> error. This prevents other websites from accessing your backend API.
+          </Typography>
+          <Typography sx={{ m: 0, mt: 1.5 }}>
+            Check <code>backend/app.py</code> to see the implementation. The code automatically allows localhost origins for development, and requires you to set <code>ALLOWED_ORIGINS</code> in production.
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid #f59e0b',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(245,158,11,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            ⚠️ Important Notes
+          </Typography>
+          <List sx={{ m: '8px 0 0 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Backend hosting on Render's free tier may spin down after inactivity, causing slow first requests" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Always include both www and non-www versions if your domain supports both" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Include both your custom domain and Render URL (e.g., <code>https://www.yourdomain.com,https://your-frontend.onrender.com</code>)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="After changing environment variables, you must redeploy for changes to take effect" />
+            </ListItem>
+          </List>
+        </Box>
+
+        <Typography variant="h3" sx={{ fontSize: '20px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          Alternative: Serving React Build Files from Flask (Not Recommended)
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          You might wonder: can you host your backend and serve your React build files from it? The short answer is: <strong>yes, but it's much more complicated and not recommended.</strong>
         </Typography>
 
         <Box
