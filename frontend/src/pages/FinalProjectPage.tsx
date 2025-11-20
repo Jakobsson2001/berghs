@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Link as MuiLink } from '@mui/material';
+import { Container, Box, Typography, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
 import SEO from '../components/SEO';
 
 const FinalProjectPage = () => {
@@ -71,10 +71,13 @@ const FinalProjectPage = () => {
           }}
         >
           <Typography sx={{ m: 0, mb: 1, fontWeight: 600 }}>
-            💡 Backend & Database Requirements
+            💡 Backend Requirements
+          </Typography>
+          <Typography sx={{ m: 0, mb: 1 }}>
+            Backends are for secrets, validation, and calling external services (CMS, email, public APIs). <strong>For Pass with Distinction (PD), demonstrating understanding of backend concepts and setting up a backend is required.</strong> This can be done in a separate branch if you prefer to keep your main project front-end only.
           </Typography>
           <Typography sx={{ m: 0 }}>
-            Backends are for secrets, validation, and calling external services (CMS, email, public APIs). <strong>Databases are optional and not required to pass this course.</strong> For examples of DB-free backends, see the <MuiLink href="/backend" sx={{ color: 'var(--accent)' }}>Backend page</MuiLink> and <MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>Resources page</MuiLink>.
+            <strong>Databases are NOT required</strong> — you can build a fully functional backend without a database. <strong>CMS and email services are also optional</strong> — not required to pass, but nice additions if you want to explore them! For examples of DB-free backends, see the <MuiLink href="/backend" sx={{ color: 'var(--accent)' }}>Backend page</MuiLink> and <MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>Resources page</MuiLink>.
           </Typography>
         </Box>
 
@@ -85,12 +88,12 @@ const FinalProjectPage = () => {
           If your idea is primarily a <strong>static front-end</strong> (portfolio, company site, landing page), that's fine for the final deliverable.
         </Typography>
         <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
-          <strong>Backend with .env for handling keys is optional.</strong> If you want to explore backend functionality, consider:
+          For <strong>Pass (P)</strong>, a static front-end is sufficient. For <strong>Pass with Distinction (PD)</strong>, you need to demonstrate understanding of backend concepts by setting up and using a backend (even if it's in a separate branch). If you want to explore backend functionality, consider:
         </Typography>
         <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li><strong>CMS integration</strong> — Try a headless CMS like <strong>Strapi</strong> to manage content without touching code. Perfect for content engineers!</li>
-          <li><strong>Email marketing</strong> — Integrate with <strong>Mailchimp</strong> or similar services for newsletter subscriptions or contact forms</li>
-          <li><strong>API proxies</strong> — Create backend routes that call external APIs while keeping your keys safe</li>
+          <li><strong>API proxies</strong> — Create backend routes that call external APIs while keeping your keys safe (using <code>.env</code> for environment variables)</li>
+          <li><em>Optional:</em> <strong>CMS integration</strong> — Try a headless CMS like <strong>Strapi</strong> to manage content without touching code. Perfect for content engineers!</li>
+          <li><em>Optional:</em> <strong>Email services</strong> — Integrate with <strong>Resend</strong> or similar services (like Mailchimp) for transactional emails, newsletter subscriptions, or contact forms</li>
         </Box>
         <Box
           sx={{
@@ -106,7 +109,7 @@ const FinalProjectPage = () => {
             💡 Don't Reinvent the Wheel
           </Typography>
           <Typography sx={{ m: 0, mt: 0.5 }}>
-            You <em>could</em> build your own CMS or email marketing system (like Mailchimp) with a backend and database. 
+            You <em>could</em> build your own CMS or email marketing system (like Resend or Mailchimp) with a backend and database. 
             But these services exist for a reason — they handle complex infrastructure, deliverability, templates, and more. 
             It's usually not worth building these yourself. Use existing services and focus on your unique project value.
           </Typography>
@@ -137,6 +140,23 @@ const FinalProjectPage = () => {
           Invite me to your repository on GitHub: <strong>jakobsson2001</strong>.
           This lets me review your <em>commit history</em>, <em>branching strategy</em> and overall Git hygiene.
         </Typography>
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '16px 0',
+            background: 'rgba(217,70,239,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            👥 Team Information
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            <strong>If you're working in a team, make it clear in your GitHub repository!</strong> Include team member names in your <code>README.md</code>, repository description, or as collaborators. I need to know who worked on each project for grading purposes.
+          </Typography>
+        </Box>
         <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
           <li>Work in <strong>branches</strong> (e.g., <code>feature/...</code>, <code>fix/...</code>, <code>experiment/...</code>).</li>
           <li>Open <strong>pull requests</strong> (PRs) to merge changes — even when working solo.</li>
@@ -188,11 +208,40 @@ const FinalProjectPage = () => {
         </Typography>
         <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
           <li>Demonstrates independent problem solving and thoughtful design choices.</li>
-          <li>Explores back-end concepts/APIs/data handling (a separate branch is acceptable).</li>
-          <li>Integration with CMS, email services, or external APIs (optional but earns plus points).</li>
+          <li><strong>Required:</strong> Shows understanding of backend concepts by setting up and using a backend (e.g., Flask, Express, or similar). This can be done in a separate branch if you prefer to keep your main project front-end only.</li>
+          <li><em>Optional but nice:</em> Integration with CMS, email services, or external APIs (these are not required, but show extra initiative).</li>
           <li>Smart, transparent use of AI-assisted tools with notes in the README.md.</li>
           <li>Professional Git workflow: branches, PRs, reviews, and clean history (squash merges).</li>
+          <li><strong>Required:</strong> A reflection paper (around one page) submitted with your project, addressing the following sections. <strong>Recommended:</strong> Write it in markdown format in your <code>README.md</code> or as a separate <code>REFLECTION.md</code> file in your repository. Alternatively, you can generate and send a PDF via Canvas.</li>
         </Box>
+        <List
+          sx={{
+            m: '8px 0 16px 48px',
+            pl: 1,
+            listStyleType: 'circle',
+            '& .MuiListItem-root': {
+              display: 'list-item',
+              paddingTop: 0,
+              paddingBottom: 0.5,
+            },
+            '& .MuiListItemText-root': {
+              margin: 0,
+            },
+          }}
+        >
+          <ListItem>
+            <ListItemText primary="What was hard? What challenges did you face and how did you overcome them?" />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="What would you do differently if you did it again? What would you change about your approach, tools, or process?" />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="What would you want to change about the assignment if you had free hands? How would you modify the requirements or structure?" />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="Additional reflection questions to consider: What did you learn that surprised you? How did working with AI tools change your workflow? What would you tell someone starting this project?" />
+          </ListItem>
+        </List>
         <Typography variant="body2" sx={{ mt: 1.5, color: 'var(--muted)' }}>
           <em>Note:</em> Frameworks (React, Tailwind, MUI) are recommended but not required. Using HTML/CSS is perfectly acceptable — choose the approach that best fits your project.
         </Typography>
@@ -200,9 +249,42 @@ const FinalProjectPage = () => {
         <Typography variant="h2" sx={{ fontSize: '28px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Presentation & Submission
         </Typography>
+        <Typography variant="h3" sx={{ fontSize: '24px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          Final Presentations
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          Final presentations will be held <strong>around November 26</strong>. Each team/individual will have approximately <strong>15 minutes</strong> (depending on the number of teams in the class). The class is 1.5 hours total, so it's good practice to keep within your time limit.
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          Your presentation should include:
+        </Typography>
         <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li>Final presentations: <strong>around November 26</strong>.</li>
+          <li><strong>Show your end project</strong> — Demonstrate the working application (live demo or screenshots/video).</li>
+          <li><strong>Talk about the journey</strong> — Share your process: how you started, key decisions, challenges you faced, and how you solved them.</li>
+          <li><strong>Answer reflection questions</strong> — Address some of the reflection questions from your paper (what was hard, what you'd do differently, etc.).</li>
+          <li><strong>Be prepared for questions</strong> — Both I and your classmates may ask questions about your technical choices, design decisions, or the development process.</li>
+        </Box>
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(217,70,239,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0 }}>
+            💡 <strong>Tip:</strong> Practice your presentation and time yourself. Being able to present within time limits is an important professional skill.
+          </Typography>
+        </Box>
+        <Typography variant="h3" sx={{ fontSize: '24px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          Submission Requirements
+        </Typography>
+        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
           <li>Submit your <strong>GitHub repository link</strong> via Canvas. The <strong>README.md</strong> (markdown format) should be in your repository — it's not too important to post it separately on Canvas since I can view it directly on GitHub where it will render nicely.</li>
+          <li><strong>Make team information clear</strong> — If working in a team, include all team member names in your <code>README.md</code> or repository description so I know who worked on the project.</li>
+          <li>For <strong>Pass with Distinction (PD)</strong>: Submit your <strong>reflection paper</strong> (around one page). <strong>Recommended:</strong> Include it in your repository as markdown (in <code>README.md</code> or <code>REFLECTION.md</code>). Alternatively, you can generate and send a PDF via Canvas.</li>
           <li>If deployed, include the <strong>live link</strong> (optional but encouraged).</li>
         </Box>
         <Typography variant="body2" sx={{ mt: 1.5, color: 'var(--muted)' }}>
@@ -220,7 +302,7 @@ const FinalProjectPage = () => {
             <MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>
               CMS & Email Services
             </MuiLink>
-            {' '}— Recommended headless CMS platforms (Sanity, Contentful, Strapi) and email services (SendGrid, Mailchimp) for your project.
+            {' '}— Recommended headless CMS platforms (Sanity, Contentful, Strapi) and email services (Resend, SendGrid, Mailchimp) for your project.
           </li>
         </Box>
       </Box>
