@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Box, Typography, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
 import SEO from '../components/SEO';
 
@@ -53,13 +54,23 @@ const FinalProjectPage = () => {
         <Typography variant="h2" sx={{ fontSize: '28px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Technical Requirements
         </Typography>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li>Use <strong>Git</strong> for version control (frequent commits, branching, PRs).</li>
-          <li>Include <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> — or use a framework such as <strong>React</strong>.</li>
-          <li><em>Recommended:</em> <strong>Tailwind CSS</strong> and/or <strong>MUI</strong> for consistent, fast styling.</li>
-          <li><em>Recommended:</em> connect to a simple <strong>API</strong> or an <strong>AI model</strong> (optional if cost is an issue).</li>
-          <li><em>Optional:</em> host on <strong>Vercel</strong>, <strong>Netlify</strong> or <strong>GitHub Pages</strong>.</li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<>Use <strong>Git</strong> for version control (frequent commits, branching, PRs).</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<>Include <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> — or use a framework such as <strong>React</strong>.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><em>Recommended:</em> <strong>Tailwind CSS</strong> and/or <strong>MUI</strong> for consistent, fast styling.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><em>Recommended:</em> connect to a simple <strong>API</strong> or an <strong>AI model</strong> (optional if cost is an issue).</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><em>Optional:</em> host on <strong>Vercel</strong>, <strong>Netlify</strong> or <strong>GitHub Pages</strong>.</>} />
+          </ListItem>
+        </List>
         <Box
           sx={{
             borderLeft: '4px solid var(--accent)',
@@ -90,11 +101,17 @@ const FinalProjectPage = () => {
         <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
           For <strong>Pass (P)</strong>, a static front-end is sufficient. For <strong>Pass with Distinction (PD)</strong>, you need to demonstrate understanding of backend concepts by setting up and using a backend (even if it's in a separate branch). If you want to explore backend functionality, consider:
         </Typography>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li><strong>API proxies</strong> — Create backend routes that call external APIs while keeping your keys safe (using <code>.env</code> for environment variables)</li>
-          <li><em>Optional:</em> <strong>CMS integration</strong> — Try a headless CMS like <strong>Strapi</strong> to manage content without touching code. Perfect for content engineers!</li>
-          <li><em>Optional:</em> <strong>Email services</strong> — Integrate with <strong>Resend</strong> or similar services (like Mailchimp) for transactional emails, newsletter subscriptions, or contact forms</li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>API proxies</strong> — Create backend routes that call external APIs while keeping your keys safe (using <code>.env</code> for environment variables)</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><em>Optional:</em> <strong>CMS integration</strong> — Try a headless CMS like <strong>Strapi</strong> to manage content without touching code. Perfect for content engineers!</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><em>Optional:</em> <strong>Email services</strong> — Integrate with <strong>Resend</strong> or similar services (like Mailchimp) for transactional emails, newsletter subscriptions, or contact forms</>} />
+          </ListItem>
+        </List>
         <Box
           sx={{
             borderLeft: '4px solid var(--accent)',
@@ -157,13 +174,23 @@ const FinalProjectPage = () => {
             <strong>If you're working in a team, make it clear in your GitHub repository!</strong> Include team member names in your <code>README.md</code>, repository description, or as collaborators. I need to know who worked on each project for grading purposes.
           </Typography>
         </Box>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li>Work in <strong>branches</strong> (e.g., <code>feature/...</code>, <code>fix/...</code>, <code>experiment/...</code>).</li>
-          <li>Open <strong>pull requests</strong> (PRs) to merge changes — even when working solo.</li>
-          <li><strong>Review your own PRs</strong> or use AI tools (Cursor Auto Mode, Lovable, Copilot) to comment on diffs.</li>
-          <li>Prefer <strong>Squash & merge</strong> to keep history tidy.</li>
-          <li>Write clear, descriptive commit messages.</li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<>Work in <strong>branches</strong> (e.g., <code>feature/...</code>, <code>fix/...</code>, <code>experiment/...</code>).</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<>Open <strong>pull requests</strong> (PRs) to merge changes — even when working solo.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Review your own PRs</strong> or use AI tools (Cursor Auto Mode, Lovable, Copilot) to comment on diffs.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<>Prefer <strong>Squash & merge</strong> to keep history tidy.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary="Write clear, descriptive commit messages." />
+          </ListItem>
+        </List>
 
         <Typography variant="h2" sx={{ fontSize: '28px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Project Management (Trello + GitHub)
@@ -176,16 +203,14 @@ const FinalProjectPage = () => {
         <Typography variant="h2" sx={{ fontSize: '28px', mt: 4, mb: 2, color: 'var(--text)' }}>
           Two Recommended Workflows
         </Typography>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li>
-            <strong>Option 1 — Start with Lovable:</strong> Prototype quickly, then export or rebuild parts locally in an IDE
-            (e.g., Cursor) for finer control, Git discipline, and final polish.
-          </li>
-          <li>
-            <strong>Option 2 — Start directly in Cursor/VS Code:</strong> Full control from day one with strong Git workflow.
-            Still use AI assistance to accelerate (Cursor Auto Mode, Copilot, etc.).
-          </li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Option 1 — Start with Lovable:</strong> Prototype quickly, then export or rebuild parts locally in an IDE (e.g., Cursor) for finer control, Git discipline, and final polish.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Option 2 — Start directly in Cursor/VS Code:</strong> Full control from day one with strong Git workflow. Still use AI assistance to accelerate (Cursor Auto Mode, Copilot, etc.).</>} />
+          </ListItem>
+        </List>
         <Typography variant="body1" sx={{ mb: 3, color: 'var(--text)', lineHeight: 1.7 }}>
           Choose the path that fits how you like to work. Remember: <em>we don't want to reinvent the wheel</em> —
           use frameworks and libraries to move faster and focus on design, logic, and content.
@@ -197,23 +222,43 @@ const FinalProjectPage = () => {
         <Typography variant="h3" sx={{ fontSize: '24px', mt: 3, mb: 1, color: 'var(--text)' }}>
           Pass (P)
         </Typography>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li>Shows understanding of fundamentals (HTML, CSS, JS, Git).</li>
-          <li>Working front-end with at least one interactive element.</li>
-          <li>Consistent Git usage (commits/branches/PRs) and a clear repo.</li>
-          <li><strong>README.md</strong> (markdown format) with short reflection on process and learning.</li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary="Shows understanding of fundamentals (HTML, CSS, JS, Git)." />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary="Working front-end with at least one interactive element." />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary="Consistent Git usage (commits/branches/PRs) and a clear repo." />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>README.md</strong> (markdown format) with short reflection on process and learning.</>} />
+          </ListItem>
+        </List>
         <Typography variant="h3" sx={{ fontSize: '24px', mt: 3, mb: 1, color: 'var(--text)' }}>
           Pass with Distinction (PD)
         </Typography>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li>Demonstrates independent problem solving and thoughtful design choices.</li>
-          <li><strong>Required:</strong> Shows understanding of backend concepts by setting up and using a backend (e.g., Flask, Express, or similar). This can be done in a separate branch if you prefer to keep your main project front-end only.</li>
-          <li><em>Optional but nice:</em> Integration with CMS, email services, or external APIs (these are not required, but show extra initiative).</li>
-          <li>Smart, transparent use of AI-assisted tools with notes in the README.md.</li>
-          <li>Professional Git workflow: branches, PRs, reviews, and clean history (squash merges).</li>
-          <li><strong>Required:</strong> A reflection paper (around one page) submitted with your project, addressing the following sections. <strong>Recommended:</strong> Write it in markdown format in your <code>README.md</code> or as a separate <code>REFLECTION.md</code> file in your repository. Alternatively, you can generate and send a PDF via Canvas.</li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary="Demonstrates independent problem solving and thoughtful design choices." />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Required:</strong> Shows understanding of backend concepts by setting up and using a backend (e.g., Flask, Express, or similar). This can be done in a separate branch if you prefer to keep your main project front-end only.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><em>Optional but nice:</em> Integration with CMS, email services, or external APIs (these are not required, but show extra initiative).</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary="Smart, transparent use of AI-assisted tools with notes in the README.md." />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary="Professional Git workflow: branches, PRs, reviews, and clean history (squash merges)." />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Required:</strong> A reflection paper (around one page) submitted with your project, addressing the following sections. <strong>Recommended:</strong> Write it in markdown format in your <code>README.md</code> or as a separate <code>REFLECTION.md</code> file in your repository. Alternatively, you can generate and send a PDF via Canvas.</>} />
+          </ListItem>
+        </List>
         <List
           sx={{
             m: '8px 0 16px 48px',
@@ -258,12 +303,20 @@ const FinalProjectPage = () => {
         <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
           Your presentation should include:
         </Typography>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li><strong>Show your end project</strong> — Demonstrate the working application (live demo or screenshots/video).</li>
-          <li><strong>Talk about the journey</strong> — Share your process: how you started, key decisions, challenges you faced, and how you solved them.</li>
-          <li><strong>Answer reflection questions</strong> — Address some of the reflection questions from your paper (what was hard, what you'd do differently, etc.).</li>
-          <li><strong>Be prepared for questions</strong> — Both I and your classmates may ask questions about your technical choices, design decisions, or the development process.</li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Show your end project</strong> — Demonstrate the working application (live demo or screenshots/video).</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Talk about the journey</strong> — Share your process: how you started, key decisions, challenges you faced, and how you solved them.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Answer reflection questions</strong> — Address some of the reflection questions from your paper (what was hard, what you'd do differently, etc.).</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Be prepared for questions</strong> — Both I and your classmates may ask questions about your technical choices, design decisions, or the development process.</>} />
+          </ListItem>
+        </List>
         <Box
           sx={{
             borderLeft: '4px solid var(--accent)',
@@ -278,15 +331,40 @@ const FinalProjectPage = () => {
             💡 <strong>Tip:</strong> Practice your presentation and time yourself. Being able to present within time limits is an important professional skill.
           </Typography>
         </Box>
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(217,70,239,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, mb: 1, fontWeight: 600 }}>
+            📅 Focus & Timeline
+          </Typography>
+          <Typography sx={{ m: 0 }}>
+            I suggest you <strong>focus on the assignment and preparing your presentation</strong> leading up to the presentation date. After presentations, you can focus on writing your self-reflection. The <strong>hard deadline for the self-reflection is November 30th</strong>.
+          </Typography>
+        </Box>
         <Typography variant="h3" sx={{ fontSize: '24px', mt: 3, mb: 1, color: 'var(--text)' }}>
           Submission Requirements
         </Typography>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li>Submit your <strong>GitHub repository link</strong> via Canvas. The <strong>README.md</strong> (markdown format) should be in your repository — it's not too important to post it separately on Canvas since I can view it directly on GitHub where it will render nicely.</li>
-          <li><strong>Make team information clear</strong> — If working in a team, include all team member names in your <code>README.md</code> or repository description so I know who worked on the project.</li>
-          <li>For <strong>Pass with Distinction (PD)</strong>: Submit your <strong>reflection paper</strong> (around one page). <strong>Recommended:</strong> Include it in your repository as markdown (in <code>README.md</code> or <code>REFLECTION.md</code>). Alternatively, you can generate and send a PDF via Canvas.</li>
-          <li>If deployed, include the <strong>live link</strong> (optional but encouraged).</li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<>You can hand in your assignment in whatever way you prefer. There is a <strong>Canvas page</strong> available where you can submit your <strong>GitHub repository link</strong>. The <strong>README.md</strong> (markdown format) should be in your repository — it's not too important to post it separately on Canvas since I can view it directly on GitHub where it will render nicely.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><strong>Make team information clear</strong> — If working in a team, include all team member names in your <code>README.md</code> or repository description so I know who worked on the project.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<>For <strong>Pass with Distinction (PD)</strong>: Submit your <strong>reflection paper</strong> (around one page) by <strong>November 30th</strong>. <strong>Recommended:</strong> Include it in your repository as markdown (in <code>README.md</code> or <code>REFLECTION.md</code>). Alternatively, you can generate and send a PDF via Canvas.</>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<>If deployed, include the <strong>live link</strong> (optional but encouraged).</>} />
+          </ListItem>
+        </List>
         <Typography variant="body2" sx={{ mt: 1.5, color: 'var(--muted)' }}>
           Unsure about your idea or setup? Reach out early — it's much easier to guide you before the final week.
         </Typography>
@@ -297,14 +375,11 @@ const FinalProjectPage = () => {
         <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
           For CMS, email services, and API integration examples, see the <MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>Resources page</MuiLink>. Here are some helpful guides for common project setups:
         </Typography>
-        <Box component="ul" sx={{ m: '16px 0 16px 24px', pl: 1 }}>
-          <li>
-            <MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>
-              CMS & Email Services
-            </MuiLink>
-            {' '}— Recommended headless CMS platforms (Sanity, Contentful, Strapi) and email services (Resend, SendGrid, Mailchimp) for your project.
-          </li>
-        </Box>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1, listStyleType: 'disc' }}>
+          <ListItem sx={{ display: 'list-item', py: 0.5 }}>
+            <ListItemText primary={<><MuiLink href="/resources" sx={{ color: 'var(--accent)' }}>CMS & Email Services</MuiLink> — Recommended headless CMS platforms (Sanity, Contentful, Strapi) and email services (Resend, SendGrid, Mailchimp) for your project.</>} />
+          </ListItem>
+        </List>
       </Box>
     </Container>
     </>
