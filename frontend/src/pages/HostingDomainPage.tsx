@@ -1,0 +1,913 @@
+import { Container, Box, Typography, Paper, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
+import SEO from '../components/SEO';
+
+const HostingDomainPage = () => {
+  return (
+    <>
+      <SEO
+        title="Hosting & Domain Setup Guide | Berghs Class"
+        description="Learn how to connect your custom domain to your hosted application, configure DNS records, and understand different hosting options for web projects."
+        path="/hosting-domain"
+      />
+      <Container maxWidth="lg" sx={{ px: 2 }}>
+      <Box
+        sx={{
+          background: 'var(--panel)',
+          border: '1px solid var(--border)',
+          borderRadius: 5,
+          p: 4,
+          boxShadow: 'var(--shadow)',
+          mb: 4,
+          mt: 4,
+        }}
+      >
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1.2fr 1fr' }, gap: 3, alignItems: 'center' }}>
+          <Box>
+            <Typography
+              variant="overline"
+              sx={{
+                display: 'block',
+                fontSize: '12px',
+                letterSpacing: '1.2px',
+                textTransform: 'uppercase',
+                color: 'var(--muted)',
+                mb: 1,
+              }}
+            >
+              Domain & Hosting
+            </Typography>
+            <Typography variant="h1" sx={{ fontSize: '34px', mb: 1, color: 'var(--text)' }}>
+              Hosting & Domain Setup
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'var(--muted)', mb: 2, lineHeight: 1.7 }}>
+              Learn how to host your frontend application, connect your custom domain, configure DNS records, and understand different hosting options and their costs. This course focuses on hosting frontend applications.
+            </Typography>
+          </Box>
+          <Box sx={{ width: '100%', maxWidth: 420, ml: 'auto' }}>
+            <svg viewBox="0 0 260 200" role="img" width="100%" height="100%">
+              <defs>
+                <linearGradient id="hostingGradient" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#8b5cf6" />
+                  <stop offset="100%" stopColor="#06b6d4" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="260" height="200" rx="16" fill="url(#hostingGradient)" opacity="0.18" />
+              <circle cx="70" cy="100" r="25" fill="#a78bfa" opacity="0.9" />
+              <rect x="120" y="70" width="90" height="60" rx="8" fill="#22d3ee" opacity="0.85" />
+              <path d="M 50 150 L 210 150 L 210 180 L 50 180 Z" fill="#34d399" opacity="0.8" />
+            </svg>
+          </Box>
+        </Box>
+      </Box>
+
+      <Box
+        className="prose"
+        sx={{
+          background: 'var(--panel)',
+          border: '1px solid var(--border)',
+          borderRadius: 5,
+          p: 5,
+          boxShadow: 'var(--shadow)',
+        }}
+      >
+        <Box sx={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(6,182,212,0.08))', border: '1px solid var(--border)', borderRadius: 4, p: 2.5, mb: 3, textAlign: 'center' }}>
+          <Typography sx={{ fontSize: '18px', fontWeight: 600, color: 'var(--text)' }}>
+            🌐 Your domain is your address. DNS records are the directions that tell the internet where to find your website. This course focuses on hosting frontend applications.
+          </Typography>
+        </Box>
+
+        <Typography id="web-hosting-providers" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Web Hosting Providers
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          There are many web hosting providers where you can register and manage your domain. For this course, we'll use <strong>Loopia</strong> as our domain registrar and DNS provider.
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Popular Web Hosting Providers
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Loopia</strong> — Swedish provider, good for Swedish domains (.se), user-friendly DNS editor (we'll use this)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Namecheap</strong> — Popular international provider, affordable pricing</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>GoDaddy</strong> — Large international provider, many domain extensions</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Cloudflare</strong> — Free DNS management, excellent performance and security</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Google Domains</strong> — Simple interface, integrated with Google services</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Typography id="dns-records" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          DNS Records Explained
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          DNS (Domain Name System) records tell the internet where to find your website. There are different types of records for different purposes:
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Common DNS Record Types
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>A Record</strong> — Points your domain directly to an IP address. Works without www (e.g., example.com)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>CNAME Record</strong> — Points your domain to another domain name. Requires www (e.g., www.example.com)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>MX Record</strong> — Points to email servers (for email hosting)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>TXT Record</strong> — Used for verification, SPF records, and other text-based configurations</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Typography id="hosting-platforms" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Frontend Hosting Platforms
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          For hosting your frontend application, there are many options. For this course, we recommend <strong>Render</strong> because it's simple, free, and perfect for static frontend sites. Let's compare it with other options like <strong>DigitalOcean</strong>.
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Render (Recommended for This Course)
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Free tier available</strong> — Perfect for learning and small projects</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Simple deployment</strong> — Connect your GitHub repo, and it auto-deploys on every push</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Zero configuration</strong> — Works out of the box for React, Vue, and other static sites</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Automatic HTTPS</strong> — SSL certificates included for free</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Easy custom domains</strong> — Simple CNAME setup for your domain</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>No server management</strong> — Focus on your code, not infrastructure</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5, mt: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            DigitalOcean (More Complex)
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            DigitalOcean is a powerful cloud platform, but it's more suited for advanced use cases:
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Paid service</strong> — Starts at $4-6/month (no free tier for hosting)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Server management required</strong> — You need to set up and maintain a server (Droplet)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Manual configuration</strong> — Need to install web server (Nginx), configure SSL, set up deployment scripts</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>More technical knowledge needed</strong> — Requires understanding of Linux, servers, and deployment</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Better for backend hosting</strong> — Great for hosting Flask/Django apps, databases, and complex infrastructure</>} />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid #f59e0b',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(245,158,11,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              💡 When to Use DigitalOcean
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              DigitalOcean is excellent when you need full control over your server, want to host backend applications, or need specific server configurations. For simple frontend hosting, Render is much easier and free.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(139,92,246,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            🎯 Why Render for This Course?
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            For this course, we focus on frontend hosting. Render is perfect because it's <strong>free</strong>, <strong>simple</strong>, and requires <strong>zero server management</strong>. You can deploy your React app in minutes without learning Linux, Nginx, or server administration. DigitalOcean is powerful, but it's overkill for static frontend sites and adds unnecessary complexity for beginners.
+          </Typography>
+        </Box>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Other Frontend Hosting Options
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Vercel</strong> — Similar to Render, excellent for React/Next.js, free tier available</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Netlify</strong> — Great for static sites, free tier, easy deployment</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>GitHub Pages</strong> — Free, simple, but more limited than Render/Vercel</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Cloudflare Pages</strong> — Free, fast, good for static sites</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Typography id="deploying-to-render" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Deploying to Render
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          To deploy your React app to Render, you need to configure your deployment settings. Here's how to set it up:
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 1: Install serve Package
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            First, install the <code>serve</code> package. Running <code>npm install serve</code> will automatically install the package and add it to your <code>package.json</code> dependencies:
+          </Typography>
+          <Box sx={{ background: 'rgba(0, 0, 0, 0.3)', borderRadius: 2, p: 2, mb: 2, fontFamily: 'monospace', fontSize: '14px', overflowX: 'auto' }}>
+            <Typography component="pre" sx={{ m: 0, color: 'var(--text)', whiteSpace: 'pre-wrap' }}>
+{`npm install serve`}
+            </Typography>
+          </Box>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            Then manually add a start script to your <code>package.json</code>:
+          </Typography>
+          <Box sx={{ background: 'rgba(0, 0, 0, 0.3)', borderRadius: 2, p: 2, mb: 2, fontFamily: 'monospace', fontSize: '14px', overflowX: 'auto' }}>
+            <Typography component="pre" sx={{ m: 0, color: 'var(--text)', whiteSpace: 'pre-wrap' }}>
+{`"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "start": "serve -s dist"
+}`}
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 2: Configure Render Deployment Settings
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            In your Render dashboard, configure the following settings for your static site:
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText 
+                primary={
+                  <>
+                    <strong>Root Directory:</strong> <code>frontend</code>
+                  </>
+                }
+              />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText 
+                primary={
+                  <>
+                    <strong>Build Command:</strong> <code>npm install && npm run build</code>
+                  </>
+                }
+              />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText 
+                primary={
+                  <>
+                    <strong>Start Command:</strong> <code>npm run start</code>
+                  </>
+                }
+              />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid var(--accent)',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(139,92,246,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              💡 Note
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              Make sure your <code>package.json</code> includes the <code>serve</code> package in dependencies and has the <code>start</code> script configured. Render will automatically detect these settings and deploy your app.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid #f59e0b',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(245,158,11,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            ⚠️ Important: Set TTL to 600
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            When configuring your DNS records (see below), make sure to set the <strong>TTL (Time To Live)</strong> to <strong>600 seconds</strong> (10 minutes). This ensures that DNS changes propagate faster, which is especially helpful during initial setup and testing. You can increase it later once everything is working correctly.
+          </Typography>
+        </Box>
+
+        <Typography id="connecting-domain" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Connecting Your Domain to Render
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          We use <strong>CNAME records</strong> to redirect our domain to our page hosted on Render. This method requires the <code>www</code> subdomain (e.g., <code>www.example.com</code>).
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            How to Set Up CNAME for Render
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="In your Render dashboard, get your app's URL (e.g., myapp.onrender.com)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Go to your domain provider's DNS editor (e.g., Loopia)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Add a CNAME record:" />
+              <List sx={{ m: '8px 0', pl: 2.5, listStyleType: 'disc' }}>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Name/Host: www" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Type: CNAME" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Value/Target: myapp.onrender.com" />
+                </ListItem>
+              </List>
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Wait for DNS propagation (can take a few minutes to 48 hours)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Your site will be accessible at www.example.com" />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(139,92,246,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            ⚠️ Important: CNAME Requires www
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            CNAME records only work with subdomains like <code>www.example.com</code>. If you want to use <code>example.com</code> (without www), you'll need to use an A record instead (see below).
+          </Typography>
+        </Box>
+
+        <Typography id="a-record-vs-cname" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          A Record vs CNAME: Cost Comparison
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          There are two main ways to connect your domain to your hosting. Each has different costs and requirements:
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Option 1: A Record (No www Required)
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            An A record points directly to an IP address. This allows you to use your domain without www (e.g., <code>example.com</code>).
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="✅ Works without www (example.com)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="❌ Requires a static IP address" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="💰 Costs more: You need to pay for a static IP on Render (~$25/month)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="🔧 Setup: Point A record to Render's static IP address" />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5, mt: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Option 2: CNAME (Requires www) — What We Use
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            A CNAME record points to another domain name. This is what we use for our setup.
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="✅ Free or low-cost (uses Render's free tier)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="✅ Easy to set up" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="⚠️ Requires www (www.example.com)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="🔧 Setup: Point CNAME record to your Render app URL" />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5, mt: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Option 3: "Ugly" Workaround (Budget Alternative)
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            A workaround if you want example.com (without www) but don't want to pay $25/month for a static IP.
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="💰 Costs ~$4/month for a cheap VPS/server" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="🔧 Setup: Rent a cheap server, point A record to it, and set up a redirect from example.com to www.example.com" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="⚠️ More complex setup and maintenance" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="⚠️ Adds an extra hop (slightly slower)" />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid #f59e0b',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(245,158,11,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontStyle: 'italic' }}>
+              This is a "hacky" solution. Most people either use CNAME with www or pay for the static IP if they really need example.com without www.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Typography id="ttl" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          TTL (Time To Live)
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          <strong>TTL</strong> (Time To Live) determines how long DNS servers cache your DNS records. This affects how quickly changes you make in your DNS editor take effect.
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Understanding TTL
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>High TTL (e.g., 3600 seconds = 1 hour)</strong> — DNS servers cache your records longer. Changes take longer to propagate, but reduces DNS queries (better performance).</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Low TTL (e.g., 300 seconds = 5 minutes)</strong> — DNS servers cache your records for a shorter time. Changes propagate faster, but increases DNS queries.</>} />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid var(--accent)',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(139,92,246,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              💡 Pro Tip
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              When you're actively making DNS changes, set TTL to <strong>600 seconds</strong> (10 minutes) so updates appear faster. This is especially important when setting up your domain for the first time. Once everything is working, you can increase TTL to improve performance.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Typography variant="h3" sx={{ fontSize: '20px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          How to Change TTL in Loopia
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          In Loopia's DNS editor, you can usually find the TTL setting for each DNS record:
+        </Typography>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1 }}>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary="Go to your domain's DNS settings in Loopia" />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary="Edit the DNS record you want to change" />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary="Look for a TTL field (usually in seconds)" />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary="Set it to 600 (10 minutes) for faster updates during setup, or 3600 (1 hour) for better performance once everything is working" />
+          </ListItem>
+        </List>
+
+        <Typography id="backend-hosting" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Hosting Backend on Render (Optional - Advanced)
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          While this course focuses on frontend hosting, you can also deploy your Flask backend to Render. This allows your frontend and backend to communicate in production. Here's how we set it up:
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 1: Create a Web Service on Render
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="In Render dashboard, click 'New +' → 'Web Service'" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Connect your GitHub repository" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Set Root Directory to: <code>backend</code>" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Set Build Command: <code>pip install -r requirements.txt</code>" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Set Start Command: <code>gunicorn app:app</code>" />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid var(--accent)',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(139,92,246,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              💡 Important: Gunicorn Required
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              Make sure <code>gunicorn</code> is in your <code>requirements.txt</code>. Flask's development server is not suitable for production. Gunicorn is a production-ready WSGI server.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 2: Configure CORS and Security
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            To secure your backend and allow only your frontend to access it, you need to configure CORS (Cross-Origin Resource Sharing). We've implemented this in our backend code:
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Check <code>backend/app.py</code> to see how we configured CORS with allowed origins" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="The code reads from an <code>ALLOWED_ORIGINS</code> environment variable" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="In development, localhost origins are automatically allowed" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="In production, you must set the <code>ALLOWED_ORIGINS</code> environment variable" />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 3: Set Environment Variables in Render
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            In your Render backend service, go to the <strong>Environment</strong> tab to configure environment variables. You can access it from your service dashboard or directly via the URL pattern: <code>dashboard.render.com/web/[your-service-id]/env</code>
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Navigate to your backend service in Render dashboard" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Click on the <strong>Environment</strong> tab in the sidebar" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Click '+ Add' under Environment Variables" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Add <code>ALLOWED_ORIGINS</code> with your frontend URL(s):" />
+              <List sx={{ m: '8px 0', pl: 2.5, listStyleType: 'disc' }}>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Single origin: <code>https://your-frontend.onrender.com</code>" />
+                </ListItem>
+                <ListItem sx={{ display: 'list-item', pl: 0 }}>
+                  <ListItemText primary="Multiple origins (comma-separated): <code>https://www.yourdomain.com,https://yourdomain.com,https://your-frontend.onrender.com</code>" />
+                </ListItem>
+              </List>
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Save and redeploy your backend service" />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid #f59e0b',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(245,158,11,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', fontWeight: 600, mb: 0.5 }}>
+              🔗 Access Environment Variables
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              You can access the Environment Variables page directly from your service dashboard. Look for the <strong>Environment</strong> option in the left sidebar, or navigate to: <MuiLink href="https://dashboard.render.com/web/srv-d4feo2lrnu6s73e2a9i0/env" target="_blank" rel="noopener noreferrer" sx={{ color: 'var(--accent)' }}>Render Environment Variables</MuiLink> (replace with your service ID).
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Step 4: Update Frontend Environment Variable
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1.5, color: 'var(--muted)' }}>
+            In your frontend service on Render, set the <code>VITE_API_BASE_URL</code> environment variable to point to your backend:
+          </Typography>
+          <List component="ol" sx={{ m: '12px 0', pl: 2.5, listStyleType: 'decimal' }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Go to your frontend service in Render" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Navigate to <strong>Environment</strong> tab" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Add <code>VITE_API_BASE_URL</code> with your backend URL: <code>https://your-backend.onrender.com</code>" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Save and redeploy your frontend" />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(139,92,246,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            🔍 How It Works
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            When your frontend makes a request to the backend, the browser sends an <code>Origin</code> header with your frontend's URL. The backend checks this against the <code>ALLOWED_ORIGINS</code> list. If it matches, the request is allowed. If not, you'll get a <code>403 Forbidden</code> error. This prevents other websites from accessing your backend API.
+          </Typography>
+          <Typography sx={{ m: 0, mt: 1.5 }}>
+            Check <code>backend/app.py</code> to see the implementation. The code automatically allows localhost origins for development, and requires you to set <code>ALLOWED_ORIGINS</code> in production.
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid #f59e0b',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(245,158,11,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            ⚠️ Important Notes
+          </Typography>
+          <List sx={{ m: '8px 0 0 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Backend hosting on Render's free tier may spin down after inactivity, causing slow first requests" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Always include both www and non-www versions if your domain supports both" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="Include both your custom domain and Render URL (e.g., <code>https://www.yourdomain.com,https://your-frontend.onrender.com</code>)" />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary="After changing environment variables, you must redeploy for changes to take effect" />
+            </ListItem>
+          </List>
+        </Box>
+
+        <Typography variant="h3" sx={{ fontSize: '20px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          Alternative: Serving React Build Files from Flask (Not Recommended)
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          You might wonder: can you host your backend and serve your React build files from it? The short answer is: <strong>yes, but it's much more complicated and not recommended.</strong>
+        </Typography>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid #ef4444',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(239,68,68,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            ⚠️ Important: Not Part of This Course
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            Hosting backend and frontend together, or hosting them separately and connecting them, introduces significant complexity including CORS issues, deployment configurations, and additional costs. This is beyond the scope of this course, which focuses on hosting frontend applications.
+          </Typography>
+        </Box>
+
+        <Typography variant="h3" sx={{ fontSize: '20px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          Serving React Build Files from Flask
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          It is technically possible to build your React app and serve the static files from Flask templates. You would:
+        </Typography>
+        <List sx={{ m: '16px 0 16px 24px', pl: 1 }}>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary={<><>Build your React app (e.g., <code>npm run build</code>)</></>} />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary="Copy the build files to your Flask app's static/templates folders" />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', pl: 0 }}>
+            <ListItemText primary="Configure Flask to serve the static files and handle routing" />
+          </ListItem>
+        </List>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Why This Approach is Problematic
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Much more complicated</strong> — Requires manual build steps, file copying, and Flask configuration</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Not free</strong> — Backend hosting typically costs money (unlike frontend hosting on Render's free tier)</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Not best practice</strong> — Separating frontend and backend is the modern standard. Mixing them makes deployment and scaling harder</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Deployment complexity</strong> — Every change requires rebuilding and redeploying the entire stack</>} />
+            </ListItem>
+          </List>
+          <Box
+            sx={{
+              borderLeft: '3px solid #f59e0b',
+              pl: 2,
+              mt: 2,
+              background: 'rgba(245,158,11,0.1)',
+              borderRadius: 1,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: 'var(--muted)', mb: 0.5 }}>
+              📚 Reference
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'var(--muted)' }}>
+              If you're curious about how this works, see this <MuiLink href="https://stackoverflow.com/questions/44209978/serving-a-front-end-created-with-create-react-app-with-flask" target="_blank" rel="noopener noreferrer" sx={{ color: 'var(--accent)' }}>Stack Overflow discussion</MuiLink>. But remember: it works, but it's not a best practice approach.
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Typography variant="h3" sx={{ fontSize: '20px', mt: 3, mb: 1, color: 'var(--text)' }}>
+          Why Hosting Backend and Frontend Separately is a Pain
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          If you host your backend and frontend on different domains (e.g., frontend on Render, backend on another service), you'll face several challenges:
+        </Typography>
+
+        <Paper sx={{ background: 'rgba(2, 6, 23, 0.6)', border: '1px solid var(--border)', borderRadius: 3, p: 2.5, my: 2.5 }}>
+          <Typography variant="h4" sx={{ fontSize: '18px', mb: 1.5, color: 'var(--accent)' }}>
+            Common Issues with Separate Hosting
+          </Typography>
+          <List sx={{ m: '12px 0', pl: 2.5 }}>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>CORS issues</strong> — Browsers block requests between different origins. You'll need to configure CORS on your backend, which can be tricky and error-prone</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Multiple deployments</strong> — Every change requires deploying both frontend and backend separately</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Configuration complexity</strong> — Managing environment variables, API endpoints, and connection settings across two services</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Cost</strong> — Backend hosting typically costs money, unlike free frontend hosting options</>} />
+            </ListItem>
+            <ListItem sx={{ display: 'list-item', pl: 0 }}>
+              <ListItemText primary={<><strong>Debugging difficulty</strong> — Issues can span both services, making troubleshooting more complex</>} />
+            </ListItem>
+          </List>
+        </Paper>
+
+        <Box
+          sx={{
+            borderLeft: '4px solid var(--accent)',
+            p: 2,
+            m: '24px 0',
+            background: 'rgba(139,92,246,0.08)',
+            borderRadius: 1.5,
+            lineHeight: 1.6,
+          }}
+        >
+          <Typography sx={{ m: 0, fontWeight: 600 }}>
+            💡 Course Focus
+          </Typography>
+          <Typography sx={{ m: 0, mt: 0.5 }}>
+            For this course, we focus on hosting frontend applications. This keeps things simple, free, and aligned with modern best practices. If you need backend functionality, consider using serverless functions, API services, or CMS solutions that can be called from your frontend without hosting your own backend.
+          </Typography>
+        </Box>
+
+        <Typography id="summary" variant="h2" sx={{ fontSize: '24px', mt: 4, mb: 2, color: 'var(--text)' }}>
+          Summary
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2, color: 'var(--text)', lineHeight: 1.7 }}>
+          Here's a quick summary of what we covered:
+        </Typography>
+
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, gap: 2, my: 3 }}>
+          {[
+            { emoji: '🌐', title: 'Domain Providers', desc: 'Loopia is our choice for domain registration and DNS management. Other options include Namecheap, GoDaddy, and Cloudflare.' },
+            { emoji: '🔗', title: 'CNAME Records', desc: 'We use CNAME to point www.example.com to our Render app. This is free but requires the www subdomain.' },
+            { emoji: '📍', title: 'A Records', desc: 'A records point directly to IP addresses, allow example.com (no www), but require a static IP (~$25/month on Render).' },
+            { emoji: '⏱️', title: 'TTL Settings', desc: 'Lower TTL (300s) makes DNS changes propagate faster. Higher TTL (3600s) improves performance but slows updates.' },
+            { emoji: '💰', title: 'Cost Options', desc: 'CNAME (free), A record with static IP (~$25/month), or workaround with cheap server (~$4/month but more complex).' },
+            { emoji: '⚙️', title: 'DNS Editor', desc: 'Use your domain provider\'s DNS editor (e.g., Loopia) to add and modify DNS records. Changes can take minutes to hours to propagate.' },
+          ].map((item) => (
+            <Paper key={item.title} sx={{ background: 'linear-gradient(180deg, rgba(139,92,246,0.10), rgba(139,92,246,0.02))', border: '1px solid var(--border)', borderRadius: 3.5, p: 2.25 }}>
+              <Typography sx={{ fontSize: '32px', mb: 1 }}>{item.emoji}</Typography>
+              <Typography variant="h4" sx={{ fontSize: '18px', mb: 1 }}>
+                {item.title}
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'var(--muted)', fontSize: '14px' }}>
+                {item.desc}
+              </Typography>
+            </Paper>
+          ))}
+        </Box>
+      </Box>
+    </Container>
+    </>
+  );
+};
+
+export default HostingDomainPage;
+
