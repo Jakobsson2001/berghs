@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Box, Typography, Link as MuiLink, List, ListItem, ListItemText } from '@mui/material';
 import SEO from '../components/SEO';
 
